@@ -1,0 +1,45 @@
+// .swiper-button-next,
+// .swiper-button-prev {
+//   position: static !important;
+//   margin: 0 !important;
+//   width: 6rem !important;
+//   height: 6rem !important;
+//   border-radius: 1.6rem;
+//   background: $accent;
+//   @include tablet {
+//     width: 5rem !important;
+//     height: 5rem !important;
+//     border-radius: 1.2rem;
+//   }
+//   @include small-tablet {
+//     width: 8.8rem !important;
+//     height: 8.8rem !important;
+//     border-radius: 2.4rem;
+//   }
+
+//   &:after {
+//     display: none;
+//   }
+//   & svg {
+//     width: 2rem !important;
+//     height: 2rem !important;
+//     object-fit: cover;
+//     transition: transform 0.3s;
+//     @include small-tablet {
+//       width: 3rem !important;
+//       height: 3rem !important;
+//     }
+//   }
+// }
+// .swiper-button-prev:hover {
+//   & svg {
+//     transform: translateX(-0.5rem);
+//   }
+// }
+// .swiper-button-next:hover {
+//   & svg {
+//     transform: translateX(0.5rem);
+//   }
+// }
+
+

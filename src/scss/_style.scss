@@ -1,0 +1,152 @@
+@import './mixins';
+@import './flexs';
+
+
+  $dark: #153842;
+  $primary-bg: #367;
+  $background: rgba(96, 118, 125, 0.3);
+  $accent: #ffc458;
+  $stroke: #adc2c9;
+  $stroke-secondary: rgba(173, 194, 201, 0.5);
+  $text-primary: #fff;
+  $text-secondary: #919b9e;
+  $tertiary-text: rgba(255, 255, 255, 0.5);
+
+
+@media (min-width: 768px) {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+body {
+  color: $text-primary;
+  background: $primary-bg;
+  font-family: 'Diodrum';
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+  &.no-scroll {
+    overflow: hidden !important;
+    touch-action: none !important;
+    width: 100vw;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  position: relative;
+
+  // overflow: hidden;
+}
+
+* {
+  // outline:  1px solid red;
+}
+// main
+main {
+  flex-grow: 1;
+  section {
+    padding: 30rem 0;
+    @include small-tablet {
+      padding: 10rem 0;
+    }
+    &._first {
+      padding: 20rem 0 30rem;
+      @include small-tablet {
+        padding: 6rem 0 10rem;
+      }
+    }
+  }
+}
+
+.desktop {
+  display: flex;
+  @include small-tablet {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include small-tablet {
+    display: flex;
+  }
+}
+.regular {
+  font-weight: 400 !important;
+}
+.medium {
+  font-weight: 500 !important;
+}
+.semibold {
+  font-weight: 600 !important;
+}
+.bold {
+  font-weight: 700 !important;
+}
+
+.italic {
+  font-style: italic !important;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+
+.cv {
+  align-items: center;
+}
+.sb {
+  justify-content: space-between;
+}
+.dc {
+  flex-direction: column;
+}
+.flex-cc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+@import './ui/ui';

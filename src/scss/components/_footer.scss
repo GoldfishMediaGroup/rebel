@@ -1,0 +1,46 @@
+
+// .cookie {
+//   position: fixed;
+//   border-radius: 20rem;
+//   padding: 32rem 40rem;
+//   background: $white;
+//   left: 90rem;
+//   bottom: 60rem;
+//   width: 700rem;
+//   gap: 24rem;
+
+//   box-shadow: 0 4rem 8rem 0 rgba(133, 60, 0, 0.1), 0 15rem 15rem 0 rgba(133, 60, 0, 0.09), 0 34rem 20rem 0 rgba(133, 60, 0, 0.05),
+//     0 60rem 24rem 0 rgba(133, 60, 0, 0.01), 0 94rem 26rem 0 rgba(133, 60, 0, 0);
+//   background: #fff;
+//   z-index: -1;
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: visibility 0.4s, opacity 0.4s, z-index 0.4s, bottom 0.4s;
+//   &--show {
+//     opacity: 1;
+//     visibility: visible;
+//     z-index: 8;
+//   }
+//   @include small-tablet {
+//     width: 359rem;
+//     border-radius: 16rem;
+//     padding: 16rem;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     bottom: 8rem;
+//   }
+//   & .txt20 {
+//     @include small-tablet {
+//       font-size: 16rem;
+//     }
+//   }
+//   & .blue-btn {
+//     padding: 20rem 98rem;
+//     @include small-tablet {
+//       font-weight: 600;
+//       font-size: 18rem;
+//       padding: 14rem;
+//       width: 100%;
+//     }
+//   }
+// }
