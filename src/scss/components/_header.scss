@@ -1,0 +1,104 @@
+.header {
+  padding: 40rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &::before {
+    transition: opacity 0.3s;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(11, 42, 52, 0.4);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  &.isScroll {
+    &::before {
+      opacity: 1;
+    }
+  }
+  @include small-tablet {
+    padding: 20px 0;
+  }
+
+  /* .header__inner */
+
+  &__inner {
+    gap: 40rem;
+    z-index: 1;
+    position: relative;
+  }
+
+  /* .header__nav */
+
+  &__nav {
+    margin-left: 40rem;
+    flex-grow: 1;
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  /* .header__list */
+
+  &__list {
+    gap: 40rem;
+  }
+
+  /* .header__link */
+
+  &__link {
+  }
+
+  /* .header__socials */
+
+  &__socials {
+    gap: 20px;
+  }
+
+  /* .header__social */
+
+  &__social {
+  }
+
+  /* .header__btns */
+
+  &__btns {
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .header__lang */
+
+  &__lang {
+  }
+
+  /* .header__lang-top */
+
+  &__lang-top {
+    gap: 8rem;
+  }
+
+  /* .header__lang-svg */
+
+  &__lang-svg {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  /* .header__lang-bottom */
+
+  &__lang-bottom {
+  }
+
+  &__burger {
+    @include small-tablet {
+      width: 24rem;
+      height: 24rem;
+    }
+  }
+}
