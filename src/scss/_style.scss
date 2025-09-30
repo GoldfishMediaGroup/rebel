@@ -1,17 +1,15 @@
 @import './mixins';
 @import './flexs';
 
-
-  $dark: #153842;
-  $primary-bg: #367;
-  $background: rgba(96, 118, 125, 0.3);
-  $accent: #ffc458;
-  $stroke: #adc2c9;
-  $stroke-secondary: rgba(173, 194, 201, 0.5);
-  $text-primary: #fff;
-  $text-secondary: #919b9e;
-  $tertiary-text: rgba(255, 255, 255, 0.5);
-
+$dark: #153842;
+$primary-bg: #367;
+$background: rgba(96, 118, 125, 0.3);
+$accent: #ffc458;
+$stroke: #adc2c9;
+$stroke-secondary: rgba(173, 194, 201, 0.5);
+$text-primary: #fff;
+$text-secondary: #919b9e;
+$tertiary-text: rgba(255, 255, 255, 0.5);
 
 @media (min-width: 768px) {
   html.lenis,
@@ -39,7 +37,7 @@
 body {
   color: $text-primary;
   background: $primary-bg;
-  font-family: 'Diodrum';
+  font-family: 'Geologica';
   .lock & {
     overflow: hidden;
     touch-action: none;
@@ -68,14 +66,17 @@ body {
 main {
   flex-grow: 1;
   section {
-    padding: 30rem 0;
+    padding: 60rem 0;
     @include small-tablet {
-      padding: 10rem 0;
+      padding: 30rem 0;
     }
     &._first {
-      padding: 20rem 0 30rem;
+      padding: 0;
+    }
+    &._breadcrumbs {
+      padding: 125rem 0 60rem;
       @include small-tablet {
-        padding: 6rem 0 10rem;
+        padding: 65rem 0 30rem;
       }
     }
   }
@@ -95,22 +96,7 @@ main {
     display: flex;
   }
 }
-.regular {
-  font-weight: 400 !important;
-}
-.medium {
-  font-weight: 500 !important;
-}
-.semibold {
-  font-weight: 600 !important;
-}
-.bold {
-  font-weight: 700 !important;
-}
 
-.italic {
-  font-style: italic !important;
-}
 .flex {
   display: flex;
 }
@@ -132,16 +118,7 @@ main {
   align-items: center;
   justify-content: center;
 }
-.center {
-  text-align: center;
-}
 
-.left {
-  text-align: left;
-}
-.right {
-  text-align: right;
-}
 .relative {
   position: relative;
 }

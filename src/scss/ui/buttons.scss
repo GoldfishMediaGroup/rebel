@@ -42,4 +42,17 @@
 //   }
 // }
 
-
+.accent-btn {
+  width: 398rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $dark;
+  text-transform: uppercase;
+  font-size: 18rem;
+  background: $accent;
+  padding: 18rem;
+  @include small-tablet {
+    font-size: 16rem;
+  }
+}
