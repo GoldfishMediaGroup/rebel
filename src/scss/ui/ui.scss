@@ -4,3 +4,12 @@
 @import './form';
 @import './fancybox';
 
+.logo {
+  width: 281rem;
+  height: 29rem;
+
+     @include small-tablet {
+  width: 207rem;
+  height: 20rem;
+    }
+}
