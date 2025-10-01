@@ -1,0 +1,112 @@
+.ambitions {
+  margin-top: 60rem;
+  @include small-tablet {
+    margin-top: 30rem;
+  }
+  /* .ambitions__container */
+
+  &__container {
+  }
+
+  /* .ambitions__inner */
+
+  &__inner {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .ambitions__title-wrap */
+
+  &__title-wrap {
+    gap: 270rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 10rem;
+    }
+  }
+
+  /* .ambitions__title */
+
+  &__title {
+    & span:nth-child(2) {
+      padding-left: 265rem;
+      @include small-tablet {
+        padding-left: 0;
+      }
+    }
+  }
+
+  /* .ambitions__content */
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40rem;
+    align-items: center;
+
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 12rem;
+    }
+  }
+
+  /* .ambitions__img */
+
+  &__img {
+    width: 100%;
+    // height: 368rem;
+    height: 100%;
+    position: relative;
+    & img {
+      position: absolute;
+      inset: 0;
+    }
+    @include small-tablet {
+      height: 197rem;
+    }
+  }
+
+  /* .ambitions__list */
+
+  &__list {
+    gap: 24rem;
+    @include small-tablet {
+      gap: 8rem;
+    }
+  }
+
+  /* .ambitions__item */
+
+  &__item {
+    padding: 32rem;
+    gap: 32rem;
+    border: 2rem solid $text-primary;
+    @include small-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16rem;
+      gap: 12rem;
+    }
+  }
+
+  /* .ambitions__svg */
+
+  &__svg {
+    width: 78rem;
+    height: 78rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 42rem;
+      height: 42rem;
+    }
+  }
+
+  /* .ambitions__text */
+
+  &__text {
+    gap: 12rem;
+  }
+}

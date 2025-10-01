@@ -1,7 +1,73 @@
 <section class="hero _first">
-  <div class="hero__container container">
-    <div class="hero__inner" style="height: 200vh">
-    
+  <div class="hero__container">
+    <div class="hero__inner">
+      <div class="hero__bg-swiper swiper">
+        <div class="hero__bg-swiper-wrapper swiper-wrapper">
+          <div class="hero__bg-slide swiper-slide">
+            <picture class="hero__bg-img">
+              <source srcset="./assets/images/heroBgMob.webp" media="(max-width: 768px)" />
+              <source srcset="./assets/images/heroBg.webp" media="(min-width: 769px)" />
+              <img src="./assets/images/heroBg.webp" alt="Hero background" />
+            </picture>
+          </div>
+          <div class="hero__bg-slide swiper-slide">
+            <picture class="hero__bg-img">
+              <source srcset="./assets/images/heroBg2.webp" media="(max-width: 768px)" />
+              <source srcset="./assets/images/heroBg2.webp" media="(min-width: 769px)" />
+              <img src="./assets/images/heroBg2.webp" alt="Hero background" />
+            </picture>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__info">
+        <div class="hero__info-inner container flex sb">
+          <div class="hero__facts flex dc">
+            <div class="hero__title-swiper swiper txt90 medium upper">
+              <div class="hero__title-swiper-wrapper swiper-wrapper">
+                <div class="hero__title-slide swiper-slide">Образцовый представитель</div>
+
+                <div class="hero__title-slide swiper-slide">Образцовый представитель Образцовый</div>
+              </div>
+            </div>
+            <div class="hero__btn-swiper swiper" data-da=".hero__details, 768, last ">
+              <div class="hero__btn-swiper-wrapper swiper-wrapper">
+                <div class="hero__btn-slide swiper-slide">
+                  <a href="#" class="accent-btn">подробнее о компании</a>
+                </div>
+                <div class="hero__btn-slide swiper-slide">
+                  <a href="#" class="accent-btn">о компании подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__details flex dc sb">
+            <div class="hero__progress flex dc">
+              <div class="hero__num-swiper swiper txt20 upper">
+                <div class="hero__num-swiper-wrapper swiper-wrapper">
+                  <div class="hero__num-slide swiper-slide">01</div>
+                  <div class="hero__num-slide swiper-slide">02</div>
+                </div>
+              </div>
+
+              <div class="hero__bar"></div>
+            </div>
+
+            <div class="hero__text-swiper swiper txt20 light lh140">
+              <div class="hero__text-swiper-wrapper swiper-wrapper">
+                <div class="hero__text-slide swiper-slide">
+                  Образцовый представитель английских и американских классических мужских брендов мужской косметики и аксессуаров
+                </div>
+                <div class="hero__text-slide swiper-slide">
+                  классических мужских брендов мужской косметики и аксессуаров Образцовый представитель английских и американских
+                  классических мужских брендов мужской косметики и аксессуаров Образцовый представитель
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -13,6 +13,9 @@ import scroll from '../utils/scroll';
 // import headerBurger from '../components/headerBurger';
 import footerCookieDisclamer from '../components/footerCookieDisclamer';
 import headerScroll from '../components/headerScroll';
+import hero from '../components/hero';
+import values from '../components/values';
+import cooperations from '../components/cooperations';
 
 import '../libs/dynamic_adapt';
 
@@ -24,8 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   popup();
   form();
   scroll();
-  headerScroll()
+  headerScroll();
   footerCookieDisclamer();
   // smoothScroll();
   // headerBurger();
+  hero();
+  values();
+  cooperations();
 });

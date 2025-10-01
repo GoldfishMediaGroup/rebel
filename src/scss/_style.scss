@@ -5,6 +5,7 @@ $dark: #153842;
 $primary-bg: #367;
 $background: rgba(96, 118, 125, 0.3);
 $accent: #ffc458;
+$accentHover: #ffd78c;
 $stroke: #adc2c9;
 $stroke-secondary: rgba(173, 194, 201, 0.5);
 $text-primary: #fff;
@@ -127,6 +128,40 @@ main {
 }
 .absolute {
   position: absolute;
+}
+
+/* .values__swiper */
+
+.swiper-grig {
+  width: 100%;
+  @include small-tablet {
+    width: calc(100% + 20rem);
+    margin: -6rem -10rem !important;
+    overflow: visible !important;
+  }
+
+  & .swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40rem;
+
+    @include small-tablet {
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 0rem;
+    }
+    @media (min-width: 769px) {
+      width: 100% !important;
+      transform: none !important;
+    }
+  }
+
+  & .swiper-slide {
+    height: auto !important;
+    @include small-tablet {
+      padding: 6rem 12rem;
+    }
+  }
 }
 
 @import './ui/ui';

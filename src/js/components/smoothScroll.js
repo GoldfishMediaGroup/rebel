@@ -22,3 +22,7 @@ function smoothScroll() {
   gsap.ticker.lagSmoothing(0);
 }
 export default smoothScroll;
+
+
+
+
