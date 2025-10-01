@@ -1,0 +1,14 @@
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.00024 14.9998C6.33358 12.9998 4.10024 7.99979 8.50024 3.99979C12.9002 -0.000206947 17.3344 3.33313 19.0015 5.49979" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M46.7837 15C48.569 12.9799 50.9611 7.92978 46.2482 3.88965C41.5352 -0.150471 36.7857 3.2163 35 5.4047" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.5 44.5L9.5 49.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40 44.5L45 49.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="27.5" cy="26.5" r="22.5" fill="#F6B745"/>
+<path d="M25 26H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29 27.6621L38.9999 36.9996" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="27.5" cy="26.5" r="1.5" stroke="white" stroke-width="2"/>
+<ellipse cx="27.5" cy="8" rx="1" ry="2" fill="white"/>
+<ellipse cx="1" cy="2" rx="1" ry="2" transform="matrix(1 0 0 -1 26 47)" fill="white"/>
+<ellipse cx="2" cy="1" rx="2" ry="1" transform="matrix(1 0 0 -1 44 27)" fill="white"/>
+<ellipse cx="2" cy="1" rx="2" ry="1" transform="matrix(-1 0 0 1 11 25)" fill="white"/>
+</svg>

@@ -1,0 +1,86 @@
+.management {
+  /* .management__container */
+
+  &__container {
+  }
+
+  /* .management__inner */
+
+  &__inner {
+    gap: 114rem;
+  }
+
+  /* .management__content-wrap */
+
+  &__content-wrap {
+    gap: 20rem;
+    padding-bottom: 32rem;
+    @include small-tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  /* .management__info */
+
+  &__info {
+    gap: 80rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .management__text-box */
+
+  &__text-box {
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+  /* .management__text */
+
+  &__text {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 16rem;
+      & br {
+        display: none;
+      }
+    }
+  }
+
+  /* .management__person */
+
+  &__person {
+    gap: 12rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  /* .management__img-wrap */
+
+  &__img-wrap {
+    gap: 40rem;
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  /* .management__img-min */
+
+  &__img-min {
+    width: 329rem;
+    height: 450rem;
+  }
+
+  /* .management__img-max */
+
+  &__img-max {
+    width: 619rem;
+    height: 764rem;
+    @include small-tablet {
+      width: 344rem;
+      height: 387rem;
+    }
+  }
+}

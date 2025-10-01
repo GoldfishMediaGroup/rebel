@@ -1,0 +1,77 @@
+.values {
+  /* .values__container */
+  width: 1920rem;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+  &__container {
+  }
+
+  /* .values__inner */
+
+  &__inner {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .values__swiper-box */
+
+  &__swiper-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16rem;
+  }
+  /* .values__swiper */
+
+  &__swiper {
+  }
+
+  /* .values__swiper-wrapper */
+
+  &__swiper-wrapper {
+  }
+
+  /* .values__slide */
+
+  &__slide {
+  }
+
+  &__pagin {
+    position: static !important;
+    & .swiper-pagination-bullet {
+      transition: all 0.3s !important;
+      background: $tertiary-text;
+    }
+    & .swiper-pagination-bullet-active {
+      background: $text-primary;
+    }
+  }
+}
+
+.value {
+  gap: 12rem;
+  border: 2rem solid $text-primary;
+  padding: 20rem;
+  height: 100%;
+  min-height: 316rem;
+  @include small-tablet {
+    min-height: 280rem;
+  }
+  @include small-tablet {
+    padding: 16rem;
+  }
+
+  /* .value__svg */
+
+  &__svg {
+    width: 52rem;
+    height: 52rem;
+    @include small-tablet {
+      width: 40rem;
+      height: 40rem;
+    }
+  }
+}
