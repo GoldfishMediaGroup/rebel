@@ -9,13 +9,14 @@ import popup from '../utils/popup';
 import form from '../utils/form';
 import scroll from '../utils/scroll';
 
-// import smoothScroll from '../components/smoothScroll';
+import smoothScroll from '../components/smoothScroll';
 // import headerBurger from '../components/headerBurger';
 import footerCookieDisclamer from '../components/footerCookieDisclamer';
 import headerScroll from '../components/headerScroll';
 import hero from '../components/hero';
 import values from '../components/values';
 import cooperations from '../components/cooperations';
+import horisontal from '../components/horisontal';
 
 import '../libs/dynamic_adapt';
 
@@ -29,9 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
   scroll();
   headerScroll();
   footerCookieDisclamer();
-  // smoothScroll();
+  smoothScroll();
   // headerBurger();
   hero();
   values();
   cooperations();
+  horisontal();
+
 });

@@ -1,3 +1,5 @@
+
+
 function scroll() {
 
   const allAnchors = document.querySelectorAll('.nav-link, .nav-link-end, .nav-top-link');
@@ -32,6 +34,9 @@ function scroll() {
       // Если нет — браузер сам перейдет на другую страницу с якорем
     });
   });
+
+
+ 
 }
 
 export default scroll;
