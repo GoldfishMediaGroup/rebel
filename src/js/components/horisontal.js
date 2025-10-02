@@ -128,7 +128,6 @@ function horisontal() {
   const links = section.querySelectorAll('.horisontal__nav-link');
   const nav = section.querySelector('.horisontal__nav');
 
-
   links.forEach((link, index) => {
     link.addEventListener('click', () => {
       links.forEach((l) => l.classList.remove('isActive'));
@@ -145,7 +144,11 @@ function horisontal() {
         scrollTrigger: {
           trigger: row,
           start: 'top top',
-          end: () => `+=${row.offsetWidth - window.innerWidth}`,
+          end: () => {
+            const base = row.offsetWidth - window.innerWidth;
+            return `+=${window.innerWidth > 768 ? base : base * 2}`;
+          },
+
           scrub: true,
           pin: true,
           anticipatePin: 1,
