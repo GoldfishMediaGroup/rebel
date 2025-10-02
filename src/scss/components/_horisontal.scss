@@ -1,0 +1,119 @@
+.horisontal {
+  position: relative;
+  height: fit-content;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  /* .horisontal__container */
+
+  &__container {
+    width: 100%;
+    width: 1920rem;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  /* .horisontal__inner */
+
+  &__inner {
+  }
+
+  /* .horisontal__row-wrap */
+
+  &__row-wrap {
+    width: fit-content;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* .horisontal__row */
+
+  &__row {
+    display: flex;
+    min-height: 100vh;
+    height: 100%;
+    align-items: center;
+    width: fit-content;
+      background: $primary-bg url('./assets/images/bg.svg') no-repeat top/cover;
+    &.isFixed {
+      position: fixed !important;
+      inset: 0;
+      //   transform: none !important;
+    }
+
+    &.isOpacity {
+      opacity: 0;
+    }
+  }
+
+  /* .horisontal__screen */
+
+  &__screen {
+    width: 1920rem;
+    flex-shrink: 0;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    & .txt20 {
+      height: calc(100% - 400rem);
+      overflow: auto;
+    }
+    @include small-tablet {
+      width: 375rem;
+    }
+  }
+
+  /* .horisontal__screen-inner */
+
+  &__screen-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    position: absolute;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(11, 42, 52, 0.4);
+
+    top: calc(100vh - 120rem);
+
+    // left: 50%;
+    // transform: translateX(-50%);
+
+    width: fit-content;
+    &.isFixed {
+      position: sticky;
+    }
+    &.isLeave {
+      top: auto;
+      //   left: 50%;
+      bottom: 50rem;
+    }
+  }
+
+  &__nav-list {
+    gap: 32rem;
+    padding: 23rem 42rem;
+    @include small-tablet {
+      width: 375rem;
+      overflow: auto;
+    }
+  }
+  &__nav-link {
+    transition: color 0.3s;
+    &.isActive,
+    &:hover {
+      color: $accent;
+    }
+  }
+}
