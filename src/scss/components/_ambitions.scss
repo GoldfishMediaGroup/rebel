@@ -1,11 +1,11 @@
 .ambitions {
-  margin-top: 60rem;
-  @include small-tablet {
-    margin-top: 30rem;
-  }
   /* .ambitions__container */
 
   &__container {
+    padding-top: 80rem;
+    @include small-tablet {
+      padding-top: 40rem;
+    }
   }
 
   /* .ambitions__inner */

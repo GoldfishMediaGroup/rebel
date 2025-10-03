@@ -1,0 +1,151 @@
+.dna {
+  width: 1920rem;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+  /* .dna__container */
+
+  &__container {
+  }
+
+  /* .dna__inner */
+
+  &__inner {
+    position: relative;
+    min-height: 820rem;
+    padding: 60rem 0;
+    @include small-tablet {
+      min-height: unset;
+      padding: 0;
+    }
+  }
+
+  /* .dna__title */
+
+  &__title {
+    width: 542rem;
+    gap: 20rem;
+    @include small-tablet {
+      width: 100%;
+      gap: 8rem;
+    }
+  }
+
+  /* .dna__content */
+
+  &__content {
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 24rem;
+    }
+  }
+
+  /* .dna__bg */
+
+  &__bg {
+    position: absolute;
+    overflow: hidden;
+    inset: 0;
+    @include small-tablet {
+      position: static;
+      width: 375rem;
+      height: 330rem;
+      margin: 0 -16rem;
+    }
+
+    & img,
+    & video {
+      /* маска для плавного исчезновения по всем сторонам */
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-composite: intersect; /* скрещиваем маски */
+      mask-composite: intersect;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      @include small-tablet {
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+      }
+    }
+  }
+
+  /* .dna__swiper-box */
+
+  &__swiper-box {
+    @include small-tablet {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16rem;
+    }
+  }
+
+  /* .dna__swiper */
+
+  &__swiper {
+    overflow: visible !important;
+   @include desk-only {
+      width: 100%;
+      height: 100%;
+      position: static !important;
+    }
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  /* .dna__swiper-wrapper */
+
+  &__swiper-wrapper {
+   @include desk-only {
+      transform: none !important;
+      width: 100% !important;
+      position: static !important;
+    }
+  }
+
+  /* .dna__slide */
+
+  &__slide {
+   @include desk-only {
+      position: absolute !important;
+      width: 420rem !important;
+      &:nth-child(1) {
+        top: 358rem;
+        left: 64rem;
+      }
+      &:nth-child(2) {
+        top: 119rem;
+        left: 1300rem;
+      }
+      &:nth-child(3) {
+        top: 528rem;
+        left: 999rem;
+      }
+    }
+  }
+
+  /* .dna__slide-inner */
+
+  &__slide-inner {
+    gap: 12rem;
+    padding: 32rem;
+    border: 2rem solid $text-primary;
+    min-height: 236rem;
+    @include small-tablet {
+      min-height: 152rem;
+      padding: 16rem;
+      background: $primary-bg;
+    }
+  }
+
+  /* .dna__pagination */
+
+  &__pagination {
+  }
+}

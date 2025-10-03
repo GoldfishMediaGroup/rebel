@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><script src="https://api-maps.yandex.ru/v3/?apikey=cb93da52-9741-4ffe-86ea-93a91ce99a1c&lang=ru_RU"></script>
     <title>500</title>
   <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
   <body>
@@ -60,7 +60,98 @@
   </div>
 </header>
 
-      
+      <div id="popup__application" aria-hidden="true" class="popup popup--application" data-lenis-prevent="true">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__body flex dc">
+        <button data-close="" type="button" class="popup__close-btn">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 10L10 30" stroke="#ADC2C9" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M10 10L30 30" stroke="#ADC2C9" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <div class="popup__body-content flex dc">
+          <div class="popup__body-text flex dc">
+            <p class="txt32 upper">Напишите нам</p>
+          </div>
+
+          <form class="popup__form form flex dc" data-popup-message="#popup__success" data-dev="" action="">
+            <div class="popup__input-box flex dc">
+              <label class="form__label">
+                <span class="form__label-inner">
+                  <input class="input--name form__input txt16 upper" type="text" data-validate="" data-required="name" autocomplete="off" name="form[]" placeholder="Введите Ваше имя">
+                  <span class="form__placeholder txt12 tight lh140">Ваше имя</span>
+                </span>
+                <span class="form__error txt10 light">Поле не заполнено</span>
+              </label>
+
+              <label class="form__label">
+                <span class="form__label-inner">
+                  <input class="input--mail form__input txt16 upper" type="text" data-validate="" data-required="email" autocomplete="off" name="form[]" placeholder="Введите электронную почту">
+                  <span class="form__placeholder txt12 tight lh140">Ваша электронная почта</span>
+                </span>
+                <span class="form__error txt10 light">Поле не заполнено</span>
+              </label>
+
+              <label class="form__label">
+                <span class="form__label-inner">
+                  <span class="form__textarea-wrap">
+                    <textarea class="form__textarea txt16 upper" name="form[]" placeholder="Введите комментарий"></textarea>
+                    <span class="form__textarea-count tertiary-color txt12 light lh140">
+                      <span class="current"></span>
+                      <span>из</span>
+                      <span class="all">350</span>
+                    </span>
+                  </span>
+                  <span class="form__placeholder txt12 tight lh140">Ваш комментарий</span>
+                </span>
+              </label>
+            </div>
+            <div class="popup__btn-box">
+              <label class="form__check-label">
+                <input type="checkbox">
+                <span class="form__check-square"></span>
+                <span class="txt14 lh140 light tertiary-color">
+                  Нажимая кнопку «Отправить», вы даете свое согласие на обработку персональных данных, определенных в
+                  <a href="#">Согласии на обработку персональных данных</a>
+                </span>
+              </label>
+              <button disabled="" type="submit" class="submit-btn accent-btn">отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup__success" aria-hidden="true" class="popup popup--success" data-lenis-prevent="true">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__body flex dc cv">
+        <button data-close="" type="button" class="popup__close-btn">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 10L10 30" stroke="#ADC2C9" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M10 10L30 30" stroke="#ADC2C9" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <div class="popup__body-content flex dc cv">
+          <div class="popup__body-text flex dc cv">
+            <p class="txt32 upper center">Ваша заявка отправлена</p>
+            <p class="txt18 light center lh140">
+              Ваша заявка успешно отправлена! Мы ответим
+              <br>
+              Вам в ближайшее время, ожидайте, пожалуйста.
+            </p>
+          </div>
+
+          <button data-close="" class="accent-btn">вернуться на главную</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <main>
             
@@ -136,20 +227,129 @@
   <a class="footer__up-btn absolute txt12 tertiary-color light nav-top-link">
     <p class="footer__up-text">Наверх</p>
     <div class="footer__up-svg">
-     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20.712 3.29875C20.3215 2.90823 19.6883 2.90823 19.2978 3.29875L12.9338 9.66271C12.5433 10.0532 12.5433 10.6864 12.9338 11.0769C13.3243 11.4675 13.9575 11.4675 14.348 11.0769L20.0049 5.42007L25.6617 11.0769C26.0523 11.4675 26.6854 11.4675 27.076 11.0769C27.4665 10.6864 27.4665 10.0532 27.076 9.66271L20.712 3.29875ZM20.0049 36.0059H21.0049L21.0049 4.00586H20.0049H19.0049L19.0049 36.0059H20.0049Z" fill="white"></path>
-</svg>
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.712 3.29875C20.3215 2.90823 19.6883 2.90823 19.2978 3.29875L12.9338 9.66271C12.5433 10.0532 12.5433 10.6864 12.9338 11.0769C13.3243 11.4675 13.9575 11.4675 14.348 11.0769L20.0049 5.42007L25.6617 11.0769C26.0523 11.4675 26.6854 11.4675 27.076 11.0769C27.4665 10.6864 27.4665 10.0532 27.076 9.66271L20.712 3.29875ZM20.0049 36.0059H21.0049L21.0049 4.00586H20.0049H19.0049L19.0049 36.0059H20.0049Z" fill="white"></path>
+      </svg>
     </div>
   </a>
 </footer>
 <!-- cookie--show -->
-<div class="cookie cookie--show flex dc">
+<div class="cookie flex dc">
   <p class="txt18 light">
     Этот сайт использует cookie для хранения данных. Продолжая использовать сайт, Вы даете согласие на работу с этими файлами.
   </p>
 
   <button class="cookie__btn accent-btn">Принять и закрыть</button>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initMap();
+  });
+  async function initMap() {
+    if (typeof ymaps3 !== 'undefined') {
+      await ymaps3.ready;
+      const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+
+      // let map = new YMap(
+      //   document.querySelector('.contacts__map'),
+      //   {
+      //     location: {
+      //       center: [37.824194, 55.725301],
+      //       zoom: 10
+      //     },
+      //     theme: 'dark'
+      //   },
+      //   [
+      //     new YMapDefaultSchemeLayer({
+      //       customization: {
+      //         style: [
+      //           {
+      //             tags: { all: ['water'] },
+      //             elements: 'geometry',
+      //             stylers: {
+      //               color: '#364A53' // нужный цвет воды
+      //             }
+      //           }
+      //         ]
+      //       }
+      //     }),
+      //     new YMapDefaultFeaturesLayer({})
+      //   ]
+      // );
+
+      let map = new YMap(
+        document.querySelector('.contacts__map'),
+        {
+          location: {
+            center: [37.835446, 55.797589],
+            zoom: 10
+          }
+          // theme: 'dark'
+        },
+        [
+          new YMapDefaultSchemeLayer({
+            customization: {
+              style: [
+                {
+                  tags: { all: [] },
+                  elements: 'geometry',
+                  stylers: {
+                    color: '#1C2429'
+                  }
+                },
+                {
+                  tags: { all: ['water'] },
+                  elements: 'geometry',
+                  stylers: {
+                    color: '#364A53'
+                  }
+                },
+
+                {
+                  tags: { any: ['transit_line', 'transit_schema'] },
+                  elements: 'geometry',
+                  stylers: {
+                    color: '#757575'
+                  }
+                },
+                {
+                  tags: { any: ['landcover', 'structure', 'road', 'urban_area', 'national_park', 'terrain', 'poi'] },
+                  elements: 'geometry',
+                  stylers: {
+                    color: '#25332D'
+                  }
+                },
+                {
+                  tags: { all: [] },
+                  elements: 'label.text.fill',
+                  stylers: { color: '#757575' }
+                },
+                {
+                  tags: {
+                    any: ['road', 'water', 'landscape', 'poi', 'admin', 'transit', 'structure', 'is_tunnel', 'geographic_line']
+                  },
+                  elements: 'label.text.outline',
+                  stylers: {
+                    opacity: 0
+                  }
+                }
+              ]
+            }
+          }),
+          new YMapDefaultFeaturesLayer({})
+        ]
+      );
+
+      const markerElement = document.createElement('img');
+      markerElement.className = 'contacts__placemark';
+      // markerElement.src = './assets/images/placemark.svg';
+      markerElement.src = '../assets/images/placemark.svg';
+      map.addChild(new YMapMarker({ coordinates: [37.675226, 55.776011] }, markerElement));
+      map.setBehaviors(['drag', 'dblClick', 'mouseRotate']);
+    }
+  }
+</script>
 
     </div>
   </body>

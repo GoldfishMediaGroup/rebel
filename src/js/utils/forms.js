@@ -289,7 +289,7 @@ export function formSubmit(options = { validate: true }) {
         popup ? modules.popup.open(popup) : null;
       }
       // formValidate.formClean(form);
-    }, 300);
+    }, 5);
     // clean form
   }
 }

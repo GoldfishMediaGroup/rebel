@@ -17,10 +17,17 @@ import hero from '../components/hero';
 import values from '../components/values';
 import cooperations from '../components/cooperations';
 import horisontal from '../components/horisontal';
+import dna from '../components/dna';
+import vacancies from '../components/vacancies';
+import news from '../components/news';
 
 import '../libs/dynamic_adapt';
 
 export const modules = {};
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
 
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -36,5 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   values();
   cooperations();
   horisontal();
-
+  dna();
+  vacancies();
+  news();
 });
