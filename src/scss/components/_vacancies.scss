@@ -1,0 +1,151 @@
+.vacancies {
+  width: 1920rem;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+  /* .vacancies__container */
+
+  &__container {
+  }
+
+  /* .vacancies__inner */
+
+  &__inner {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .vacancies__swiper-box */
+
+  &__swiper-box {
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .vacancies__swiper */
+
+  &__swiper {
+    width: 100%;
+    overflow: visible !important;
+    @include small-tablet {
+      width: calc(100% + 20rem);
+      margin: -6rem -10rem !important;
+    }
+  }
+
+  /* .vacancies__swiper-wrapper */
+
+  &__swiper-wrapper {
+    flex-direction: row !important;
+  }
+
+  /* .vacancies__slide */
+
+  &__slide {
+    height: auto !important;
+    @include small-tablet {
+      padding: 6rem 12rem;
+    }
+  }
+
+  /* .vacancies__slide-link */
+
+  &__slide-link {
+    padding: 20rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: $primary-bg;
+    transition: background 0.3s, border 0.3s;
+    border: 2rem solid $text-primary;
+
+    gap: 115rem;
+    height: 100%;
+    @include small-tablet {
+      gap: 32rem;
+      padding: 16rem;
+    }
+    &:hover {
+      background: rgba(11, 42, 52, 0.4);
+      border: 2rem solid $accent;
+      & .vacancies__slide-arr {
+        opacity: 1;
+      }
+    }
+  }
+
+  /* .vacancies__slide-title */
+
+  &__slide-title {
+    gap: 15rem;
+  }
+
+  /* .vacancies__slide-info */
+
+  &__slide-info {
+    gap: 10rem;
+  }
+
+  /* .vacancies__slide-footer */
+
+  &__slide-footer {
+    gap: 16rem;
+  }
+
+  /* .vacancies__slide-svg */
+
+  &__slide-svg {
+    width: 52rem;
+    height: 52rem;
+    flex-shrink: 0;
+  }
+
+  /* .vacancies__pagin */
+
+  &__pagin {
+    @include desk-only {
+      display: none;
+    }
+  }
+  /* .vacancies__slide-arr */
+  &__slide-arr {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20rem;
+    width: 40rem;
+    height: 40rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  /* .vacancies__empty */
+
+  &__empty {
+    border: 2rem solid $text-primary;
+    padding: 60rem;
+    width: 812rem;
+    margin: 0 auto;
+    gap: 40rem;
+    @include small-tablet {
+      width: 100%;
+      padding: 16rem;
+      gap: 32rem;
+      text-align: left;
+    }
+  }
+
+  /* .vacancies__empty-text */
+
+  &__empty-text {
+    gap: 20rem;
+    & .txt18 {
+      @include small-tablet {
+        font-size: 12rem;
+        gap: 12rem;
+      }
+    }
+  }
+}

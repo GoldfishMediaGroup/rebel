@@ -40,16 +40,13 @@
   }
 
   &__pagin {
-    position: static !important;
-    & .swiper-pagination-bullet {
-      transition: all 0.3s !important;
-      background: $tertiary-text;
-    }
-    & .swiper-pagination-bullet-active {
-      background: $text-primary;
-    }
+   
   }
 }
+
+
+
+
 
 .value {
   gap: 12rem;

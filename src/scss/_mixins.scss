@@ -14,6 +14,11 @@
     @content;
   }
 }
+@mixin desk-only {
+  @media (min-width: 48.01em) {
+    @content;
+  }
+}
 
 @mixin sizes($width, $height) {
   max-width: $width;

@@ -11,9 +11,9 @@
   }
 }
 .txt32 {
-  font-size: 48rem;
+  font-size: 32rem;
   @include small-tablet {
-    font-size: 22rem;
+    font-size: 18rem;
   }
 }
 .txt24 {
@@ -41,9 +41,21 @@
     font-size: 12rem;
   }
 }
+.txt14 {
+  font-size: 14rem;
+  @include small-tablet {
+  }
+}
 .txt12 {
   font-size: 12rem;
   @include small-tablet {
+    font-size: 10rem;
+  }
+}
+.txt10 {
+  font-size: 10rem;
+  @include small-tablet {
+    font-size: 8rem;
   }
 }
 

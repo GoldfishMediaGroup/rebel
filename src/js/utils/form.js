@@ -11,7 +11,6 @@ const form = () => {
   mailValidate();
   textareaValidate();
 
-
   function nameValidate() {
     const name = document.querySelectorAll('.input--name');
 
@@ -86,16 +85,16 @@ const form = () => {
   }
 
   function textareaValidate() {
-    const textareas = document.querySelectorAll('.application__form-textarea');
+    const textareas = document.querySelectorAll('.form__textarea');
 
     function textareaCount(item) {
       let textareaValue = item.value.trim();
-      const span = item.closest('.form__input-group').querySelector('.form__textarea-span');
-      const length = span.getAttribute('data-length')
+      const span = item.closest('.form__textarea-wrap').querySelector('.form__textarea-count .current');
+      const length = item.closest('.form__textarea-wrap').querySelector('.form__textarea-count .all').textContent;
       if (textareaValue.length > 0) {
-        span.classList.add('active');
+        span.parentElement.classList.add('active');
       } else {
-        span.classList.remove('active');
+        span.parentElement.classList.remove('active');
       }
       if (textareaValue.length > length) {
         textareaValue = textareaValue.substring(0, length);
@@ -103,9 +102,9 @@ const form = () => {
       }
 
       // Обновляем спан
-      const remaining = length - textareaValue.length;
+      const remaining = textareaValue.length;
       if (span) {
-        span.querySelector('span').textContent = remaining;
+        span.textContent = remaining;
       }
     }
     textareas.forEach((textarea) => {
@@ -115,42 +114,52 @@ const form = () => {
     });
   }
 
-  // function setupFormListener(formSelector, submitButtonSelector) {
-  //   const form = document.querySelector(formSelector);
-  //   const submitButton = document.querySelector(submitButtonSelector);
+  function setupFormListener(formSelector, submitButtonSelector) {
+    const form = document.querySelector(formSelector);
+    const submitButton = document.querySelector(submitButtonSelector);
+    console.log(formSelector);
 
-  //   const formElements = form.querySelectorAll('input[data-required], textarea[data-required]');
+    const formElements = form.querySelectorAll('input[data-required], textarea[data-required]');
 
-  //   const formElementCheckbox = form.querySelectorAll('.popup__input-checkbox');
-  //   const formElementsParents = form.querySelectorAll('.input-group');
+    const formElementCheckbox = form.querySelectorAll('.form__check-label input');
+    const formElementsParents = form.querySelectorAll('.form__label');
 
-  //   function updateSubmitButtonState() {
-  //     const isEmpty = Array.from(formElements).some((element) => {
-  //       return element.value.trim() === '';
-  //     });
-  //     const formError = Array.from(formElementsParents).some((element) => {
-  //       return element.classList.contains('_form-error');
-  //     });
+    function updateSubmitButtonState() {
+      const isEmpty = Array.from(formElements).some((element) => {
+        return element.value.trim() === '';
+      });
+      const formError = Array.from(formElementsParents).some((element) => {
+        return element.classList.contains('_form-error');
+      });
+      const formErrorInner = Array.from(formElementsParents).some((element) => {
+        return element.querySelector('.form__label-inner').classList.contains('_form-error');
+      });
 
-  //     const formErrorCheckbox = Array.from(formElementCheckbox).some((element) => {
-  //       return !element.checked;
-  //     });
+      const formErrorCheckbox = Array.from(formElementCheckbox).some((element) => {
+        return !element.checked;
+      });
 
-  //     if (isEmpty || formError || formErrorCheckbox) {
-  //       submitButton.setAttribute('disabled', 'disabled');
-  //     } else {
-  //       submitButton.removeAttribute('disabled');
-  //     }
-  //   }
+      if (isEmpty || formError || formErrorInner || formErrorCheckbox) {
+        submitButton.setAttribute('disabled', 'disabled');
+      } else {
+        submitButton.removeAttribute('disabled');
+      }
+    }
 
-  //   formElements.forEach((element) => {
-  //     element.addEventListener('input', updateSubmitButtonState);
-  //   });
+    formElements.forEach((element) => {
+      element.addEventListener('input', updateSubmitButtonState);
+    });
+    formElements.forEach((element) => {
+      element.addEventListener('blur', updateSubmitButtonState);
+    });
+    formElementCheckbox.forEach((checkbox) => {
+      checkbox.addEventListener('change', updateSubmitButtonState);
+    });
 
-  //   updateSubmitButtonState();
-  // }
+    updateSubmitButtonState();
+  }
 
-  // setupFormListener('.popup__form--application', '.popup__btn--application');
+  setupFormListener('.popup--application .popup__form', '.popup--application .submit-btn');
 };
 
 export default form;

@@ -6,7 +6,7 @@ function values() {
   if (!section) return;
 
   const swiper = new Swiper('.values__swiper', {
-    slidesPerView: 1,
+    slidesPerView: 1,    speed: 800,
     grid: {
       rows: 2
     },
