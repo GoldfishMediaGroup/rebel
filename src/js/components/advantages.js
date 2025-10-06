@@ -1,8 +1,8 @@
 import Swiper from 'swiper/bundle';
 import { rem } from '../utils/constants';
-function news() {
-  const section = document.querySelector('.news');
-  const swiperEl = document.querySelector('.news__swiper');
+function advantages() {
+  const section = document.querySelector('.advantages');
+  const swiperEl = document.querySelector('.advantages__swiper');
 
   if (!swiperEl) return;
 
@@ -38,4 +38,4 @@ function news() {
   window.addEventListener('resize', initSwiper);
 }
 
-export default news;
+export default advantages;

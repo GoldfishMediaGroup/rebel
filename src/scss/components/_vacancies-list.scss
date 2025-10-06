@@ -1,0 +1,59 @@
+.vacancies-list {
+  /* .vacancies-list__container */
+
+  &__container {
+  }
+
+  /* .vacancies-list__inner */
+
+  &__inner {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .vacancies-list__list-box */
+
+  &__list-box {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 24rem;
+    }
+  }
+
+  /* .vacancies-list__list */
+
+  &__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 12rem;
+    }
+  }
+
+  /* .vacancies-list__more */
+
+  &__more {
+    align-self: center;
+    gap: 8rem;
+    @include small-tablet {
+      & .txt24 {
+        font-size: 15rem;
+      }
+    }
+  }
+
+  /* .vacancies-list__more-svg */
+
+  &__more-svg {
+    width: 40rem;
+    height: 40rem;
+    @include small-tablet {
+      width: 25rem;
+      height: 25rem;
+    }
+  }
+}

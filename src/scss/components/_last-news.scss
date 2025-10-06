@@ -1,0 +1,59 @@
+.last-news {
+  /* .last-news__container */
+
+  &__container {
+  }
+
+  /* .last-news__inner */
+
+  &__inner {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .last-news__list-box */
+
+  &__list-box {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 24rem;
+    }
+  }
+
+  /* .last-news__list */
+
+  &__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 12rem;
+    }
+  }
+
+  /* .last-news__more */
+
+  &__more {
+    align-self: center;
+    gap: 8rem;
+    @include small-tablet {
+      & .txt24 {
+        font-size: 15rem;
+      }
+    }
+  }
+
+  /* .last-news__more-svg */
+
+  &__more-svg {
+    width: 40rem;
+    height: 40rem;
+    @include small-tablet {
+      width: 25rem;
+      height: 25rem;
+    }
+  }
+}

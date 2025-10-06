@@ -1,11 +1,11 @@
 import Swiper from 'swiper/bundle';
 import { rem } from '../utils/constants';
-function news() {
-  const section = document.querySelector('.news');
-  const swiperEl = document.querySelector('.news__swiper');
+function vacancies() {
+  const section = document.querySelector('.vacancies');
+  const swiperEl = document.querySelector('.vacancies__swiper');
 
   if (!swiperEl) return;
-
+  
   let swiper;
   let isMobile = window.innerWidth < 769; // текущий флаг
 
@@ -20,7 +20,7 @@ function news() {
     if (swiper) swiper.destroy(true, true); // уничтожаем старый свайпер
 
     swiper = new Swiper(swiperEl, {
-      slidesPerView: currentMobile ? 1 : 4,
+      slidesPerView: currentMobile ? 1 : 2,
       spaceBetween: currentMobile ? 0 : rem(4),
       speed: 800,
       grabCursor: true,
@@ -38,4 +38,4 @@ function news() {
   window.addEventListener('resize', initSwiper);
 }
 
-export default news;
+export default vacancies;
