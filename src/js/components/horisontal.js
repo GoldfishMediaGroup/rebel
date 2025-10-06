@@ -139,10 +139,8 @@ function horisontal() {
 
       gsap.to(window, {
         scrollTo: { y: scrollPos, autoKill: false },
-        duration: 1,
-        ease: 'power2.inOut'
+        duration: 0
       });
-
     });
   });
 }

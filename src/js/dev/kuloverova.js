@@ -21,6 +21,7 @@ import horisontal from '../components/horisontal';
 import dna from '../components/dna';
 import vacancies from '../components/vacancies';
 import news from '../components/news';
+import advantages from '../components/advantages';
 
 import '../libs/dynamic_adapt';
 
@@ -48,4 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
   dna();
   vacancies();
   news();
+  advantages();
 });
