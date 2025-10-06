@@ -6,14 +6,30 @@ function horisontal() {
   const section = document.querySelector('.horisontal');
   if (!section) return;
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   const rows = section.querySelectorAll('.horisontal__row');
-  const links = section.querySelectorAll('.horisontal__nav-link');
-  const nav = section.querySelector('.horisontal__nav');
-  const nextBtn = section.querySelector('.horisontal__next-btn');
+  const screens = section.querySelectorAll('.horisontal__screen');
+  const totalWidth = window.innerWidth > 768 ? (screens.length - 1) * 1400 : screens.length * 600;
 
   const navSwiper = section.querySelector('.horisontal__nav-swiper');
+  const links = section.querySelectorAll('.horisontal__nav-link');
+
+  rows.forEach((row, index) => {
+    const innerScreens = row.querySelectorAll('.horisontal__screen');
+    innerScreens.forEach((screen, index) => {
+      if (index === 0) {
+        gsap.set(screen, { x: 0 });
+      } else {
+        gsap.set(screen, { x: '+=111%' });
+      }
+    });
+    if (index === 0) {
+      gsap.set(row, { y: 0 });
+    } else {
+      gsap.set(row, { y: '+=150%' });
+    }
+  });
 
   const swiper = new Swiper(navSwiper, {
     slidesPerView: 'auto',
@@ -21,131 +37,113 @@ function horisontal() {
     // freeMode: true,
   });
 
-  links.forEach((link, index) => {
-    link.addEventListener('click', () => {
-      links.forEach((l) => l.classList.remove('isActive'));
-      link.classList.add('isActive');
-      swiper.slideTo(index);
-    });
-  });
-
-  rows.forEach((row, i) => {
-    const totalScriins = Array.from(row.querySelectorAll('.horisontal__screen')).length;
-    const totalWidth = totalScriins * window.innerWidth;
-
-    const tl = gsap.timeline({
-      defaults: { ease: 'none' },
-      scrollTrigger: {
-        trigger: row,
-        start: 'top top',
-        end: () => {
-          const base = row.offsetWidth;
-          return `+=${window.innerWidth > 768 ? base - window.innerWidth : base * 2}`;
-        },
-
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        // markers: true,
-        onEnter: () => {
-          if (i > 0) rows[i - 1].classList.add('isOpacity');
-          links.forEach((l) => l.classList.remove('isActive'));
-          links[i]?.classList.add('isActive');
-          swiper.slideTo(i);
-        },
-        onEnterBack: () => {
-          links.forEach((l) => l.classList.remove('isActive'));
-          links[i]?.classList.add('isActive');
-          swiper.slideTo(i);
-          if (i === rows.length - 1) {
-            rows.forEach((r, idx) => {
-              if (idx !== rows.length - 1) r.classList.add('isFixed');
-            });
-          } else {
-            row.classList.remove('isFixed');
-          }
-        },
-
-        onLeave: () => {
-          if (i !== rows.length - 1) {
-            row.classList.add('isFixed');
-            row.style.transform = `translateX(-${100 - 100 / totalScriins}%) translateY(0px)`;
-          } else {
-            rows.forEach((r) => r.classList.remove('isFixed'));
-          }
-        },
-        onLeaveBack: () => {
-          if (i > 0) rows[i - 1].classList.remove('isOpacity');
-        }
-      }
-    });
-
-    for (let j = 0; j < totalScriins; j++) {
-      const currentX = (100 / totalScriins) * j;
-
-      if (j === 0) {
-        // Только opacity для первого экрана
-        tl.to(row, {
-          opacity: 1,
-          duration: window.innerWidth > 768 ? 0.1 : 0.4
-        });
-      } else {
-        // Сначала opacity, потом перемещение
-        tl.to(row, {
-          x: () => `-${currentX}%`
-        }).to(row, {
-          opacity: 1,
-          duration: window.innerWidth > 768 ? 0.1 : 0.4
-        });
-      }
-    }
-  });
-
-  gsap.timeline({
-    defaults: { ease: 'none' },
+  let animTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: section,
       start: 'top top',
-      end: 'bottom bottom',
-      onEnter: () => {
-        nav && nav.classList.add('isFixed');
-        nextBtn && nextBtn.classList.add('isFixed');
-      },
-      onLeave: () => {
-        nav && nav.classList.remove('isFixed');
-        nav && nav.classList.add('isLeave');
-        nextBtn && nextBtn.classList.remove('isFixed');
-        nextBtn && nextBtn.classList.add('isLeave');
-      },
-      onLeaveBack: () => {
-        nav && nav.classList.remove('isFixed');
-        nextBtn && nextBtn.classList.remove('isFixed');
-        rows.forEach((row) => {
-          row.classList.remove('isFixed');
+      pin: true,
+      end: `+=${totalWidth}`,
+      scrub: true,
+      pin: true,
+      pinSpacer: true,
+      invalidateOnRefresh: true,
+      anticipatePin: 0,
+      pinType: 'fixed',
+      immediatelyRender: true,
+      onUpdate: (self) => {
+        const time = animTimeline.time();
+        let activeRowIndex = 0;
+        for (let i = rows.length - 1; i >= 0; i--) {
+          const startTime = animTimeline.labels[`row${i}Start`];
+          if (time >= startTime - 1) {
+            activeRowIndex = i;
+            break;
+          }
+        }
+
+        links.forEach((innerLink, index) => {
+          innerLink.classList.toggle('isActive', index === activeRowIndex);
         });
-      },
-      onEnterBack: () => {
-        nav && nav.classList.add('isFixed');
-        nav && nav.classList.remove('isLeave');
-        nextBtn && nextBtn.classList.add('isFixed');
-        nextBtn && nextBtn.classList.remove('isLeave');
+
+        swiper.slideTo(activeRowIndex);
       }
     }
   });
 
-  // window.addEventListener('resize', () => {
-  //   ScrollTrigger.refresh();
-  // });
+  rows.forEach((row, rowIndex) => {
+    animTimeline.addLabel(`row${rowIndex}Start`);
+    const innerScreens = row.querySelectorAll('.horisontal__screen');
 
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      rows.forEach((row, i) => {
-        const totalScriins = Array.from(row.querySelectorAll('.horisontal__screen')).length;
-        if (row.classList.contains('isFixed')) {
-          row.style.transform = `translateX(-${100 - 100 / totalScriins}%) translateY(0px)`;
-        }
+    //         links[i]?.classList.add('isActive');
+    // Показываем текущий ряд (если не первый)
+    if (rowIndex > 0) {
+      animTimeline.to(
+        row,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1
+        },
+        '<'
+      );
+    }
+
+    for (let i = 0; i < innerScreens.length - 1; i++) {
+      const currentScreen = innerScreens[i];
+      const nextScreen = innerScreens[i + 1];
+
+      animTimeline.to(
+        currentScreen,
+        {
+          x: '-111%',
+          duration: 2
+        },
+        '>'
+      );
+      animTimeline.to(
+        nextScreen,
+        {
+          x: '0',
+          duration: 2
+        },
+        '<'
+      );
+    }
+
+    if (rowIndex < rows.length - 1) {
+      animTimeline.to(
+        row,
+        {
+          y: '0',
+          opacity: 0,
+          duration: 1
+        },
+        '>'
+      );
+    }
+    animTimeline.addLabel(`row${rowIndex}End`);
+  });
+
+  links.forEach((link, index) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      links.forEach((innerLink) => innerLink.classList.remove('isActive'));
+      link.classList.add('isActive');
+
+      const label = `row${index}Start`;
+      const scrollTrigger = animTimeline.scrollTrigger;
+
+      const scrollPos =
+        scrollTrigger.start + (scrollTrigger.end - scrollTrigger.start) * (animTimeline.labels[label] / animTimeline.duration());
+
+      gsap.to(window, {
+        scrollTo: { y: scrollPos, autoKill: false },
+        duration: 1,
+        ease: 'power2.inOut'
       });
-    }, 500);
+
+    });
   });
 }
 

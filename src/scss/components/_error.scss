@@ -1,0 +1,88 @@
+.error {
+  max-width: 100%;
+  width: 1920rem;
+  margin: 0 auto;
+  overflow: hidden;
+  @include small-tablet {
+  }
+  /* .error__container */
+  padding: 0;
+  &__container {
+  }
+
+  /* .error__inner */
+
+  &__inner {
+    min-height: 100vh;
+    justify-content: center;
+    padding-bottom: 80rem;
+    @include small-tablet {
+      padding: 100rem 0;
+    }
+  }
+
+  /* .error__error */
+
+  &__error {
+    gap: 390rem;
+    position: relative;
+    width: fit-content;
+
+    @include small-tablet {
+      gap: 150rem;
+    }
+  }
+
+  /* .error__num */
+
+  &__num {
+    font-weight: 700;
+    font-size: 400rem;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $stroke-secondary;
+    @include small-tablet {
+      font-size: 160rem;
+    }
+  }
+
+  /* .error__img */
+
+  &__img {
+    width: 614rem;
+    height: 414rem;
+    position: absolute;
+    left: 220rem;
+    top: 50%;
+    transform: translate(0, -48%);
+    @include small-tablet {
+      width: 250rem;
+      height: 168rem;
+          left: 85rem;
+    }
+  }
+
+  /* .error__text */
+
+  &__text {
+    gap: 40rem;
+    margin-top: -55rem;
+    width: 100%;
+    @include small-tablet {
+      gap: 24rem;
+      margin-top: 0rem;
+      & .txt60 {
+        font-size: 16rem;
+      }
+    }
+  }
+
+  /* .error__title */
+
+  &__title {
+    gap: 20rem;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+}

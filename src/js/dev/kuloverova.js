@@ -8,6 +8,7 @@ import { rem } from '../utils/constants';
 import popup from '../utils/popup';
 import form from '../utils/form';
 import scroll from '../utils/scroll';
+import fancybox from '../utils/fancybox';
 
 import smoothScroll from '../components/smoothScroll';
 // import headerBurger from '../components/headerBurger';
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   popup();
   form();
   scroll();
+  fancybox();
   headerScroll();
   footerCookieDisclamer();
   smoothScroll();
