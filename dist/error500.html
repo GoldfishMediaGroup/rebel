@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><script src="https://api-maps.yandex.ru/v3/?apikey=cb93da52-9741-4ffe-86ea-93a91ce99a1c&lang=ru_RU"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://api-maps.yandex.ru/v3/?apikey=cb93da52-9741-4ffe-86ea-93a91ce99a1c&lang=ru_RU"></script>
     <title>500</title>
   <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
   <body>
@@ -154,7 +155,30 @@
 
 
       <main>
-            
+        <section class="error">
+          <div class="error__container container">
+            <div class="error__inner flex dc cv">
+              <div class="error__error flex cv">
+                <p class="error__num">5</p>
+                <div class="error__img">
+                  <img src="./assets/images/error.webp" alt="" />
+                </div>
+                <p class="error__num">0</p>
+              </div>
+              <div class="error__text flex dc cv center">
+                <div class="error__title flex dc cv center">
+                  <p class="txt60 upper">внутренняя ошибка сервера</p>
+                  <p class="txt18 light lh140">
+                    Мы уже пытаемся решить данный вопрос! Пожалуйста, попробуйте
+                    <br class="desktop" />
+                    перезагрузить страницу через несколько минут.
+                  </p>
+                </div>
+                <a href="#" class="accent-btn">вернуться на главную</a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer">
   <div class="footer__content">
@@ -233,6 +257,7 @@
     </div>
   </a>
 </footer>
+<div class="fancybox-bg"></div>
 <!-- cookie--show -->
 <div class="cookie flex dc">
   <p class="txt18 light">
@@ -244,42 +269,17 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    initMap();
+    const mapEl = document.querySelector('.contacts__map');
+    if (!mapEl) return;
+    initMap(mapEl);
   });
-  async function initMap() {
+  async function initMap(mapEl) {
     if (typeof ymaps3 !== 'undefined') {
       await ymaps3.ready;
       const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
 
-      // let map = new YMap(
-      //   document.querySelector('.contacts__map'),
-      //   {
-      //     location: {
-      //       center: [37.824194, 55.725301],
-      //       zoom: 10
-      //     },
-      //     theme: 'dark'
-      //   },
-      //   [
-      //     new YMapDefaultSchemeLayer({
-      //       customization: {
-      //         style: [
-      //           {
-      //             tags: { all: ['water'] },
-      //             elements: 'geometry',
-      //             stylers: {
-      //               color: '#364A53' // нужный цвет воды
-      //             }
-      //           }
-      //         ]
-      //       }
-      //     }),
-      //     new YMapDefaultFeaturesLayer({})
-      //   ]
-      // );
-
       let map = new YMap(
-        document.querySelector('.contacts__map'),
+        mapEl,
         {
           location: {
             center: [37.835446, 55.797589],

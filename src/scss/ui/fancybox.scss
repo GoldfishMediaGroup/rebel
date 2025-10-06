@@ -1,240 +1,180 @@
-// @import '@fancyapps/ui/dist/fancybox/fancybox.css';
+@import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
-// html.with-fancybox body.hide-scrollbar {
-//   overflow: visible !important;
-//   margin-right: 0 !important;
-// }
+html.with-fancybox body.hide-scrollbar {
+  //   overflow: visible !important;
+  //   margin-right: 0 !important;
+}
 
-// .fancybox__container {
-//   --fancybox-bg: rgba(30, 37, 45, 0.2) !important;
-//   transition: opacity 0.3s;
-//   &[aria-hidden='false'] {
-//     opacity: 1;
-//     & .fancybox__carousel {
-//       opacity: 1;
-//     }
-//     & .fancybox__backdrop {
-//       opacity: 1;
-//     }
-//   }
-//   &[aria-hidden='true'] {
-//     opacity: 0;
-//     & .fancybox__backdrop {
-//       opacity: 0;
-//     }
-//     & .fancybox__carousel {
-//       opacity: 0;
-//     }
-//   }
-// }
-// .fancybox__backdrop {
-//   display: none;
-// }
-// .fancybox__carousel {
-//   transition: opacity 0.3s;
-// }
-// .f-button-close {
-//   border-radius: 1.6rem !important;
-//   width: 6rem !important;
-//   height: 6rem !important;
-//   display: flex !important;
-//   align-items: center !important;
-//   justify-content: center !important;
-//   background: $white !important;
-//   position: relative !important;
-//   margin: 0 !important;
-//   padding: 0 !important;
-//   pointer-events: all !important;
-//   cursor: pointer !important;
-//   transition: all 0.3s !important;
+.fancybox__container {
+  --fancybox-bg: rgba(30, 37, 45, 0.2) !important;
+  transition: opacity 0.3s;
+  &[aria-hidden='false'] {
+    opacity: 1;
+    & .fancybox__carousel {
+      opacity: 1;
+    }
+    & .fancybox__backdrop {
+      opacity: 1;
+    }
+  }
+  &[aria-hidden='true'] {
+    opacity: 0;
+    & .fancybox__backdrop {
+      opacity: 0;
+    }
+    & .fancybox__carousel {
+      opacity: 0;
+    }
+  }
+}
+.fancybox__backdrop {
+  display: none;
+}
+.fancybox__carousel {
+  transition: opacity 0.3s;
+}
+.f-button-close {
+  border-radius: 1.6rem !important;
+  width: 40rem !important;
+  height: 40rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: all !important;
+  cursor: pointer !important;
+  transition: all 0.3s !important;
+  @include small-tablet {
+    width: 32rem !important;
+    height: 32rem !important;
+  }
+  &:hover {
+    & svg path {
+      stroke: $accent;
+    }
+  }
+  svg {
+    width: 100% !important;
+    height: 100% !important;
+    stroke: none !important;
+    filter: none !important;
+    transition: transform 0.3s !important;
+    & path {
+      transition: stroke 0.3s;
+    }
+  }
+}
+.fancybox__toolbar__column.is-right {
+  margin: 60rem 100rem 0 0;
+  @include small-tablet {
+    margin: 16rem 16rem 0 0;
+  }
+}
+.fancybox__footer {
+  display: none;
+}
 
-//   @include tablet {
-//     border-radius: 1.6rem !important;
-//     width: 5rem !important;
-//     height: 5rem !important;
-//   }
-//   @include small-tablet {
-//     border-radius: 3.2rem !important;
-//     width: 8.8rem !important;
-//     height: 8.8rem !important;
-//   }
+.has-image {
+  gap: 20rem !important;
+  padding: 0 180rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include small-tablet {
+    padding: 0 16rem !important;
+  }
+  &::before,
+  &::after {
+    display: none;
+  }
+  & .fancybox__content {
+    width: auto !important;
+    // min-height: 770rem !important;
+    height: 100%;
+    overflow: hidden !important;
+    transform: none !important;
+    cursor: default !important;
+    margin: 60rem 0;
 
-//   &:hover {
-//     & svg {
-//       transform: scale(1.2);
-//     }
-//   }
-//   svg {
-//     width: 2rem !important;
-//     height: 2rem !important;
-//     stroke: none !important;
-//     filter: none !important;
-//     transition: transform 0.3s !important;
-//     @include tablet {
-//       width: 1.8rem !important;
-//       height: 1.8rem !important;
-//     }
-//     @include small-tablet {
-//       width: 3.6rem !important;
-//       height: 3.6rem !important;
-//     }
-//   }
-// }
-// .fancybox__toolbar__column.is-right {
-//   margin: 3.6rem 24.2rem 0 0;
-//   @include tablet {
-//     margin: 3rem 0.7rem 0 0;
-//   }
-//   @include small-tablet {
-//     margin: 4.8rem 1.6rem 0 0;
-//   }
-// }
-// .fancybox__footer {
-//   display: none;
-// }
+    @include small-tablet {
+      width: 343rem !important;
+      height: auto !important;
+    }
 
-// .has-image {
-//   gap: 2rem !important;
-//   & .fancybox__content {
-//     border-radius: 3.8rem !important;
-//     background: $white!important;
-//     width: 89.3rem !important;
-//     height: 65.1rem !important;
-//     overflow: hidden !important;
-//     transform: none !important;
-//     cursor: default !important;
-//     @include tablet {
-//       border-radius: 2.2rem !important;
-//       width: 51rem !important;
-//       height: 37.1rem !important;
-//     }
-//     @include small-tablet {
-//       border-radius: 4.2rem !important;
-//       width: 71.8rem !important;
-//       height: 44rem !important;
-//     }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      @include small-tablet {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+.is-horizontal .f-carousel__nav .f-button.is-prev,
+.is-horizontal .f-carousel__nav .f-button.is-next,
+.is-horizontal .fancybox__nav .f-button.is-prev,
+.is-horizontal .fancybox__nav .f-button.is-next {
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-//     & img {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: contain;
-//     }
-//   }
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke: none;
+    filter: none;
+    transition: transform 0.3s;
+    & path {
+      transition: fill 0.3s;
+    }
+  }
+  &:hover {
+    background: transparent !important;
+    & svg path {
+      fill: $accent;
+    }
+  }
+}
+.is-horizontal .f-carousel__nav .f-button.is-prev,
+.is-horizontal .fancybox__nav .f-button.is-prev {
+  left: 100rem !important;
+  @include small-tablet {
+    top: auto !important;
+    bottom: 40rem !important;
+    left: 50% !important;
+    transform: translate(-130%) !important;
+  }
+}
+.is-horizontal .f-carousel__nav .f-button.is-next,
+.is-horizontal .fancybox__nav .f-button.is-next {
+  right: 100rem !important;
+  @include small-tablet {
+    top: auto !important;
+    bottom: 40rem !important;
+    right: 50% !important;
+    transform: translate(130%) !important;
+  }
+}
+.fancybox__nav .f-button:before {
+  inset: 0 !important;
+}
 
-//   & .fancybox__caption {
-//     border-radius: 1.2rem;
-//     padding: 1.6rem 4rem;
-//     width: 89.3rem !important;
-//     background: $white;
-//     color: $black;
-//     font-weight: 400;
-//     font-size: 2rem;
-//     line-height: 120%;
-//     @include tablet {
-//       font-size: 2rem;
-//       font-weight: 500;
-//       width: 51rem !important;
-//       padding: 1.6rem 2.4rem;
-//       & br {
-//         display: none;
-//       }
-//     }
-//     @include small-tablet {
-//       font-size: 2.8rem;
-//       width: 71.8rem !important;
-//       border-radius: 2.4rem;
-//       padding: 1.6rem 3.2rem;
-//       min-height: 11.2rem;
-//       display: flex;
-//       align-items: center;
-//     }
-//   }
-// }
-// .is-horizontal .f-carousel__nav .f-button.is-prev,
-// .is-horizontal .f-carousel__nav .f-button.is-next,
-// .is-horizontal .fancybox__nav .f-button.is-prev,
-// .is-horizontal .fancybox__nav .f-button.is-next {
-//   border-radius: 1.6rem;
-//   width: 6rem;
-//   height: 6rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background: $white;
-//   @include tablet {
-//     border-radius: 1.6rem;
-//     width: 5rem;
-//     height: 5rem;
-//   }
-//   @include small-tablet {
-//     border-radius: 3.2rem;
-//     width: 8.8rem;
-//     height: 8.8rem;
-//     top: calc(50% + 35rem);
-//   }
-//   svg {
-//     width: 2rem;
-//     height: 2rem;
-//     stroke: none;
-//     filter: none;
-//     transition: transform 0.3s;
-//     @include tablet {
-//       width: 1.8rem;
-//       height: 1.8rem;
-//     }
-//     @include small-tablet {
-//       width: 3.6rem;
-//       height: 3.6rem;
-//     }
-//   }
-// }
-// .is-horizontal .f-carousel__nav .f-button.is-prev,
-// .is-horizontal .fancybox__nav .f-button.is-prev {
-//   left: 24.2rem !important;
-//   @include tablet {
-//     left: 0.7rem !important;
-//   }
-//   @include small-tablet {
-//     left: 28rem !important;
-//   }
-//   &:hover {
-//     & svg {
-//       transform: translateX(-0.5rem);
-//     }
-//   }
-// }
-// .is-horizontal .f-carousel__nav .f-button.is-next,
-// .is-horizontal .fancybox__nav .f-button.is-next {
-//   right: 24.2rem !important;
-//   @include tablet {
-//     right: 0.7rem !important;
-//   }
-//   @include small-tablet {
-//     right: 28rem !important;
-//   }
-//   &:hover {
-//     & svg {
-//       transform: translateX(0.5rem);
-//     }
-//   }
-// }
-// .fancybox__nav .f-button:before {
-//   inset: 0 !important;
-//   @include tablet {
-//     inset: -4rem !important;
-//   }
-// }
-
-// .fancybox-bg {
-//   position: fixed;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   left: 0;
-//   background-color: rgba(30, 37, 45, 0.2);
-//   z-index: 1010;
-
-//   backdrop-filter: blur(4px);
-//   -webkit-backdrop-filter: blur(4px);
-//   display: none;
-// }
+.fancybox-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1010;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: rgba(11, 42, 52, 0.4);
+  display: none;
+}

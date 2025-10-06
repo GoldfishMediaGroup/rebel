@@ -231,6 +231,7 @@
     </div>
   </a>
 </footer>
+<div class="fancybox-bg"></div>
 <!-- cookie--show -->
 <div class="cookie flex dc">
   <p class="txt18 light">
@@ -242,42 +243,17 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    initMap();
+    const mapEl = document.querySelector('.contacts__map');
+    if (!mapEl) return;
+    initMap(mapEl);
   });
-  async function initMap() {
+  async function initMap(mapEl) {
     if (typeof ymaps3 !== 'undefined') {
       await ymaps3.ready;
       const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
 
-      // let map = new YMap(
-      //   document.querySelector('.contacts__map'),
-      //   {
-      //     location: {
-      //       center: [37.824194, 55.725301],
-      //       zoom: 10
-      //     },
-      //     theme: 'dark'
-      //   },
-      //   [
-      //     new YMapDefaultSchemeLayer({
-      //       customization: {
-      //         style: [
-      //           {
-      //             tags: { all: ['water'] },
-      //             elements: 'geometry',
-      //             stylers: {
-      //               color: '#364A53' // нужный цвет воды
-      //             }
-      //           }
-      //         ]
-      //       }
-      //     }),
-      //     new YMapDefaultFeaturesLayer({})
-      //   ]
-      // );
-
       let map = new YMap(
-        document.querySelector('.contacts__map'),
+        mapEl,
         {
           location: {
             center: [37.835446, 55.797589],
