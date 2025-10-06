@@ -431,8 +431,8 @@
 
       const markerElement = document.createElement('img');
       markerElement.className = 'contacts__placemark';
-      // markerElement.src = './assets/images/placemark.svg';
-      markerElement.src = '../assets/images/placemark.svg';
+      markerElement.src = './assets/images/placemark.svg';
+      // markerElement.src = '../assets/images/placemark.svg';
       map.addChild(new YMapMarker({ coordinates: [37.675226, 55.776011] }, markerElement));
       map.setBehaviors(['drag', 'dblClick', 'mouseRotate']);
     }
