@@ -22,6 +22,8 @@ import dna from '../components/dna';
 import vacancies from '../components/vacancies';
 import news from '../components/news';
 import advantages from '../components/advantages';
+import gallery from '../components/gallery';
+import aboutHero from '../components/about-hero';
 
 import '../libs/dynamic_adapt';
 
@@ -50,4 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   vacancies();
   news();
   advantages();
+  gallery();
+  aboutHero();
+
 });

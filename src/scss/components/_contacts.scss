@@ -1,6 +1,5 @@
 .contacts {
   @include small-tablet {
-    display: none;
   }
   /* .contacts__container */
 
@@ -21,6 +20,42 @@
   &__content {
     gap: 40rem;
     grid-template-columns: repeat(2, 1fr);
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      gap: 0;
+    
+      &.isOpen {
+        & .contacts__map {
+          height: 100%;
+          bottom: 0;
+        }
+
+        & .contacts__info {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &__map-inc {
+    display: none;
+    @include small-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 15;
+      width: 36rem;
+      height: 36rem;
+      top: 16rem;
+      right: 16rem;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      background: $background;
+    }
   }
 
   /* .contacts__map */
@@ -35,6 +70,17 @@
       inset: 0;
     }
     @include small-tablet {
+      position: absolute;
+      // inset: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 180rem;
+      transition: height 0.8s, bottom 0.8s;
+      z-index: 10;
+
+      // height: 283rem;
+      // margin-bottom: 370rem;
     }
   }
 
@@ -49,8 +95,8 @@
     -o-object-fit: contain;
     object-fit: contain;
     @include small-tablet {
-      width: 64rem;
-      height: 64rem;
+      width: 60rem;
+      height: 60rem;
     }
   }
   [class*='map-copyrights'] {
@@ -70,8 +116,19 @@
     height: fit-content;
 
     @include small-tablet {
-      gap: 32rem;
+      // position: absolute;
+      margin-top: 180rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 28rem;
       padding: 16rem;
+      background: $primary-bg;
+      z-index: 5;
+      position: relative;
+      transition: opacity 0.8s;
     }
   }
 
@@ -85,6 +142,9 @@
         color: $accent;
       }
     }
+    @include small-tablet {
+      gap: 16rem;
+    }
   }
 
   /* .contacts__mail-list */
@@ -92,11 +152,19 @@
   &__mail-list {
     grid-template-columns: 345rem 382rem;
     gap: 40rem 56rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 12rem;
+    }
   }
 
   /* .contacts__mail-item */
 
   &__mail-item {
     gap: 8rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
   }
 }

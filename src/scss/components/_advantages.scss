@@ -1,8 +1,5 @@
 .advantages {
-  width: 1920rem;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 100%;
+
   /* .advantages__container */
 
   &__container {
@@ -60,49 +57,4 @@
   }
 }
 
-.advantages-el {
-  padding: 20rem;
-  border: 2rem solid $text-primary;
-  overflow: hidden;
-  gap: 70rem;
-  min-height: 316rem;
-  height: 100%;
-  position: relative;
-  @include small-tablet {
-    min-height: 280rem;
-    padding: 16rem;
-    gap: 12rem;
-  }
 
-  /* .advantages-el__svg */
-
-  &__svg {
-    width: 52rem;
-    height: 52rem;
-    @include small-tablet {
-      width: 40rem;
-      height: 40rem;
-    }
-  }
-
-  /* .advantages-el__text */
-
-  &__text {
-    gap: 12rem;
-    flex-grow: 1;
-    & .txt20 {
-      min-height: 50rem;
-      display: flex;
-      align-items: center;
-      @include small-tablet {
-        min-height: unset;
-        font-size: 16rem;
-      }
-    }
-  }
-  & .txt16 {
-    @include small-tablet {
-      font-size: 15rem;
-    }
-  }
-}

@@ -4,6 +4,7 @@ import { lenis } from '../components/smoothScroll';
 const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 
 function fancybox() {
+  const header = document.querySelector('header');
   Fancybox.bind('[data-fancybox]', {
     animated: true,
     autoStart: false,
@@ -73,7 +74,9 @@ function fancybox() {
           //   document.body.querySelector('.fancybox__container').style.paddingRight = `${scrollWith}px`;
           //   document.body.querySelector('.fancybox__toolbar').style.paddingRight = `${scrollWith}px`;
           // }
-          document.querySelector('header').style.paddingRight = `${scrollWith}px`;
+          if (header) {
+            header.style.paddingRight = `${scrollWith}px`;
+          }
           lenis.stop();
           // }, 300);
         }
@@ -86,7 +89,9 @@ function fancybox() {
           // document.body.querySelector('.fancybox__container').style.paddingRight = ``;
           // document.body.querySelector('.fancybox__toolbar').style.paddingRight = ``;
           setTimeout(() => {
-            document.querySelector('header').style.paddingRight = ``;
+            if (header) {
+              header.style.paddingRight = ``;
+            }
           }, 500);
         }
       }

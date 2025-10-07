@@ -4,10 +4,7 @@
   /* .footer__content */
   &__content {
     border-top: 1rem solid #3d6e7e;
-    max-width: 1920rem;
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
+   
     position: relative;
     @include small-tablet {
     }

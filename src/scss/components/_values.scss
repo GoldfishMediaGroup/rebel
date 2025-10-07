@@ -1,9 +1,6 @@
 .values {
   /* .values__container */
-  width: 1920rem;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 100%;
+
   &__container {
   }
 
@@ -48,27 +45,4 @@
 
 
 
-.value {
-  gap: 12rem;
-  border: 2rem solid $text-primary;
-  padding: 20rem;
-  height: 100%;
-  min-height: 316rem;
-  @include small-tablet {
-    min-height: 280rem;
-  }
-  @include small-tablet {
-    padding: 16rem;
-  }
 
-  /* .value__svg */
-
-  &__svg {
-    width: 52rem;
-    height: 52rem;
-    @include small-tablet {
-      width: 40rem;
-      height: 40rem;
-    }
-  }
-}
