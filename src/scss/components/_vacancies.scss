@@ -1,8 +1,5 @@
 .vacancies {
-  width: 1920rem;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 100%;
+
   /* .vacancies__container */
 
   &__container {
@@ -87,73 +84,4 @@
     }
   }
 }
-.vacancies-el {
-  padding: 20rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  background: $primary-bg;
-  transition: background 0.3s, border 0.3s;
-  border: 2rem solid $text-primary;
 
-  gap: 115rem;
-  height: 100%;
-  @include small-tablet {
-    gap: 32rem;
-    padding: 16rem;
-  }
-  &:hover {
-    background: rgba(11, 42, 52, 0.4);
-    border: 2rem solid $accent;
-    & .vacancies-el__arr {
-      opacity: 1;
-    }
-  }
-  /* .vacancies-el__title */
-
-  &__title {
-    gap: 15rem;
-  }
-
-  /* .vacancies-el__info */
-
-  &__info {
-    gap: 10rem;
-  }
-
-  /* .vacancies-el__footer */
-
-  &__footer {
-    gap: 16rem;
-    @include small-tablet {
-      gap: 8rem;
-    }
-  }
-
-  /* .vacancies-el__svg */
-
-  &__svg {
-    width: 52rem;
-    height: 52rem;
-    flex-shrink: 0;
-    @include small-tablet {
-      width: 32rem;
-      height: 32rem;
-    }
-  }
-
-  /* .vacancies-el__arr */
-
-  &__arr {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20rem;
-    width: 40rem;
-    height: 40rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    @include small-tablet {
-      display: none;
-    }
-  }
-}

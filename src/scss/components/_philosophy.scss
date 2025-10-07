@@ -1,0 +1,52 @@
+.philosophy {
+  /* .philosophy__container */
+
+  &__container {
+  }
+
+  /* .philosophy__inner */
+
+  &__inner {
+    grid-template-columns: 1fr 953rem;
+    gap: 32rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 12rem;
+    }
+  }
+
+  /* .philosophy__content */
+
+  &__content {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .philosophy__text */
+
+  &__text {
+    padding: 40rem;
+    border: 2rem solid $text-primary;
+    display: flex;
+    align-items: center;
+    min-height: 366rem;
+    @include small-tablet {
+      min-height: unset;
+      padding: 16rem;
+    }
+  }
+
+  /* .philosophy__img */
+
+  &__img {
+    width: 953rem;
+    height: 688rem;
+    @include small-tablet {
+      width: 343rem;
+      height: 240rem;
+    }
+  }
+}

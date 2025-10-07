@@ -1,0 +1,48 @@
+.brand-hero {
+
+  position: relative;
+  /* .brand-hero__bg */
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* .brand-hero__container */
+
+  &__container {
+    position: relative;
+    z-index: 5;
+  }
+
+  /* .brand-hero__inner */
+
+  &__inner {
+    padding: 124rem 0 178rem;
+    gap: 90rem;
+    @include small-tablet {
+      padding: 64rem 0 306rem;
+      gap: 28rem;
+    }
+  }
+
+  /* .brand-hero__content */
+
+  &__content {
+    width: 760rem;
+    gap: 52rem;
+    @include small-tablet {
+      width: 100%;
+      gap: 20rem;
+    }
+  }
+
+  /* .brand-hero__title */
+
+  &__title {
+    gap: 12rem;
+    @include small-tablet {
+      gap: 16rem;
+    }
+  }
+}

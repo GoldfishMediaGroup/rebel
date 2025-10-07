@@ -155,7 +155,7 @@
 
 
       <main>
-        <section class="dna">
+        <section class="dna section-wrap">
   <div class="dna__container container">
     <div class="dna__inner">
       <div class="dna__title flex dc">
@@ -220,7 +220,7 @@
   </div>
 </section>
 
-        <section class="vacancies">
+        <section class="vacancies section-wrap">
   <div class="vacancies__container container">
     <div class="vacancies__inner flex dc">
       <div class="flex cv sb">
@@ -356,7 +356,7 @@
 
 <!-- нет вакансий -->
 
-<section class="vacancies vacancies-empty">
+<section class="vacancies vacancies-empty section-wrap">
   <div class="vacancies__container container">
     <div class="vacancies__inner flex dc">
       <div class="flex cv sb">
@@ -397,7 +397,10 @@
       </p>
 
       <div class="contacts__content grid">
-        <div class="contacts__map"></div>
+        <div class="contacts__map-wrap">
+          <div class="contacts__map"></div>
+          <div class="contacts__map-inc">   </div>
+        </div>
         <div class="contacts__info grid">
           <div class="contacts__item flex dc">
             <p class="txt20 upper">АДРЕС</p>
@@ -432,7 +435,7 @@
 
       </main>
       <footer class="footer">
-  <div class="footer__content">
+  <div class="footer__content section-wrap">
     <div class="footer__container container">
       <div class="footer__inner grid">
         <div class="footer__text flex dc">
@@ -524,10 +527,18 @@
     if (!mapEl) return;
     initMap(mapEl);
   });
+
   async function initMap(mapEl) {
     if (typeof ymaps3 !== 'undefined') {
       await ymaps3.ready;
-      const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+      const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapListener } = ymaps3;
+
+      // let isMobile = window.innerWidth < 768;
+      // let resizeTimeout;
+
+      // function getMapCenter() {
+      //   return isMobile ? [37.79974, 55.630132] : [37.835446, 55.797589];
+      // }
 
       let map = new YMap(
         mapEl,
@@ -536,7 +547,6 @@
             center: [37.835446, 55.797589],
             zoom: 10
           }
-          // theme: 'dark'
         },
         [
           new YMapDefaultSchemeLayer({
@@ -556,7 +566,6 @@
                     color: '#364A53'
                   }
                 },
-
                 {
                   tags: { any: ['transit_line', 'transit_schema'] },
                   elements: 'geometry',
@@ -592,15 +601,146 @@
         ]
       );
 
+      // логика ресайза
+      // function handleResize() {
+      //   clearTimeout(resizeTimeout);
+      //   resizeTimeout = setTimeout(() => {
+      //     const nowIsMobile = window.innerWidth < 768;
+
+      //     // Если состояние изменилось (был мобильный ↔ стал десктоп или наоборот)
+      //     if (isMobile !== nowIsMobile) {
+      //       console.log(`Переключение: ${isMobile ? 'мобильный → десктоп' : 'десктоп → мобильный'}`);
+
+      //       isMobile = nowIsMobile;
+
+      //       const newCenter = getMapCenter();
+      //       map.setLocation({
+      //         center: newCenter
+      //       });
+
+      //       console.log('Центр карты обновлен:', newCenter);
+      //     }
+      //   }, 150); // Небольшая задержка для стабилизации ресайза
+      // }
+
+      // window.addEventListener('resize', handleResize);
+
       const markerElement = document.createElement('img');
       markerElement.className = 'contacts__placemark';
       markerElement.src = './assets/images/placemark.svg';
-      // markerElement.src = '../assets/images/placemark.svg';
       map.addChild(new YMapMarker({ coordinates: [37.675226, 55.776011] }, markerElement));
-      // map.setBehaviors(['drag', 'dblClick', 'mouseRotate']);
+
+      // вывод координат в консоль
+      //   const updateHandler = ({ type, camera, location }) => {
+      //     console.log(location.zoom, location.center);
+      //   };
+      //   const mapListener = new YMapListener({
+      //     layer: 'any',
+      //     onUpdate: updateHandler
+      //   });
+
+      //   map.addChild(mapListener);
     }
+
+    const incBtn = document.querySelector('.contacts__map-inc');
+    const mapContent = document.querySelector('.contacts__content');
+
+    incBtn &&
+      incBtn.addEventListener('click', () => {
+        mapContent.classList.toggle('isOpen');
+      });
   }
 </script>
+
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mapEl = document.querySelector('.contacts__map');
+    if (!mapEl) return;
+    initMap(mapEl);
+  });
+
+  async function initMap(mapEl) {
+    if (typeof ymaps3 !== 'undefined') {
+      await ymaps3.ready;
+      const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapListener } = ymaps3;
+
+      // Флаг текущего состояния
+      let isMobile = window.innerWidth < 768;
+      let resizeTimeout;
+
+      function getMapCenter() {
+        return isMobile 
+          ? [37.799740, 55.630132] // мобильный центр
+          : [37.835446, 55.797589]; // десктоп центр
+      }
+
+      // Создаем карту с начальным центром
+      let map = new YMap(
+        mapEl,
+        {
+          location: {
+            center: getMapCenter(),
+            zoom: 10
+          }
+        },
+        [
+          new YMapDefaultSchemeLayer({
+            customization: {
+              style: [
+                // ваш стиль...
+              ]
+            }
+          }),
+          new YMapDefaultFeaturesLayer({})
+        ]
+      );
+
+      const markerElement = document.createElement('img');
+      markerElement.className = 'contacts__placemark';
+      markerElement.src = './assets/images/placemark.svg';
+      map.addChild(new YMapMarker({ coordinates: [37.675226, 55.776011] }, markerElement));
+
+      // Обработчик ресайза с логикой переключения состояний
+      function handleResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          const nowIsMobile = window.innerWidth < 768;
+          
+          // Если состояние изменилось (был мобильный ↔ стал десктоп или наоборот)
+          if (isMobile !== nowIsMobile) {
+            console.log(`Переключение: ${isMobile ? 'мобильный → десктоп' : 'десктоп → мобильный'}`);
+            
+            // Обновляем флаг
+            isMobile = nowIsMobile;
+            
+            // Перестраиваем карту с новым центром
+            const newCenter = getMapCenter();
+            map.setLocation({
+              ...map.getLocation(),
+              center: newCenter
+            });
+            
+            console.log('Центр карты обновлен:', newCenter);
+          }
+        }, 150); // Небольшая задержка для стабилизации ресайза
+      }
+
+      // Вешаем обработчик ресайза
+      window.addEventListener('resize', handleResize);
+
+      // для вывода координат в консоль
+      const updateHandler = ({ location }) => {
+        console.log('Центр:', location.center, 'Зум:', location.zoom);
+      };
+      
+      const mapListener = new YMapListener({
+        layer: 'any',
+        onUpdate: updateHandler
+      });
+      map.addChild(mapListener);
+    }
+  }
+</script> -->
 
     </div>
   </body>

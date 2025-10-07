@@ -1,3 +1,9 @@
+.txt110 {
+  font-size: 110rem;
+  @include small-tablet {
+    font-size: 36rem;
+  }
+}
 .txt90 {
   font-size: 90rem;
   @include small-tablet {

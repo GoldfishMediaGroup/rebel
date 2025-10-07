@@ -1,0 +1,158 @@
+.begins {
+  /* .begins__container */
+
+  &__container {
+  }
+
+  /* .begins__inner */
+
+  &__inner {
+    gap: 32rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .begins__head */
+
+  &__head {
+    grid-template-columns: 734rem 1fr;
+    gap: 32rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+    }
+  }
+
+  /* .begins__content */
+
+  &__content {
+    grid-template-columns: 734rem 1fr;
+    gap: 32rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 20rem;
+    }
+  }
+
+  /* .begins__img-wrap */
+
+  &__img-wrap {
+    @include small-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8rem;
+    }
+  }
+
+  /* .begins__img */
+
+  &__img {
+    width: 734rem;
+    min-height: 600rem;
+    height: 100%;
+    @include small-tablet {
+      width: 168rem;
+      min-height: 144rem;
+    }
+  }
+
+  /* .begins__info */
+
+  &__info {
+    gap: 30rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .begins__text-block */
+
+  &__text-block {
+    gap: 152rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 20rem;
+    }
+  }
+  /* .begins__text */
+
+  &__text {
+    width: 580rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  /* .begins__profile */
+
+  &__profile {
+    gap: 20rem;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+
+  /* .begins__photo */
+
+  &__photo {
+    width: 220rem;
+    height: 139rem;
+    @include small-tablet {
+      width: 168rem;
+      height: 76rem;
+    }
+  }
+
+  /* .begins__person */
+
+  &__person {
+    gap: 8rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+  }
+
+  /* .begins__name */
+
+  &__name {
+    letter-spacing: 0.2em;
+  }
+
+  /* .begins__position */
+
+  &__position {
+    letter-spacing: 0.04em;
+  }
+
+  /* .begins__list */
+
+  &__list {
+    border: 2rem solid $text-primary;
+    padding: 36rem 52rem;
+    gap: 120rem;
+    @include small-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 12rem;
+      padding: 12rem;
+    }
+  }
+
+  /* .begins__item */
+
+  &__item {
+    gap: 8rem;
+    @include small-tablet {
+      gap: 4rem;
+    }
+    & .txt18 {
+      @include small-tablet {
+        font-size: 12rem;
+      }
+    }
+  }
+}

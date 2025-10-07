@@ -111,6 +111,9 @@ main {
 .cv {
   align-items: center;
 }
+.ev {
+  align-items: flex-end;
+}
 .sb {
   justify-content: space-between;
 }
@@ -134,48 +137,5 @@ main {
 }
 
 /* .values__swiper */
-
-.swiper-grig {
-  width: 100%;
-  @include small-tablet {
-    width: calc(100% + 20rem);
-    margin: -6rem -10rem !important;
-    overflow: visible !important;
-  }
-
-  & .swiper-wrapper {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40rem;
-
-    @include small-tablet {
-      display: flex !important;
-      flex-direction: row !important;
-      gap: 0rem;
-    }
-    @include desk-only {
-      width: 100% !important;
-      transform: none !important;
-    }
-  }
-
-  & .swiper-slide {
-    height: auto !important;
-    @include small-tablet {
-      padding: 6rem 12rem;
-    }
-  }
-}
-
-.swiper-pagination {
-  position: static !important;
-  & .swiper-pagination-bullet {
-    transition: all 0.3s !important;
-    background: $tertiary-text;
-  }
-  & .swiper-pagination-bullet-active {
-    background: $text-primary;
-  }
-}
 
 @import './ui/ui';
