@@ -1,4 +1,7 @@
 .values {
+  @include small-tablet {
+    width: 375rem;
+  }
   /* .values__container */
 
   &__container {
@@ -8,6 +11,7 @@
 
   &__inner {
     gap: 40rem;
+
     @include small-tablet {
       gap: 20rem;
     }
@@ -24,6 +28,7 @@
   /* .values__swiper */
 
   &__swiper {
+    width: 100%;
   }
 
   /* .values__swiper-wrapper */
@@ -37,12 +42,104 @@
   }
 
   &__pagin {
-   
   }
 }
 
+.values-anim {
+  /* .values-anim__container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: fit-content;
+  @include small-tablet {
+    min-height: unset;
+  }
+  & .values__container {
+    @include desk-only {
+      display: none;
+    }
+  }
+  &__container {
+    padding-top: 100rem;
+    @include small-tablet {
+      display: none;
+    }
+  }
 
+  /* .values-anim__inner */
 
+  &__inner {
+    padding: 24rem 0 53rem;
+    position: relative;
+  }
 
+  /* .values-anim__content */
 
+  &__content {
+    gap: 142rem;
+  }
 
+  /* .values-anim__swiper-box */
+
+  &__swiper-box {
+    display: flex;
+    align-items: center;
+    gap: 20rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* .values-anim__swiper */
+
+  &__swiper {
+    width: 100%;
+
+    background: $primary-bg;
+    position: relative;
+    &:after {
+      position: absolute;
+      inset: 0rem;
+      pointer-events: none;
+      content: '';
+      border: 2rem solid $text-primary;
+      z-index: 5;
+    }
+    & .value-el {
+      border-top: unset;
+      border-bottom: unset;
+    }
+  }
+
+  /* .values-anim__swiper-wrapper */
+
+  &__swiper-wrapper {
+  }
+
+  /* .values-anim__slide */
+
+  &__slide {
+    background: $primary-bg;
+  }
+
+  /* .values-anim__pagin */
+
+  &__pagin {
+  }
+
+  /* .values-anim__img-swiper */
+
+  &__img-swiper {
+    width: 840rem;
+    height: 671rem;
+    position: absolute !important;
+    top: 0;
+    right: -72rem;
+    overflow: hidden;
+  }
+
+  /* .values-anim__img-box */
+
+  &__img-box {
+  }
+}

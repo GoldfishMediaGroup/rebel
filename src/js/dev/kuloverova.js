@@ -11,7 +11,7 @@ import scroll from '../utils/scroll';
 import fancybox from '../utils/fancybox';
 
 import smoothScroll from '../components/smoothScroll';
-// import headerBurger from '../components/headerBurger';
+import headerBurger from '../components/headerBurger';
 import footerCookieDisclamer from '../components/footerCookieDisclamer';
 import headerScroll from '../components/headerScroll';
 import hero from '../components/hero';
@@ -24,6 +24,8 @@ import news from '../components/news';
 import advantages from '../components/advantages';
 import gallery from '../components/gallery';
 import aboutHero from '../components/about-hero';
+import valuesAnim from '../components/values-anim';
+import managementAnim from '../components/managementAnim';
 
 import '../libs/dynamic_adapt';
 
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   headerScroll();
   footerCookieDisclamer();
   smoothScroll();
-  // headerBurger();
+  headerBurger();
   hero();
   values();
   cooperations();
@@ -54,5 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   advantages();
   gallery();
   aboutHero();
-
+  valuesAnim();
+  managementAnim();
 });

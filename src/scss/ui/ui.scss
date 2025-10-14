@@ -5,7 +5,7 @@
 @import './fancybox';
 
 .section-wrap {
-    width: 1920rem;
+  width: 1920rem;
   margin: 0 auto;
   overflow: hidden;
   max-width: 100%;
@@ -14,6 +14,8 @@
 .logo {
   width: 281rem;
   height: 29rem;
+  position: relative;
+  z-index: 10;
 
   @include small-tablet {
     width: 207rem;
@@ -482,27 +484,31 @@
 .cooperation-el {
   min-height: 348rem;
   position: relative;
-  @include small-tablet {
-    min-height: 266rem;
-  }
-  /* .cooperation-el__img */
   width: 100%;
   height: 100%;
   justify-content: flex-end;
   overflow: hidden;
+  @include small-tablet {
+    min-height: unset;
+    display: flex;
+    flex-direction: row;
+    border: 2rem solid $text-primary;
+  }
   &:hover {
     & .cooperation-el__hide {
       margin-bottom: 0;
     }
   }
+  /* .cooperation-el__img */
   &__img {
     width: 400rem;
     height: 348rem;
     position: absolute;
     inset: 0;
     @include small-tablet {
-      width: 100%;
-      height: 266rem;
+      width: 80rem;
+      height: 80rem;
+      position: static;
     }
   }
 
@@ -518,6 +524,9 @@
     gap: 20rem;
     @include small-tablet {
       padding: 16rem;
+      flex-grow: 1;
+      background: transparent;
+      justify-content: center;
     }
   }
 
