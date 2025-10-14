@@ -95,7 +95,7 @@ function headerBurger() {
     allLangRadios.forEach((radio) => {
       radio.addEventListener('change', function () {
         lang && lang.classList.remove('isActive');
-        lang && lang.classList.remove('isOpenMob');
+        lang && lang.classList.remove('isOpenMob');     document.body.classList.remove('no-scroll');
         if (this.checked) {
           const selectedLang = this.getAttribute('data-lang');
           textItem.textContent = selectedLang;
