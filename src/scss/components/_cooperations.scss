@@ -13,38 +13,15 @@
     }
   }
 
-  /* .cooperations__swiper-box */
+  &__list {
+    display: grid ;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40rem;
 
-  &__swiper-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 16rem;
-  }
-  /* .cooperations__swiper */
-
-  &__swiper {
-  }
-
-  /* .cooperations__swiper-wrapper */
-
-  &__swiper-wrapper {
-  }
-
-  /* .cooperations__slide */
-
-  &__slide {
-  }
-
-  &__pagin {
-    position: static !important;
-    & .swiper-pagination-bullet {
-      transition: all 0.3s !important;
-      background: $tertiary-text;
-    }
-    & .swiper-pagination-bullet-active {
-      background: $text-primary;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column ;
+      gap: 8rem;
     }
   }
 }
-

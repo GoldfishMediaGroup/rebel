@@ -3,7 +3,6 @@
   min-height: 100dvh;
   padding: 0;
   @include small-tablet {
-    display: none;
   }
   /* .horisontal__inner */
   &__inner {
@@ -17,6 +16,11 @@
     top: calc(100dvh - 60rem);
     width: 100%;
     margin-top: -50rem;
+    @include small-tablet {
+      top: calc(100vh - 50rem);
+      top: calc(100dvh - 50rem);
+      margin-top: 0;
+    }
   }
 
   &__nav-swiper {
@@ -32,6 +36,8 @@
     padding: 23rem 42rem !important;
     @include small-tablet {
       width: 375rem !important;
+      padding: 0 16rem !important;
+      background: rgba(11, 42, 52, 0.4);
     }
   }
   &__nav-swiper-wrapper {
@@ -40,14 +46,23 @@
     width: fit-content !important;
   }
   &__nav-link {
-    transition: color 0.3s;
+    transition: color 0.3s, border 0.3s;
+    display: flex;
     &.isActive {
       color: $accent;
+      @include small-tablet {
+        border: 2rem solid $accent;
+      }
     }
     @include desk-only {
       &:hover {
         color: $accent;
       }
+    }
+
+    @include small-tablet {
+      padding: 12rem;
+      border: 2rem solid $stroke;
     }
   }
 
@@ -80,13 +95,20 @@
     }
 
     @include small-tablet {
-      display: none;
+      width: 45rem;
+      height: 45rem;
+      right: 16rem;
+      top: calc(-1 * (calc(100vh - 120rem)));
+      top: calc(-1 * (calc(100dvh - 120rem)));
     }
   }
 
   /* .horisontal__next-text */
 
   &__next-text {
+    @include small-tablet {
+      display: none;
+    }
   }
 
   /* .horisontal__next-svg */
@@ -98,6 +120,10 @@
     rotate: -180deg;
     & path {
       transition: fill 0.3s;
+    }
+    @include small-tablet {
+      width: 20rem;
+      height: 20rem;
     }
   }
 
@@ -140,26 +166,48 @@
         bottom: 0;
         width: 940rem;
         height: 100%;
+        @include small-tablet {
+          position: static;
+          width: 343rem;
+          height: 252rem;
+        }
       }
 
-      & .horisontal__inner {
+      & .horisontal__screen-inner {
       }
 
       & .horisontal__info {
         width: 840rem;
         gap: 40rem;
+        @include small-tablet {
+          gap: 12rem;
+          width: 100%;
+          height: calc(100vh - 150rem);
+          height: calc(100dvh - 150rem);
+          overflow: auto;
+        }
+        @include small-tablet {
+        }
       }
 
       & .horisontal__text {
         padding: 40rem 32rem;
         border: 2rem solid $text-primary;
-
+        @include small-tablet {
+          padding: 16rem;
+          display: flex;
+          flex-direction: column;
+          gap: 10rem;
+        }
         & p {
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 10;
           -webkit-box-orient: vertical;
+          @include small-tablet {
+            -webkit-line-clamp: 4;
+          }
         }
       }
     }
@@ -167,6 +215,16 @@
     &--2 {
       & .horisontal__screen-inner {
         width: 1346rem;
+        @include small-tablet {
+          width: 100%;
+        }
+      }
+      & .horisontal__info {
+        position: absolute;
+        inset: 0;
+        @include small-tablet {
+          position: relative;
+        }
       }
 
       & .horisontal__screen-content {
@@ -176,19 +234,44 @@
         border-top: unset;
         padding: 70rem 52rem;
         width: 100%;
+        @include small-tablet {
+          padding: 0;
+          width: 100%;
+          height: auto;
+          border: unset;
+          gap: 20rem;
+          height: calc(100vh - 150rem);
+          height: calc(100dvh - 150rem);
+          overflow: auto;
+          justify-content: flex-start;
+        }
       }
       & .horisontal__title {
         width: 320rem;
+        @include small-tablet {
+          width: 100%;
+        }
       }
       & .horisontal__text {
         width: 807rem;
+        @include small-tablet {
+          width: 100%;
+          border: 2rem solid $text-primary;
+          padding: 16rem;
+          display: flex;
+          flex-direction: column;
+          gap: 10rem;
 
-        & p {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 10;
-          -webkit-box-orient: vertical;
+          & p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical;
+            @include small-tablet {
+              -webkit-line-clamp: 13;
+            }
+          }
         }
       }
 
@@ -201,6 +284,17 @@
         padding: 24rem;
         min-height: 255rem;
         border: 1px solid $accent;
+        @include small-tablet {
+          position: static;
+          transform: unset;
+          padding: 16rem 20rem;
+          width: 276rem;
+          margin-left: auto;
+          min-height: unset;
+          & p {
+            font-size: 12rem;
+          }
+        }
         &::before,
         &:after {
           position: absolute;
@@ -209,6 +303,9 @@
           content: '';
           top: 40rem;
           background: $text-primary;
+          @include small-tablet {
+            display: none;
+          }
         }
         &::before {
           left: 0;
@@ -227,6 +324,12 @@
         left: 798rem;
         bottom: -167rem;
         z-index: 5;
+        @include small-tablet {
+          width: 223rem;
+          height: 223rem;
+          left: -50rem;
+          bottom: -30rem;
+        }
       }
     }
 
@@ -238,32 +341,68 @@
         gap: 80rem;
       }
 
+      & .horisontal__img {
+        @include desk-only {
+          display: none;
+        }
+        @include small-tablet {
+          width: 343rem;
+          height: 130rem;
+        }
+      }
       & .horisontal__list-box {
         width: 572rem;
         gap: 40rem;
         flex-shrink: 0;
+        @include small-tablet {
+          width: 100%;
+          gap: 16rem;
+          height: calc(100vh - 150rem);
+          height: calc(100dvh - 150rem);
+          overflow: auto;
+          justify-content: flex-start;
+        }
       }
 
       & .horisontal__list {
         gap: 30rem;
+        @include small-tablet {
+          gap: 12rem;
+        }
       }
 
       & .horisontal__item {
         gap: 20rem;
+        @include small-tablet {
+          gap: 4rem;
+        }
       }
 
       & .horisontal__svg {
         width: 78rem;
         height: 78rem;
         flex-shrink: 0;
+        @include small-tablet {
+          width: 40rem;
+          height: 40rem;
+        }
       }
 
       & .horisontal__text {
         gap: 8rem;
+        @include small-tablet {
+          gap: 4rem;
+          & .txt18 {
+            font-size: 12rem;
+          }
+        }
       }
 
       & .horisontal__img-wrap {
         gap: 35rem;
+        @include small-tablet {
+          display: none;
+        }
       }
 
       & .horisontal__img-big {
@@ -283,6 +422,21 @@
     }
   }
 
+  /* .horisontal__show-more */
+
+  &__show-more {
+    @include desk-only {
+      display: none;
+    }
+    gap: 4rem;
+  }
+
+  /* .horisontal__show-more-svg */
+
+  &__show-more-svg {
+    width: 24rem;
+    height: 24rem;
+  }
   /* .horisontal__screen-inner */
 
   &__screen-inner {

@@ -1,16 +1,19 @@
 .gallery {
-
   /* .gallery__container */
 
   &__container {
+    padding-top: 60rem;
+    @include small-tablet {
+        padding-top: 0rem;
+    }
   }
 
   /* .gallery__inner */
 
   &__inner {
     position: relative;
+
     @include small-tablet {
-   
       gap: 20rem;
     }
   }

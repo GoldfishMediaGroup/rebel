@@ -25,7 +25,7 @@
       flex-direction: column;
       position: relative;
       gap: 0;
-    
+
       &.isOpen {
         & .contacts__map {
           height: 100%;
@@ -35,6 +35,15 @@
         & .contacts__info {
           opacity: 0;
           pointer-events: none;
+        }
+
+        & .contacts__map-inc-svg {
+          &:nth-child(1) {
+            scale: 0;
+          }
+          &:nth-child(2) {
+            scale: 1;
+          }
         }
       }
     }
@@ -54,10 +63,23 @@
       right: 16rem;
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
-      background: $background;
+      background: $accent;
     }
   }
-
+  &__map-inc-svg {
+    position: absolute;
+    transition: scale 0.3s;
+    &:nth-child(1) {
+      scale: 1;
+      width: 13rem;
+      height: 13rem;
+    }
+    &:nth-child(2) {
+      scale: 0;
+      width: 18rem;
+      height: 18rem;
+    }
+  }
   /* .contacts__map */
 
   &__map {

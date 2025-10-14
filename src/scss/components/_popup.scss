@@ -137,6 +137,25 @@ body::before {
       }
     }
   }
+  &--horisontal {
+    & .popup__body {
+      @include small-tablet {
+        border: 2rem solid $text-primary;
+        padding: 56rem 12rem 22rem;
+      }
+    }
+    .popup__body-content {
+      gap: 24rem;
+    }
+
+    .popup__body-text {
+      gap: 20rem;
+      @include small-tablet {
+        gap: 16rem;
+   
+      }
+    }
+  }
 
   &--application {
     & .popup__body {

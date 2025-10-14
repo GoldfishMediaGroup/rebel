@@ -33,8 +33,13 @@ function horisontal() {
 
   const swiper = new Swiper(navSwiper, {
     slidesPerView: 'auto',
-    spaceBetween: rem(3.2)
+    spaceBetween: rem(0.8),
     // freeMode: true,
+    breakpoints: {
+      768: {
+            spaceBetween: rem(3.2),
+      }
+    }
   });
 
   let animTimeline = gsap.timeline({
