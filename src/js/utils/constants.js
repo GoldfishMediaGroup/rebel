@@ -1,4 +1,5 @@
 import { lenis } from '../components/smoothScroll';
+import SimpleBar from '../libs/simplebar';
 
 export const rem = function (rem) {
   if (window.innerWidth > 768) {
@@ -137,3 +138,59 @@ export const _slideToggle = (target, duration = 500) => {
     return _slideUp(target, duration);
   }
 };
+
+
+export function castomScroll(el) {
+  const blocks = document.querySelectorAll(el);
+  if (!blocks.length) return;
+
+  let isDesktop = window.innerWidth > 768;
+  let simplebars = [];
+
+  function init() {
+    if (window.innerWidth > 768 && !isDesktop) {
+      // ✅ переключились с мобилки на десктоп
+      isDesktop = true;
+      blocks.forEach(block => {
+        if (!block.SimpleBar) {
+          simplebars.push(new SimpleBar(block));
+        }
+      });
+    } else if (window.innerWidth <= 768 && isDesktop) {
+      // ✅ переключились с десктопа на мобилку
+      isDesktop = false;
+      simplebars.forEach(sb => {
+        if (sb && sb.unMount) sb.unMount(); // корректно уничтожаем
+      });
+      simplebars = [];
+
+      // Полностью очищаем DOM от следов SimpleBar
+      blocks.forEach(block => {
+        const wrapper = block.querySelector('.simplebar-wrapper');
+        if (wrapper) {
+          const content = wrapper.querySelector('.simplebar-content');
+          if (content) {
+            block.innerHTML = content.innerHTML;
+          }
+        }
+      });
+    }
+  }
+
+  // Инициализация при загрузке
+  if (isDesktop) {
+    blocks.forEach(block => {
+      simplebars.push(new SimpleBar(block));
+    });
+  }
+
+  // Реакция только на "пересечение" порога 768
+  window.addEventListener('resize', () => {
+    const currentIsDesktop = window.innerWidth > 768;
+    if (currentIsDesktop !== isDesktop) {
+      init();
+    }
+  });
+}
+
+

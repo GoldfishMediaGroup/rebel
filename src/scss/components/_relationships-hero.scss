@@ -1,0 +1,87 @@
+.relationships-hero {
+  /* .relationships-hero__container */
+
+  &__container {
+  }
+
+  /* .relationships-hero__inner */
+
+  &__inner {
+    position: relative;
+  }
+
+  /* .relationships-hero__content */
+
+  &__content {
+    gap: 32rem;
+    position: relative;
+    z-index: 10;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .relationships-hero__info */
+
+  &__info {
+    gap: 74rem;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+
+  /* .relationships-hero__desc */
+
+  &__desc {
+  }
+
+  /* .relationships-hero__desc-img */
+
+  &__desc-img {
+    width: 544rem;
+    height: 428rem;
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  /* .relationships-hero__desc-content */
+
+  &__desc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32rem;
+    @include desk-only {
+      width: 589rem;
+      padding: 28rem 28rem 32rem 47rem;
+      background: $primary-bg;
+    }
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .relationships-hero__btn */
+
+  &__btn {
+  }
+
+  /* .relationships-hero__img */
+
+  &__img {
+    position: absolute;
+    width: 840rem;
+    height: 100%;
+    right: 0;
+    top: 0;
+    & img {
+      position: absolute;
+      inset: 0;
+    }
+    @include small-tablet {
+      width: 343rem;
+      height: 262rem;
+      position: relative;
+    }
+  }
+}

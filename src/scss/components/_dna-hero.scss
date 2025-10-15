@@ -1,0 +1,69 @@
+.dna-hero {
+  position: relative;
+  padding: 0;
+  /* .dna-hero__bg */
+  @include small-tablet {
+    padding-top: 64rem;
+  }
+  &__bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* .dna-hero__container */
+
+  &__container {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* .dna-hero__inner */
+
+  &__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* .dna-hero__content */
+
+  &__content {
+    @include desk-only {
+      padding: 135rem 120rem 174rem 47rem;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11, 42, 52, 0.4);
+      margin-right: -102rem;
+      grid-column: 2/3;
+      gap: 32rem;
+    }
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 210rem;
+    }
+  }
+
+  /* .dna-hero__info */
+
+  &__info {
+    gap: 54rem;
+    @include small-tablet {
+      margin: 0 -16rem;
+      padding: 24rem 16rem;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11, 42, 52, 0.4);
+      gap: 24rem;
+    }
+  }
+
+  /* .dna-hero__head */
+
+  &__head {
+    gap: 12rem;
+  }
+}

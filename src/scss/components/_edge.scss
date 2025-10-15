@@ -1,0 +1,322 @@
+.edge {
+  /* .edge__container */
+
+  &__container {
+  }
+
+  /* .edge__inner */
+
+  &__inner {
+    gap: 40rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 20rem;
+    }
+  }
+
+  /* .edge__head */
+
+  &__head {
+  }
+
+  /* .edge__content */
+
+  &__content {
+    @include small-tablet {
+      flex-direction: column;
+      gap: 16rem;
+      position: relative;
+    }
+  }
+
+  /* .edge__tab-box */
+
+  &__tab-box {
+    @include desk-only {
+      width: 404rem;
+      padding: 32rem 20rem;
+      background: $dark;
+      position: relative;
+      height: fit-content;
+      margin: 42rem 0;
+    }
+    z-index: 5;
+
+    @include small-tablet {
+      width: 100%;
+      position: sticky;
+      top: 64rem;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: transparent;
+      transition: background 0.3s;
+
+      width: 375rem;
+      margin: 0 -16rem !important;
+      padding: 0 16rem !important;
+      &.isVisible {
+        background: rgba(11, 42, 52, 0.4);
+      }
+    }
+  }
+
+  /* .edge__tab-swiper */
+
+  &__tab-swiper {
+    width: 100%;
+
+    @include desk-only {
+      & .swiper-wrapper {
+        flex-direction: column !important;
+        gap: 20rem;
+        transform: unset !important;
+      }
+    }
+    @include small-tablet {
+      width: 375rem;
+      margin: 0 -16rem !important;
+      padding: 0 16rem !important;
+    }
+  }
+
+  /* .edge__tab-swiper-wrapper */
+
+  &__tab-swiper-wrapper {
+  }
+
+  /* .edge__tab-slide */
+
+  &__tab-slide {
+    width: 100% !important;
+    border: 1.5px solid transparent;
+    padding: 20rem 24rem;
+    cursor: pointer;
+    @include desk-only {
+      transition: color 0.3s, border 0.3s !important;
+    }
+    @include small-tablet {
+      width: fit-content !important;
+      padding: 12rem;
+      border: 1.5px solid $stroke;
+      & p {
+        font-size: 12rem;
+      }
+    }
+    &.isActive {
+      border: 1.5px solid $accent;
+      color: $accent;
+    }
+  }
+
+  /* .edge__info-box */
+
+  &__info-box {
+    border: 2rem solid $text-primary;
+    padding: 27rem 40rem 27rem 293rem;
+    position: relative;
+    height: auto;
+    @include desk-only {
+      width: 1573rem;
+      margin-left: -257rem;
+      background: $primary-bg;
+    }
+    @include small-tablet {
+      width: 100%;
+      padding: 16rem;
+    }
+  }
+
+  /* .edge__info-block */
+
+  &__info-block {
+    padding: 13rem 0;
+
+    // inset: 0;
+    // top: 27rem;
+    right: 40rem;
+    bottom: 27rem;
+    top: 27rem;
+    left: 293rem;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s, visibility 0.8s;
+    @include small-tablet {
+      inset: 16rem;
+    }
+    &.isActive {
+      opacity: 1;
+      visibility: visible;
+      @include small-tablet {
+        position: static;
+      }
+    }
+
+    @include small-tablet {
+      padding: 0;
+    }
+  }
+
+  /* .edge__info-inner */
+
+  &__info-inner {
+    grid-template-columns: 693rem 507rem;
+    gap: 40rem;
+    width: 100%;
+    @include desk-only {
+      height: 100%;
+    }
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* .edge__info-text-wrap */
+
+  &__info-text-wrap {
+    position: relative;
+    @include desk-only {
+      height: 100%;
+    }
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 16rem;
+      &.isActive {
+        & .edge__show-more {
+          & > span span {
+            &:nth-child(1) {
+              position: absolute;
+              opacity: 0;
+            }
+            &:nth-child(2) {
+              position: relative;
+              opacity: 1;
+            }
+          }
+        }
+        & .edge__show-more-svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &::before,
+    &::after {
+      z-index: 0;
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 35rem;
+      height: 65rem;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, $primary-bg 70%);
+      pointer-events: none;
+      z-index: 1;
+      transition: transform 0.3s;
+      @include small-tablet {
+        display: none;
+      }
+    }
+    &::before {
+      top: -20rem;
+    }
+    &::after {
+      bottom: -20rem;
+      transform: rotate(180deg);
+    }
+  }
+  &__info-mob {
+    display: none;
+    @include small-tablet {
+      display: grid;
+      flex-direction: column;
+      gap: 16rem;
+    }
+  }
+  &__info-mob-img {
+    @include small-tablet {
+      width: 311rem;
+      height: 240rem;
+    }
+  }
+  /* .edge__info-text */
+
+  &__info-text {
+    overflow: auto;
+    flex-wrap: nowrap !important;
+    transition: max-height 0.8s;
+    gap: 12rem;
+    @include desk-only {
+      position: absolute;
+      inset: 0;
+      padding-right: 35rem;
+      padding: 40rem 35rem 40rem 0;
+      margin: -13rem 0;
+
+      &::-webkit-scrollbar {
+        width: 2rem;
+        background: rgba(255, 255, 255, 0.2);
+      }
+      &::-webkit-scrollbar-thumb {
+        width: 2rem;
+        background: $text-primary;
+      }
+      &::-webkit-scrollbar-track {
+        width: 2rem;
+        background: rgba(255, 255, 255, 0.2);
+      }
+      margin: -13rem 0;
+    }
+    @include small-tablet {
+      gap: 8rem;
+      overflow: hidden;
+    }
+  }
+
+  /* .edge__info-img */
+
+  &__info-img {
+    width: 507rem;
+    height: 100%;
+    position: relative;
+    @include small-tablet {
+      display: none;
+    }
+    & img {
+      position: absolute;
+      inset: 0;
+    }
+  }
+  &__show-more {
+    @include desk-only {
+      display: none;
+    }
+    &.isHidden {
+      display: none;
+    }
+    & > span {
+      position: relative;
+      & span {
+        transition: opacity 0.3s;
+        left: 0;
+        &:nth-child(1) {
+          position: relative;
+          opacity: 1;
+        }
+        &:nth-child(2) {
+          position: absolute;
+          opacity: 0;
+        }
+      }
+    }
+    gap: 4rem;
+  }
+
+  &__show-more-svg {
+    width: 24rem;
+    height: 24rem;
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+  }
+}
