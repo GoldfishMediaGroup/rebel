@@ -1,0 +1,105 @@
+.data-sout {
+  /* .data-sout__container */
+
+  &__container {
+  }
+
+  /* .data-sout__inner */
+
+  &__inner {
+    gap: 107rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 20rem;
+    }
+  }
+
+  /* .data-sout__head */
+
+  &__head {
+    width: 625rem;
+    flex-shrink: 0;
+    gap: 28rem;
+    @include small-tablet {
+      width: 100%;
+      gap: 8rem;
+    }
+  }
+
+  /* .data-sout__btn */
+
+  &__btn {
+  }
+
+  /* .data-sout__list */
+
+  &__list {
+    gap: 20rem;
+    @include small-tablet {
+      gap: 8rem;
+    }
+  }
+
+  /* .data-sout__item */
+
+  &__item {
+    padding: 36rem 34rem 36rem 74rem;
+    border: 2rem solid $text-primary;
+    gap: 12rem;
+    position: relative;
+    @include small-tablet {
+      padding: 16rem 16rem 16rem 36rem;
+      min-height: 176rem;
+      justify-content: center;
+    }
+    &::before {
+      top: 36rem;
+      bottom: 36rem;
+      width: 7rem;
+      background: $accent;
+      left: 40rem;
+      content: '';
+      position: absolute;
+      @include small-tablet {
+        top: 16rem;
+        bottom: 16rem;
+        width: 4rem;
+        left: 16rem;
+      }
+    }
+  }
+
+  /* .data-sout__item-info */
+
+  &__item-info {
+    gap: 8rem;
+  }
+  &__item-desc {
+    color: #97a6ab;
+    @include small-tablet {
+      font-size: 12rem;
+    }
+  }
+  /* .data-sout__item-link */
+
+  &__item-link {
+    gap: 4rem;
+    @include small-tablet {
+      & .accent-color {
+        font-size: 14rem;
+      }
+    }
+  }
+
+  /* .data-sout__item-svg */
+
+  &__item-svg {
+    width: 28rem;
+    height: 28rem;
+    @include small-tablet {
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+}

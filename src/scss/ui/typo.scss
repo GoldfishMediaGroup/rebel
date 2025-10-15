@@ -10,6 +10,12 @@
     font-size: 36rem;
   }
 }
+.txt80 {
+  font-size: 80rem;
+  @include small-tablet {
+     font-size: 36rem;
+  }
+}
 .txt60 {
   font-size: 60rem;
   @include small-tablet {

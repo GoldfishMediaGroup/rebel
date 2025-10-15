@@ -1,6 +1,6 @@
 import Swiper from 'swiper/bundle';
 import { rem } from '../utils/constants';
-
+import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, ScrollToPlugin } from 'gsap/all';
 function aboutHero() {
   const section = document.querySelector('.about-hero');
 
@@ -34,6 +34,11 @@ function aboutHero() {
       / 
       <span class="swiper-pagination-total">${formattedTotal}</span>
     `;
+      }
+    },
+    on: {
+      slideChangeTransitionEnd() {
+        ScrollTrigger.refresh();
       }
     }
   });

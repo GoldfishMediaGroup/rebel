@@ -26,6 +26,10 @@ import gallery from '../components/gallery';
 import aboutHero from '../components/about-hero';
 import valuesAnim from '../components/values-anim';
 import managementAnim from '../components/managementAnim';
+import edge from '../components/edge';
+import showMoreMob from '../components/showMoreMob';
+
+import { castomScroll } from '../utils/constants';
 
 import '../libs/dynamic_adapt';
 
@@ -37,14 +41,13 @@ window.scrollTo(0, 0);
 
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
-
   popup();
   form();
   scroll();
   fancybox();
   headerScroll();
   footerCookieDisclamer();
-  smoothScroll();
+  // smoothScroll();
   headerBurger();
   hero();
   values();
@@ -58,4 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   aboutHero();
   valuesAnim();
   managementAnim();
+  edge();
+  showMoreMob('.edge__info-text', 920, '435rem', '.edge__show-more');
+  castomScroll('.edge__info-text');
+  
 });

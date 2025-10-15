@@ -105,6 +105,19 @@
   }
 }
 
+.simplebar-track.simplebar-vertical {
+  width: 2rem !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.simplebar-scrollbar::before {
+  background: $text-primary !important;
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
 .swiper-pagination {
   @include desk-only {
     display: none;

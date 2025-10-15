@@ -74,7 +74,11 @@ function headerBurger() {
     const langBottomWrap = lang.querySelector('.header__lang-bottom-wrap');
     langTop.addEventListener('click', () => {
       lang.classList.toggle('isOpenMob');
-      document.body.classList.toggle('no-scroll');
+      if (lang.classList.contains('isOpenMob')) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
       burger.classList.remove('isOpen');
       navWrapper.classList.remove('isOpen');
     });
@@ -95,7 +99,8 @@ function headerBurger() {
     allLangRadios.forEach((radio) => {
       radio.addEventListener('change', function () {
         lang && lang.classList.remove('isActive');
-        lang && lang.classList.remove('isOpenMob');     document.body.classList.remove('no-scroll');
+        lang && lang.classList.remove('isOpenMob');
+        document.body.classList.remove('no-scroll');
         if (this.checked) {
           const selectedLang = this.getAttribute('data-lang');
           textItem.textContent = selectedLang;

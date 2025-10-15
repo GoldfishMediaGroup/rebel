@@ -1,0 +1,169 @@
+.vacancies-hero {
+  /* .vacancies-hero__container */
+
+  &__container {
+  }
+
+  /* .vacancies-hero__inner */
+
+  &__inner {
+    position: relative;
+    padding-bottom: 86rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 20rem;
+    }
+  }
+
+  /* .vacancies-hero__content */
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    gap: 32rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .vacancies-hero__info */
+
+  &__info {
+    gap: 165rem;
+    position: relative;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+
+  /* .vacancies-hero__desc */
+
+  &__desc {
+    width: 514rem;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: -40rem;
+      width: 1283rem;
+      border-radius: 8px;
+      height: 2.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      @include small-tablet {
+        display: none;
+        width: 100%;
+      }
+    }
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  /* .vacancies-hero__review-box */
+
+  &__review-box {
+    position: absolute;
+    top: 50%;
+    left: 293rem;
+    transform: translateY(-50%);
+    padding: 20rem 40rem;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    background: rgba(11, 42, 52, 0.4);
+    gap: 84rem;
+    z-index: 10;
+    @include small-tablet {
+      left: 12rem;
+      right: 12rem;
+      bottom: 12rem;
+      top: auto;
+      padding: 12rem 22rem;
+      transform: unset;
+      justify-content: space-between;
+    }
+  }
+
+  /* .vacancies-hero__review-text */
+
+  &__review-text {
+    font-weight: 400;
+    font-size: 15rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    @include small-tablet {
+      font-size: 8rem;
+      gap: 4rem;
+    }
+  }
+
+  /* .vacancies-hero__review-grade */
+
+  &__review-grade {
+    gap: 10rem;
+    align-items: center;
+    @include small-tablet {
+      gap: 5rem;
+    }
+  }
+
+  /* .vacancies-hero__review-stars */
+
+  &__review-stars {
+    gap: 4rem;
+    @include small-tablet {
+      gap: 2rem;
+    }
+  }
+
+  /* .vacancies-hero__review-star */
+
+  &__review-star {
+    width: 20rem;
+    height: 20rem;
+    @include small-tablet {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+
+  /* .vacancies-hero__review-logo */
+
+  &__review-logo {
+    width: 80rem;
+    height: 80rem;
+    @include small-tablet {
+      width: 45rem;
+      height: 45rem;
+    }
+  }
+
+  /* .vacancies-hero__img-wrap */
+
+  &__img-wrap {
+    width: 1131rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include small-tablet {
+      position: relative;
+      width: 343rem;
+      height: 339rem;
+    }
+  }
+
+  /* .vacancies-hero__img */
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    & > img {
+      position: absolute;
+      inset: 0;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.relationships {
+  /* .relationships__container */
+
+  &__container {
+  }
+
+  /* .relationships__inner */
+
+  &__inner {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .relationships__head */
+
+  &__head {
+    gap: 20rem;
+    width: 987rem;
+    @include small-tablet {
+      width: 100%;
+      gap: 8rem;
+    }
+  }
+
+  /* .relationships__list */
+
+  &__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 12rem;
+    }
+  }
+
+  /* .relationships__item */
+
+  &__item {
+    padding: 28rem;
+    border: 1rem solid $text-primary;
+    min-height: 508rem;
+    gap: 120rem;
+    position: relative;
+    overflow: hidden;
+    @include small-tablet {
+      padding: 16rem;
+      min-height: 300rem;
+      gap: 12rem;
+      justify-content: space-between;
+      & .lh140 {
+        line-height: 133%;
+      }
+    }
+  }
+
+  /* .relationships__item-head */
+
+  &__item-head {
+    gap: 20rem;
+    @include small-tablet {
+      gap: 8rem;
+      & br {
+        display: none;
+      }
+    }
+  }
+
+  /* .relationships__item-svg */
+
+  &__item-svg {
+    width: 78rem;
+    height: 78rem;
+    @include small-tablet {
+      width: 50rem;
+      height: 50rem;
+    }
+  }
+
+  /* .relationships__img */
+
+  &__img {
+    position: absolute;
+    width: 259rem;
+    height: 169rem;
+    top: -40rem;
+    right: -20rem;
+    @include small-tablet {
+      width: 110rem;
+      height: 73rem;
+      top: -5rem;
+      right: -5rem;
+    }
+  }
+}
