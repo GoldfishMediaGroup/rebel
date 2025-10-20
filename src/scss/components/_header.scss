@@ -103,6 +103,17 @@
     }
     @include small-tablet {
       width: 100%;
+      &.isMobOpen {
+        & .header__link {
+          color: $accent;
+        }
+        & .header__link-svg {
+          transform: rotate(-180deg);
+          & path {
+            stroke: $accent;
+          }
+        }
+      }
     }
   }
 
@@ -117,8 +128,8 @@
   /* .header__link */
 
   &__link {
+    transition: color 0.3s;
     @include desk-only {
-      transition: color 0.3s;
       &:before {
         width: 100%;
         height: 24rem;
