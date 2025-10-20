@@ -1,0 +1,78 @@
+.coop-det-hero {
+  /* .coop-det-hero__container */
+
+  &__container {
+  }
+
+  /* .coop-det-hero__inner */
+
+  &__inner {
+    gap: 32rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .coop-det-hero__content */
+
+  &__content {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+
+  /* .coop-det-hero__info */
+
+  &__info {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 16rem;
+      flex-direction: column;
+    }
+  }
+
+  /* .coop-det-hero__img */
+
+  &__img {
+    width: 957rem;
+    min-height: 556rem;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    @include small-tablet {
+      width: 343rem;
+      height: 160rem;
+      min-height: unset;
+    }
+    & img {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  /* .coop-det-hero__text-wrap */
+
+  &__text-wrap {
+    gap: 38rem;
+    position: relative;
+    z-index: 1;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+
+  /* .coop-det-hero__important */
+
+  &__important {
+    width: 840rem;
+    margin-left: -116rem;
+    background: $dark;
+    padding: 80rem 50rem;
+    @include small-tablet {
+      width: 100%;
+      margin: 0;
+      padding: 16rem;
+    }
+  }
+}

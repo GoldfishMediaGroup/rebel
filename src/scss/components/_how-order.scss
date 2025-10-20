@@ -1,0 +1,75 @@
+.how-order {
+  /* .how-order__container */
+
+  &__container {
+  }
+
+  /* .how-order__inner */
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40rem;
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 12rem;
+    }
+  }
+
+  /* .how-order__content */
+
+  &__content {
+    gap: 40rem;
+    @include small-tablet {
+      gap: 24rem;
+    }
+  }
+
+  /* .how-order__info */
+
+  &__info {
+    gap: 24rem;
+    @include small-tablet {
+      gap: 16rem;
+    }
+  }
+
+  /* .how-order__list */
+
+  &__list {
+    gap: 24rem;
+    @include small-tablet {
+      gap: 8rem;
+    }
+  }
+
+  /* .how-order__item */
+
+  &__item {
+    gap: 12rem;
+    border: 2rem solid $text-primary;
+    padding: 32rem;
+    @include small-tablet {
+      padding: 16rem;
+    }
+  }
+
+  /* .how-order__img */
+
+  &__img {
+    width: 840rem;
+    height: 100%;
+    position: relative;
+    min-height: 515rem;
+    @include small-tablet {
+      width: 343rem;
+      height: 207rem;
+      min-height: unset;
+    }
+    & img {
+      position: absolute;
+      inset: 0;
+    }
+  }
+}

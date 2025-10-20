@@ -1,0 +1,232 @@
+.news-hero {
+  position: relative;
+  /* .news-hero__container */
+
+  &__container {
+  }
+
+  /* .news-hero__inner */
+
+  &__inner {
+    gap: 32rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .news-hero__content */
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    gap: 94rem;
+    @include small-tablet {
+      gap: 35rem;
+    }
+  }
+
+  /* .news-hero__swiper-wrap */
+
+  &__swiper-wrap {
+    display: flex;
+    align-items: flex-end;
+    @include small-tablet {
+      gap: 8rem;
+      flex-direction: column;
+    }
+  }
+
+  /* .news-hero__news-swiper */
+
+  &__news-swiper {
+    width: 841rem;
+    margin: 0 !important;
+    flex-shrink: 0;
+    height: 517rem;
+    background: $dark;
+    @include small-tablet {
+      width: 100%;
+      height: auto;
+      margin-bottom: 12rem !important;
+    }
+  }
+
+  /* .news-hero__news-slide */
+
+  &__news-slide {
+    height: auto !important;
+  }
+
+  /* .news-hero__news */
+
+  &__news {
+    padding: 32rem;
+    gap: 32rem;
+    width: 100%;
+    height: 517rem;
+    background: $dark;
+    @include small-tablet {
+      height: 100%;
+      padding: 16rem;
+    }
+  }
+
+  /* .news-hero__news-info */
+
+  &__news-info {
+    gap: 20rem;
+    & .txt32 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include small-tablet {
+        -webkit-line-clamp: 3;
+      }
+    }
+    & .txt18 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include small-tablet {
+        -webkit-line-clamp: 4;
+      }
+    }
+  }
+
+  /* .news-hero__bg-swiper */
+
+  &__bg-swiper {
+    position: absolute !important;
+    width: 1273rem;
+    // height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 60rem;
+    @include small-tablet {
+      position: static !important;
+      width: 343rem;
+      height: 232rem;
+    }
+  }
+
+  /* .news-hero__bg-slide */
+
+  &__bg-slide {
+  }
+
+  /* .news-hero__bg */
+
+  &__bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    & img {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  /* .news-hero__nav-box */
+
+  &__nav-box {
+    width: calc(100% + 92rem);
+    margin-right: -92rem;
+    position: relative;
+    height: 120rem;
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  /* .news-hero__next-btn */
+
+  &__next-btn {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 10;
+    position: relative !important;
+    inset: 0 !important;
+    justify-content: flex-start !important;
+    &:hover {
+      & .news-hero__next-btn-inner {
+        color: $dark !important;
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  /* .news-hero__next-btn-inner */
+
+  &__next-btn-inner {
+    width: 439rem !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(11, 42, 52, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100% !important;
+    color: $text-primary !important;
+    letter-spacing: 0.2em;
+    transition: color 0.3s, background 0.3s !important;
+  }
+
+  /* .news-hero__next-swiper */
+
+  &__next-swiper {
+    width: 544rem;
+    height: 100%;
+    position: absolute !important;
+    bottom: 0;
+    left: 439rem;
+  }
+
+  /* .news-hero__next-slide */
+
+  &__next-slide {
+    height: 100%;
+  }
+
+  /* .news-hero__next */
+
+  &__next {
+    display: flex;
+  }
+
+  /* .news-hero__next-img */
+
+  &__next-img {
+    flex-grow: 1;
+    height: 120rem;
+    overflow: hidden;
+    position: relative;
+    &:after {
+      position: absolute;
+      inset: 0;
+      content: '';
+      background: rgba(11, 42, 52, 0.3);
+    }
+    & img {
+      object-position: 100% 30%;
+    }
+  }
+
+  /* .news-hero__next-link */
+
+  &__next-link {
+    width: 102rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $stroke;
+    & img {
+      width: 40rem;
+      height: 40rem;
+    }
+  }
+}

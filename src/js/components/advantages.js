@@ -11,7 +11,7 @@ function advantages() {
 
   function initSwiper() {
     const currentMobile = window.innerWidth < 769;
-console.log(currentMobile)
+
     // если состояние не поменялось — не пересоздаём
     if (currentMobile === isMobile && swiper) return;
 

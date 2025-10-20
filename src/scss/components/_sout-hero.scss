@@ -1,0 +1,74 @@
+.sout-hero {
+  /* .sout-hero__container */
+
+  &__container {
+  }
+
+  /* .sout-hero__inner */
+
+  &__inner {
+    position: relative;
+    gap: 32rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .sout-hero__content */
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    gap: 160rem;
+    @include small-tablet {
+      flex-direction: column-reverse;
+      gap: 12rem;
+    }
+  }
+
+  /* .sout-hero__info */
+
+  &__info {
+    gap: 40rem;
+  }
+
+  /* .sout-hero__img */
+
+  &__img {
+    width: 399rem;
+    height: 343rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 343rem;
+      height: 242rem;
+    }
+  }
+
+  /* .sout-hero__text */
+
+  &__text {
+    width: 389rem;
+    gap: 32rem;
+    @include small-tablet {
+      width: 100%;
+      gap: 20rem;
+    }
+  }
+
+  /* .sout-hero__bg */
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 840rem;
+    height: 100%;
+    @include small-tablet {
+      display: none;
+    }
+    & img {
+      position: absolute;
+    }
+  }
+}

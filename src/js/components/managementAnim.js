@@ -94,7 +94,7 @@ function managementAnim() {
         trigger: section,
         start: 'top top',
         pin: true,
-        end: swiperContent.slides.length * 1800,
+        end: swiperContent.slides.length * 2500,
         scrub: true,
         pinSpacer: true,
         invalidateOnRefresh: true,

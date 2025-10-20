@@ -73,6 +73,10 @@ function aboutHero() {
     fadeEffect: {
       crossFade: true
     },
+        autoplay: {
+      delay: 6000,
+      disableOnInteraction: false
+    },
     loop: true,
     allowTouchMove: false,
     navigation: {

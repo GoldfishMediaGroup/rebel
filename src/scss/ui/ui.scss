@@ -46,13 +46,13 @@
     gap: 8rem;
     color: $text-secondary;
     white-space: nowrap;
-    &:not(:last-child)::after {
+    &:not(:last-child):not(:first-child)::before {
       display: inline-block;
       content: '';
       width: 20rem;
       height: 20rem;
       background: no-repeat center/contain
-        url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='9' y='4' width='2' height='12' fill='%23FFC458'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='9' y='4' width='2' height='12' fill='%23919b9e'/%3E%3C/svg%3E");
     }
     &:last-child {
       color: $text-primary;
@@ -60,6 +60,14 @@
       overflow: hidden;
       width: 100%;
       flex-shrink: 1;
+      &::before {
+        display: inline-block;
+        content: '';
+        width: 20rem;
+        height: 20rem;
+        background: no-repeat center/contain
+          url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='9' y='4' width='2' height='12' fill='%23FFC458'/%3E%3C/svg%3E");
+      }
       & p {
         text-overflow: ellipsis;
         overflow: hidden;
@@ -75,6 +83,7 @@
 
 .swiper-grid {
   width: 100%;
+
   @include small-tablet {
     width: calc(100% + 20rem);
     margin: -6rem -10rem !important;
@@ -94,6 +103,11 @@
     @include desk-only {
       width: 100% !important;
       transform: none !important;
+    }
+  }
+  &--3 {
+    & .swiper-wrapper {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -122,13 +136,20 @@
   @include desk-only {
     display: none;
   }
-  position: static !important;
-  & .swiper-pagination-bullet {
-    transition: all 0.3s !important;
-    background: $tertiary-text;
-  }
-  & .swiper-pagination-bullet-active {
-    background: $text-primary;
+  @include small-tablet {
+    &,
+    &--fraction {
+      text-align: center;
+      position: static !important;
+      & .swiper-pagination-bullet {
+        transition: all 0.3s !important;
+        background: $tertiary-text;
+        margin: 0 4rem !important;
+      }
+      & .swiper-pagination-bullet-active {
+        background: $text-primary;
+      }
+    }
   }
 }
 
