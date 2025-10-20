@@ -279,6 +279,19 @@
         & .header__lang-bottom {
           transform: translateY(0);
         }
+        & .header__lang-top {
+          color: $accent;
+          & .header__lang-svg {
+            transform: rotate(-180deg);
+            & path {
+              stroke: $accent;
+            }
+          }
+          & ~ .header__lang-bottom-wrap {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
       }
     }
   }
@@ -289,8 +302,8 @@
     gap: 8rem;
     position: relative;
     z-index: 10;
+    transition: color 0.3s;
     @include desk-only {
-      transition: color 0.3s;
       &:before {
         width: 200%;
         height: 24rem;
