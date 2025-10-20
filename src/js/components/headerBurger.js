@@ -130,6 +130,7 @@ function headerBurger() {
     navItems.forEach((item) => {
       item.addEventListener('click', () => {
         $(item.querySelector('.header__nav-modal')).slideToggle();
+        $(item).toggleClass('isMobOpen')
       });
     });
   }
