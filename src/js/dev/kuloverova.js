@@ -28,6 +28,12 @@ import valuesAnim from '../components/values-anim';
 import managementAnim from '../components/managementAnim';
 import edge from '../components/edge';
 import showMoreMob from '../components/showMoreMob';
+import condsHero from '../components/conds-hero';
+import conds from '../components/conds';
+import newsHero from '../components/news-hero';
+import benefits from '../components/benefits';
+import brandsGallery from '../components/brands-gallery';
+import brandHeroDet from '../components/brandHeroDet';
 
 import { castomScroll } from '../utils/constants';
 
@@ -47,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fancybox();
   headerScroll();
   footerCookieDisclamer();
-  // smoothScroll();
+  smoothScroll();
   headerBurger();
   hero();
   values();
@@ -64,5 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
   edge();
   showMoreMob('.edge__info-text', 920, '435rem', '.edge__show-more');
   castomScroll('.edge__info-text');
-  
+  condsHero();
+  conds();
+  newsHero();
+  benefits();
+  brandsGallery();
+  brandHeroDet();
 });

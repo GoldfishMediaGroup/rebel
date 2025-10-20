@@ -1,0 +1,55 @@
+.env-hero {
+  /* .env-hero__container */
+
+  &__container {
+  }
+
+  /* .env-hero__inner */
+
+  &__inner {
+    gap: 180rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 24rem;
+    }
+  }
+
+  /* .env-hero__content */
+
+  &__content {
+    gap: 32rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .env-hero__info */
+
+  &__info {
+    gap: 32rem;
+    @include small-tablet {
+      gap: 24rem;
+    }
+  }
+
+  /* .env-hero__text */
+
+  &__text {
+    gap: 24rem;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+
+  /* .env-hero__img */
+
+  &__img {
+    width: 834rem;
+    height: 711rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 342rem;
+      height: 262rem;
+    }
+  }
+}

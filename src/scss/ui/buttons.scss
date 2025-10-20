@@ -1,4 +1,11 @@
-
+.swiper-button-perv,
+.swiper-button-next {
+  margin: 0 !important;
+  position: static !important;
+  &::after {
+    display: none;
+  }
+}
 
 .accent-btn {
   width: 398rem;

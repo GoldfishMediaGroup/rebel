@@ -1,4 +1,11 @@
 .edge {
+  &--height {
+    & .edge__info-box {
+      @include desk-only {
+        min-height: 702rem;
+      }
+    }
+  }
   /* .edge__container */
 
   &__container {
@@ -50,7 +57,7 @@
       -webkit-backdrop-filter: blur(20px);
       background: transparent;
       transition: background 0.3s;
-
+      z-index: 10;
       width: 375rem;
       margin: 0 -16rem !important;
       padding: 0 16rem !important;
@@ -75,7 +82,7 @@
     @include small-tablet {
       width: 375rem;
       margin: 0 -16rem !important;
-      padding: 0 16rem !important;
+      padding: 0 16rem 1.5rem !important;
     }
   }
 
@@ -88,7 +95,7 @@
 
   &__tab-slide {
     width: 100% !important;
-    border: 1.5px solid transparent;
+    border: 1.5rem solid transparent;
     padding: 20rem 24rem;
     cursor: pointer;
     @include desk-only {
@@ -97,13 +104,13 @@
     @include small-tablet {
       width: fit-content !important;
       padding: 12rem;
-      border: 1.5px solid $stroke;
+      border: 1.5rem solid $stroke;
       & p {
         font-size: 12rem;
       }
     }
     &.isActive {
-      border: 1.5px solid $accent;
+      border: 1.5rem solid $accent;
       color: $accent;
     }
   }
@@ -111,7 +118,7 @@
   /* .edge__info-box */
 
   &__info-box {
-    border: 2rem solid $text-primary;
+    border: 1.5rem solid $text-primary;
     padding: 27rem 40rem 27rem 293rem;
     position: relative;
     height: auto;
@@ -185,6 +192,9 @@
       gap: 16rem;
       &.isActive {
         & .edge__show-more {
+          &:before {
+            opacity: 0;
+          }
           & > span span {
             &:nth-child(1) {
               position: absolute;
@@ -289,14 +299,31 @@
     }
   }
   &__show-more {
+    position: relative;
+    &::before {
+      z-index: 0;
+      content: '';
+      position: absolute;
+      left: -16rem;
+      right: -16rem;
+      bottom: -16rem;
+      height: 101rem;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, $primary-bg 48%);
+      transform: rotate(180deg);
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.3s;
+    }
     @include desk-only {
       display: none;
     }
+
     &.isHidden {
       display: none;
     }
     & > span {
       position: relative;
+      z-index: 5;
       & span {
         transition: opacity 0.3s;
         left: 0;
@@ -318,5 +345,7 @@
     height: 24rem;
     transform: rotate(90deg);
     transition: transform 0.3s;
+    position: relative;
+    z-index: 5;
   }
 }

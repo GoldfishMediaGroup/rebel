@@ -1,0 +1,51 @@
+.benefits {
+  /* .benefits__container */
+
+  &__container {
+  }
+
+  /* .benefits__inner */
+
+  &__inner {
+    gap: 40rem;
+
+    @include small-tablet {
+      gap: 20rem;
+    }
+  }
+
+  /* .benefits__swiper-box */
+
+  &__swiper-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16rem;
+  }
+
+  /* .benefits__swiper */
+
+  &__swiper {
+    width: 100%;
+  }
+
+  /* .benefits__swiper-wrapper */
+
+  &__swiper-wrapper {
+  }
+
+  /* .benefits__slide */
+
+  &__slide {
+  }
+
+  /* .benefits__pagin */
+
+  &__pagin {
+  }
+  & .value-el {
+    & .txt16 {
+      font-size: 15rem;
+    }
+  }
+}
