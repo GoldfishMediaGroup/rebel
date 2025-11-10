@@ -280,14 +280,21 @@
     & .news-el__arr {
       opacity: 1;
     }
+    & .news-el__title,
+    & .news-el__desc {
+      opacity: 0.2;
+    }
     & .news-el__img {
       transform: translateX(0);
     }
+
+
   }
   /* .news-el__title */
 
   &__title {
     gap: 12rem;
+    transition: opacity 0.3s;
   }
   /* .news-el__name */
 
@@ -306,7 +313,7 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical;    transition: opacity 0.3s;
     @include small-tablet {
       font-size: 15rem;
       -webkit-line-clamp: 4;
