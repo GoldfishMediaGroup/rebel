@@ -1,0 +1,124 @@
+.news-det-info {
+  /* .news-det-info__container */
+
+  &__container {
+  }
+
+  /* .news-det-info__inner */
+
+  &__inner {
+    position: relative;
+    gap: 113rem;
+    @include small-tablet {
+      flex-direction: column;
+      gap: 48rem;
+    }
+  }
+
+  /* .news-det-info__content */
+
+  &__content {
+    width: 987rem;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+    }
+    & img {
+      width: 987rem;
+      height: 555rem;
+      margin: 24rem 0;
+      @include small-tablet {
+        width: 343rem;
+        height: 192rem;
+        margin: 16rem 0;
+      }
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 24rem;
+      text-transform: uppercase;
+      margin-bottom: 20rem;
+      @include small-tablet {
+        margin-bottom: 16rem;
+        font-size: 16rem;
+      }
+      &:not(:first-child) {
+        margin-top: 40rem;
+        @include small-tablet {
+          margin-top: 28rem;
+        }
+      }
+    }
+  }
+
+  /* .news-det-info__aside */
+
+  &__aside {
+    // position: sticky;
+    // top: 130rem;
+    // right: 0;
+    // height: fit-content;
+    gap: 40rem;
+    @include small-tablet {
+      gap: 20rem;
+    }
+    & .news-el {
+      gap: 54rem;
+      min-height: 260rem;
+    }
+
+    & .txt32 {
+      @include small-tablet {
+        font-size: 22rem;
+      }
+    }
+
+    & .news-el__img {
+      width: 250rem;
+    }
+  }
+
+  /* .news-det-info__list-box */
+
+  &__list-box {
+    gap: 24rem;
+  }
+  /* .news-det-info__list */
+
+  &__list {
+    gap: 28rem;
+    @include small-tablet {
+      gap: 12rem;
+    }
+  }
+
+  /* .news-det-info__item */
+
+  &__item {
+  }
+
+  /* .vacancies-list__more */
+
+  &__more {
+    display: none;
+    @include small-tablet {
+      display: flex;
+      align-self: center;
+      gap: 8rem;
+      & .txt24 {
+        font-size: 15rem;
+      }
+    }
+  }
+
+  /* .vacancies-list__more-svg */
+
+  &__more-svg {
+    @include small-tablet {
+      width: 40rem;
+      height: 40rem;
+      width: 25rem;
+      height: 25rem;
+    }
+  }
+}

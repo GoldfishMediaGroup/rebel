@@ -34,6 +34,7 @@ import newsHero from '../components/news-hero';
 import benefits from '../components/benefits';
 import brandsGallery from '../components/brands-gallery';
 import brandHeroDet from '../components/brandHeroDet';
+import newsDetHero from '../components/newsDetHero';
 
 import { castomScroll } from '../utils/constants';
 
@@ -76,4 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
   benefits();
   brandsGallery();
   brandHeroDet();
+  newsDetHero();
 });
