@@ -28,7 +28,8 @@
       height: 555rem;
       margin: 24rem 0;
       @include small-tablet {
-        width: 343rem;
+        // width: 343rem;
+        width: 100%;
         height: 192rem;
         margin: 16rem 0;
       }
