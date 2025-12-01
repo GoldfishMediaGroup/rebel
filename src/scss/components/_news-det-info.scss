@@ -55,10 +55,10 @@
   /* .news-det-info__aside */
 
   &__aside {
-    // position: sticky;
-    // top: 130rem;
-    // right: 0;
-    // height: fit-content;
+    position: sticky;
+    top: 130rem;
+    right: 0;
+    height: fit-content;
     gap: 40rem;
     @include small-tablet {
       gap: 20rem;
