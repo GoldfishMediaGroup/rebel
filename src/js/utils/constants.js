@@ -149,7 +149,7 @@ export function castomScroll(el) {
 
   function init() {
     if (window.innerWidth > 768 && !isDesktop) {
-      // ✅ переключились с мобилки на десктоп
+
       isDesktop = true;
       blocks.forEach(block => {
         if (!block.SimpleBar) {
@@ -157,14 +157,13 @@ export function castomScroll(el) {
         }
       });
     } else if (window.innerWidth <= 768 && isDesktop) {
-      // ✅ переключились с десктопа на мобилку
+
       isDesktop = false;
       simplebars.forEach(sb => {
-        if (sb && sb.unMount) sb.unMount(); // корректно уничтожаем
+        if (sb && sb.unMount) sb.unMount(); 
       });
       simplebars = [];
 
-      // Полностью очищаем DOM от следов SimpleBar
       blocks.forEach(block => {
         const wrapper = block.querySelector('.simplebar-wrapper');
         if (wrapper) {
@@ -177,14 +176,13 @@ export function castomScroll(el) {
     }
   }
 
-  // Инициализация при загрузке
+
   if (isDesktop) {
     blocks.forEach(block => {
       simplebars.push(new SimpleBar(block));
     });
   }
 
-  // Реакция только на "пересечение" порога 768
   window.addEventListener('resize', () => {
     const currentIsDesktop = window.innerWidth > 768;
     if (currentIsDesktop !== isDesktop) {
