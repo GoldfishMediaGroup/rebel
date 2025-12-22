@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   managementAnim();
   edge();
   showMoreMob('.edge__info-text', 920, '435rem', '.edge__show-more');
-  castomScroll('.edge__info-text');
+  // castomScroll('.edge__info-text');
   condsHero();
   conds();
   newsHero();
