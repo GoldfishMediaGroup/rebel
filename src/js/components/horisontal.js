@@ -110,6 +110,7 @@ function horisontal() {
           }, 100);
         }
       }
+      
     });
 
     animTimeline
