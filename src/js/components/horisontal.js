@@ -83,6 +83,8 @@ function horisontal() {
       }
     }
 
+    
+
     let animTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: row,
