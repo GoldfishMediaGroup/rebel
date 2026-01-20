@@ -6,6 +6,8 @@ function horisontal() {
   const section = document.querySelector('.horisontal');
   if (!section) return;
 
+  let isClick = false;
+
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   //фиксация блока со свайпером и кнопкой пропустить
@@ -54,13 +56,16 @@ function horisontal() {
     }
   };
   links.forEach((link, i) => {
+  
     link.href = `#row${i}`;
     link.addEventListener('click', (e) => {
+        isClick = true;
+      links.forEach((innerLink) => innerLink.classList.remove('isActive'));
+      link.classList.add('isActive');
+      navSwiper.slideTo(i);
       setTimeout(() => {
-        links.forEach((innerLink) => innerLink.classList.remove('isActive'));
-        link.classList.add('isActive');
-      }, 300);
-      //  navSwiper.slideTo(i);
+        isClick = false;
+      }, 500);
     });
   });
 
@@ -83,8 +88,6 @@ function horisontal() {
       }
     }
 
-    
-
     let animTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: row,
@@ -95,13 +98,20 @@ function horisontal() {
 
         onEnter: () => {
           ScrollTrigger.refresh();
-          setActiveLink(num);
+          setTimeout(() => {
+            !isClick && setActiveLink(num);
+          }, 100);
         },
         onEnterBack: () => {
           ScrollTrigger.refresh();
-          setActiveLink(num);
+
+          setTimeout(() => {
+            !isClick && setActiveLink(num);
+          }, 100);
         }
       }
+      
+
     });
 
     animTimeline
