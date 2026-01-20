@@ -76,17 +76,17 @@ function managementAnim() {
 
   let swiperContent = initSwiper();
 
-  // Переинициализация при ресайзе
-  window.addEventListener('resize', function () {
-    const isDesktop = window.innerWidth >= 768;
-    const currentIsDesktop = swiperContent.params.allowTouchMove === false;
+  // // Переинициализация при ресайзе
+  // window.addEventListener('resize', function () {
+  //   const isDesktop = window.innerWidth >= 768;
+  //   const currentIsDesktop = swiperContent.params.allowTouchMove === false;
 
-    // Пересоздаем Swiper только если изменился тип устройства
-    if (isDesktop !== currentIsDesktop) {
-      swiperContent.destroy(true, true);
-      swiperContent = initSwiper();
-    }
-  });
+  //   // Пересоздаем Swiper только если изменился тип устройства
+  //   if (isDesktop !== currentIsDesktop) {
+  //     swiperContent.destroy(true, true);
+  //     swiperContent = initSwiper();
+  //   }
+  // });
 
   gsap.matchMedia().add('(min-width: 768px)', () => {
     const animTimeline = gsap.timeline({
