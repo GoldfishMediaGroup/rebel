@@ -88,6 +88,8 @@ function managementAnim() {
   //   }
   // });
 
+  
+
   gsap.matchMedia().add('(min-width: 768px)', () => {
     const animTimeline = gsap.timeline({
       scrollTrigger: {
