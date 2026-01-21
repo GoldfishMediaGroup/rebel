@@ -25,7 +25,7 @@
     }
 
     &.is-bottom {
-      top: auto!important;
+      top: auto !important;
       bottom: 30rem;
     }
     @include small-tablet {
@@ -81,9 +81,9 @@
   }
 
   & .vertical-spacer {
-&[id] {
-margin-top: -100vh;
-}
+    &[id] {
+      margin-top: -100vh;
+    }
   }
 
   /* .horisontal__next-btn */
@@ -184,6 +184,8 @@ margin-top: -100vh;
     display: flex;
     height: 100vh !important;
     height: 100dvh !important;
+    will-change: transform;
+    transform: translateZ(0); /* Включает аппаратное ускорение */
   }
 
   /* .horisontal__screen */

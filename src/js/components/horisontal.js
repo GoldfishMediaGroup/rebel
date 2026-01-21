@@ -9,6 +9,7 @@ function horisontal() {
   let isClick = false;
 
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  gsap.ticker.lagSmoothing(1000, 16);
 
   //фиксация блока со свайпером и кнопкой пропустить
   const nav = section.querySelector('.horisontal__nav');
