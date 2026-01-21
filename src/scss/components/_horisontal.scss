@@ -4,6 +4,8 @@
   padding: 0;
   position: relative;
   overflow: visible;
+  // content-visibility: auto;
+  // contain: paint;
   @include small-tablet {
   }
   /* .horisontal__inner */
@@ -185,7 +187,9 @@
     height: 100vh !important;
     height: 100dvh !important;
     will-change: transform;
-    transform: translateZ(0); /* Включает аппаратное ускорение */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   /* .horisontal__screen */

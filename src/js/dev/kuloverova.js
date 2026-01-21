@@ -46,36 +46,41 @@ if (history.scrollRestoration) {
 }
 window.scrollTo(0, 0);
 
+gsap.registerPlugin(ScrollTrigger);
+smoothScroll();
+
 document.addEventListener('DOMContentLoaded', () => {
-  gsap.registerPlugin(ScrollTrigger);
   popup();
   form();
   scroll();
   fancybox();
-  headerScroll();
-  footerCookieDisclamer();
-  smoothScroll();
-  headerBurger();
-  hero();
-  values();
-  cooperations();
-  horisontal();
-  dna();
-  vacancies();
-  news();
-  advantages();
-  gallery();
-  aboutHero();
-  valuesAnim();
-  managementAnim();
-  edge();
-  showMoreMob('.edge__info-text', 920, '435rem', '.edge__show-more');
-  // castomScroll('.edge__info-text');
-  condsHero();
-  conds();
-  newsHero();
-  benefits();
-  brandsGallery();
-  brandHeroDet();
-  newsDetHero();
+
+    headerScroll();
+    footerCookieDisclamer();
+    headerBurger();
+    hero();
+    values();
+    cooperations();
+    horisontal();
+    dna();
+    vacancies();
+    news();
+    advantages();
+    gallery();
+    aboutHero();
+    valuesAnim();
+    managementAnim();
+    edge();
+    showMoreMob('.edge__info-text', 920, '435rem', '.edge__show-more');
+    // castomScroll('.edge__info-text');
+    condsHero();
+    conds();
+    newsHero();
+    benefits();
+    brandsGallery();
+    brandHeroDet();
+    newsDetHero();
+});
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
 });
