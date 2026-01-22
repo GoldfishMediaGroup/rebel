@@ -48,6 +48,7 @@
       margin-top: 0;
       width: 375rem;
     }
+
   }
 
   &__nav-swiper {
@@ -227,7 +228,7 @@
     height: 100dvh;
     will-change: transform;
     @include small-tablet {
-      width: 100%;
+      width: 375rem;
     }
 
     &--1 {
@@ -308,7 +309,9 @@
         width: 100%;
         @include small-tablet {
           padding: 0;
-          width: 100%;
+          width: 375rem;
+          margin: 0 -16rem;
+          padding: 0 16rem;
           height: auto;
           border: unset;
           gap: 20rem;
