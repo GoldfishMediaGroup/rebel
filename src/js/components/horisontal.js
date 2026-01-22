@@ -7,93 +7,32 @@ function horisontal() {
   const section = document.querySelector('.horisontal');
   if (!section) return;
 
+  const isMobile = window.innerWidth < 768;
+
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   gsap.ticker.lagSmoothing(1000, 16);
 
-  //фиксация блока со свайпером и кнопкой пропустить
-  const nav = section.querySelector('.horisontal__nav');
-
-  ScrollTrigger.create({
-    trigger: section,
-    start: 'top top',
-    end: 'bottom bottom',
-    onEnter: () => {
-      nav.classList.add('is-fixed');
-    },
-    onLeave: () => {
-      nav.classList.remove('is-fixed');
-      nav.classList.add('is-bottom');
-    },
-    onEnterBack: () => {
-      nav.classList.add('is-fixed');
-      nav.classList.remove('is-bottom');
-    },
-    onLeaveBack: () => {
-      nav.classList.remove('is-fixed');
-    }
-  });
-
-  const navSwiperEl = section.querySelector('.horisontal__nav-swiper');
-  const navSwiper = new Swiper(navSwiperEl, {
-    slidesPerView: 'auto',
-    spaceBetween: rem(0.8),
-    breakpoints: {
-      768: {
-        spaceBetween: rem(3.2)
-      }
-    }
-  });
-
-  const links = section.querySelectorAll('.horisontal__nav-link');
-
-  const setActiveLink = (index) => {
-    links.forEach((link, i) => {
-      link.classList.toggle('isActive', i === index);
-    });
-    if (navSwiper) {
-      navSwiper.slideTo(index);
-    }
-  };
-
-  links.forEach((link, i) => {
-    link.href = `#row${i}`;
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      links.forEach((innerLink) => innerLink.classList.remove('isActive'));
-      link.classList.add('isActive');
-
-      if (navSwiper) navSwiper.slideTo(i);
-
-      const targetId = link.getAttribute('href');
-
-      lenis.scrollTo(targetId, {
-        offset: 0,
-        immediate: true
-      });
-    });
-  });
-
   const rows = section.querySelectorAll('.horisontal__row');
+  const links = section.querySelectorAll('.horisontal__nav-link');
+  const navSwiperEl = section.querySelector('.horisontal__nav-swiper');
+  let navSwiper;
 
   rows.forEach((row, num) => {
+    row.id = `row${num}`;
+
     const innerSectionCount = row.querySelectorAll('.horisontal__screen').length;
-    row.style.width = `${innerSectionCount * 100}vw`;
+    const innerWrapp = row.querySelector('.horisontal__screen-wrapp');
 
-    const inner = row.querySelector('.horisontal__row-inner');
+    const calculatedHeight = isMobile ? `${innerSectionCount * 300}vw` : `${innerSectionCount * 150}vw`;
 
-    const spacer = document.createElement('div');
-    spacer.id = `row${num}`;
-    spacer.classList.add('vertical-spacer');
-    spacer.style.minHeight = `${innerSectionCount}00vh`;
-    spacer.style.height = `${innerSectionCount}00vh`;
-    row.after(spacer);
+    innerWrapp.style.width = `${innerSectionCount * 100}vw`;
+    row.style.height = calculatedHeight;
 
     let animTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: row,
-        start: 'top top',
-        pin: true,
-        end: num === rows.length - 1 ? `+=${(innerSectionCount - 1) * 100}%` : `+=${(innerSectionCount - 0.1) * 100}%`,
+        start: 'top 10px',
+        end: 'bottom bottom',
         scrub: true,
         onEnter: () => {
           setActiveLink(num);
@@ -106,18 +45,51 @@ function horisontal() {
 
     animTimeline
       .to(
-        inner,
+        innerWrapp,
         {
-          x: `-${100 - 100 / innerSectionCount}%`,
+          xPercent: `-${100 - 100 / innerSectionCount}`,
           duration: 0.8
         },
         '<'
       )
-      .to(inner, {
+      .to(innerWrapp, {
         opacity: num === rows.length - 1 ? 1 : 0,
         duration: 0.2
       });
   });
+
+  links.forEach((link, i) => {
+    link.href = `#row${i}`;
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      // links.forEach((innerLink) => innerLink.classList.remove('isActive'));
+      // link.classList.add('isActive');
+
+      // if (navSwiper) navSwiper.slideTo(i);
+
+      const targetId = link.getAttribute('href');
+      lenis.scrollTo(targetId, {
+        offset: 0,
+        immediate: true
+      });
+    });
+  });
+
+  navSwiper = new Swiper(navSwiperEl, {
+    slidesPerView: 'auto',
+    spaceBetween: rem(0.8),
+    breakpoints: {
+      768: {
+        spaceBetween: rem(3.2)
+      }
+    }
+  });
+
+  function setActiveLink(num) {
+    links.forEach((innerLink) => innerLink.classList.remove('isActive'));
+    links[num].classList.add('isActive');
+    if (navSwiper) navSwiper.slideTo(num);
+  }
 }
 
 export default horisontal;
