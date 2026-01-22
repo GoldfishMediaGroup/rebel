@@ -46,7 +46,7 @@
       top: calc(100vh - 50rem);
       top: calc(100dvh - 50rem);
       margin-top: 0;
-      width: 100%;
+      width: 375rem;
     }
   }
 
@@ -226,6 +226,9 @@
     height: 100vh;
     height: 100dvh;
     will-change: transform;
+    @include small-tablet {
+      width: 100%;
+    }
 
     &--1 {
       & .horisontal__img {
