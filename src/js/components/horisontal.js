@@ -25,7 +25,7 @@ function horisontal() {
 
     const calculatedHeight = isMobile ? `${innerSectionCount * 300}vw` : `${innerSectionCount * 150}vw`;
 
-    innerWrapp.style.width = `${innerSectionCount * 100}vw`;
+    // innerWrapp.style.width = `${innerSectionCount * 100}vw`;
     row.style.height = calculatedHeight;
 
     let animTimeline = gsap.timeline({
@@ -57,18 +57,11 @@ function horisontal() {
         duration: 0.2
       });
   });
-
+  
   links.forEach((link, i) => {
-    link.href = `#row${i}`;
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      // links.forEach((innerLink) => innerLink.classList.remove('isActive'));
-      // link.classList.add('isActive');
-
-      // if (navSwiper) navSwiper.slideTo(i);
-
-      const targetId = link.getAttribute('href');
-      lenis.scrollTo(targetId, {
+      lenis.scrollTo(`#row${i}`, {
         offset: 0,
         immediate: true
       });
