@@ -94,7 +94,6 @@ function horisontal() {
   const isMobile = window.innerWidth < 768;
   const calculatedHeight = isMobile ? `1600px` : `2000px`;
 
-
   const cards = section.querySelectorAll('.horisontal__card');
   const brandCards = Array.from(cards).filter((card) => card.querySelector('.horisontal__screen--1'));
 
@@ -116,6 +115,9 @@ function horisontal() {
       })
       .to(card, {
         opacity: num === cards.length - 1 ? 1 : 0,
+        scale: num === cards.length - 1 ?
+         1 : 
+         card.querySelector('.horisontal__screen--3') ? 0.7 : 1,
         duration: 0.8
       });
 
