@@ -161,8 +161,42 @@
   }
 
   /* .management-anim__pagination */
+  &__pagination-box {
+        @include desk-only {
+    position: absolute;
+    bottom: -90rem;
+    width: 694rem;
+    right: 0;
+  }
+  }
 
+  &__pagination-num {
+    position: absolute;
+    top: -40rem;
+  }
+
+  &__pagination-current {
+    left: 0;
+  }
+  &__pagination-all {
+    right: 0;
+    opacity: 0.5;
+  }
   &__pagination {
+    display: flex !important;
+    @include desk-only {
+      background: $text-primary !important;
+      height: 2rem !important;
+      // top: auto !important;
+      // left: auto !important;
+      // bottom: -90rem !important;
+      & .swiper-pagination-progressbar-fill {
+        background: $accent !important;
+      }
+    }
+    @include small-tablet {
+      justify-content: center;
+    }
   }
 
   /* .management-anim__next-btn */
@@ -180,7 +214,9 @@
     bottom: 20rem;
     right: -70rem;
     z-index: 10;
-    transition: color 0.3s, background 0.3s;
+    transition:
+      color 0.3s,
+      background 0.3s;
     padding: 16rem;
     &:hover {
       color: $dark;
