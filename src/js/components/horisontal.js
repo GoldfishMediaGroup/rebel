@@ -85,6 +85,90 @@ import { lenis } from './smoothScroll';
 //   }
 // }
 
+// function horisontal() {
+//   const section = document.querySelector('.horisontal');
+//   if (!section) return;
+
+//   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+//   const isMobile = window.innerWidth < 768;
+//   const calculatedHeight = isMobile ? `1600px` : `2000px`;
+
+//   const cards = section.querySelectorAll('.horisontal__card');
+//   const brandCards = Array.from(cards).filter((card) => card.querySelector('.horisontal__screen--1'));
+
+//   const links = section.querySelectorAll('.horisontal__nav-link');
+//   const navSwiperEl = section.querySelector('.horisontal__nav-swiper');
+//   let navSwiper;
+
+//   cards.forEach((card, num) => {
+//     card.style.height = calculatedHeight;
+// const nextCard = cards[num + 1];
+//   const hasNextScreen1 = nextCard && nextCard.querySelector('.horisontal__screen--1');
+//     gsap
+//       .timeline({
+//         scrollTrigger: {
+//           trigger: card,
+//           start: '50% 80%',
+//           end: 'bottom bottom',
+//           scrub: true
+//         }
+//       })
+//       .to(card, {
+//         opacity: num === cards.length - 1 ? 1 : 0,
+//         // scale: num === cards.length - 1 ?
+//         //  1 : 
+//         //  hasNextScreen1 ? 0.7 : 1,
+//         duration: 0.8
+//       });
+
+//     if (card.querySelector('.horisontal__screen--1')) {
+//       const brandIndex = brandCards.indexOf(card);
+
+//       card.id = `card${brandIndex}`;
+
+//       ScrollTrigger.create({
+//         trigger: card,
+//         start: 'top 80%',
+//         end: 'bottom bottom',
+//         scrub: true,
+//         onEnter: () => setActiveLink(brandIndex),
+//         onLeaveBack: () => {
+//           if (brandIndex > 0) {
+//             setActiveLink(brandIndex - 1);
+//           }
+//         }
+//       });
+//     }
+//   });
+
+//   links.forEach((link, i) => {
+//     link.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       lenis.scrollTo(`#card${i}`, {
+//         offset: 0,
+//         immediate: true
+//       });
+//     });
+//   });
+
+//   navSwiper = new Swiper(navSwiperEl, {
+//     slidesPerView: 'auto',
+//     spaceBetween: rem(0.8),
+//     breakpoints: {
+//       768: {
+//         spaceBetween: rem(3.2)
+//       }
+//     }
+//   });
+
+//   function setActiveLink(num) {
+//     links.forEach((innerLink) => innerLink.classList.remove('isActive'));
+//     links[num].classList.add('isActive');
+//     if (navSwiper) navSwiper.slideTo(num);
+//   }
+// }
+
 function horisontal() {
   const section = document.querySelector('.horisontal');
   if (!section) return;
@@ -103,42 +187,24 @@ function horisontal() {
 
   cards.forEach((card, num) => {
     card.style.height = calculatedHeight;
-const nextCard = cards[num + 1];
-  const hasNextScreen1 = nextCard && nextCard.querySelector('.horisontal__screen--1');
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: card,
-          start: '50% 80%',
-          end: 'bottom bottom',
-          scrub: true
-        }
-      })
-      .to(card, {
-        opacity: num === cards.length - 1 ? 1 : 0,
-        // scale: num === cards.length - 1 ?
-        //  1 : 
-        //  hasNextScreen1 ? 0.7 : 1,
-        duration: 0.8
-      });
 
     if (card.querySelector('.horisontal__screen--1')) {
       const brandIndex = brandCards.indexOf(card);
 
       card.id = `card${brandIndex}`;
 
-      ScrollTrigger.create({
-        trigger: card,
-        start: 'top 80%',
-        end: 'bottom bottom',
-        scrub: true,
-        onEnter: () => setActiveLink(brandIndex),
-        onLeaveBack: () => {
-          if (brandIndex > 0) {
-            setActiveLink(brandIndex - 1);
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+          onEnter: () => setActiveLink(brandIndex),
+          onLeaveBack: () => {
+            if (brandIndex > 0) {
+              setActiveLink(brandIndex - 1);
+            }
           }
-        }
-      });
+        });
     }
   });
 
