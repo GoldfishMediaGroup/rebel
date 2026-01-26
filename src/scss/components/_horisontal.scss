@@ -696,7 +696,7 @@
   &__card {
     position: relative;
     max-height: none !important;
-    will-change: transform;
+
     display: flex;
     &:not(:last-of-type) {
       margin-bottom: (-100vh);
@@ -717,7 +717,7 @@
     max-width: 1920rem;
     // width: 100vw;
     overflow: hidden;
-    will-change: transform;
+  
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -730,7 +730,7 @@
     width: 1920rem;
     height: 100vh;
     // height: 100dvh;
-    will-change: transform;
+
     @include small-tablet {
       width: 375rem;
     }

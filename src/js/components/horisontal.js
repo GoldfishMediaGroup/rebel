@@ -103,7 +103,8 @@ function horisontal() {
 
   cards.forEach((card, num) => {
     card.style.height = calculatedHeight;
-
+const nextCard = cards[num + 1];
+  const hasNextScreen1 = nextCard && nextCard.querySelector('.horisontal__screen--1');
     gsap
       .timeline({
         scrollTrigger: {
@@ -115,9 +116,9 @@ function horisontal() {
       })
       .to(card, {
         opacity: num === cards.length - 1 ? 1 : 0,
-        scale: num === cards.length - 1 ?
-         1 : 
-         card.querySelector('.horisontal__screen--3') ? 0.7 : 1,
+        // scale: num === cards.length - 1 ?
+        //  1 : 
+        //  hasNextScreen1 ? 0.7 : 1,
         duration: 0.8
       });
 
