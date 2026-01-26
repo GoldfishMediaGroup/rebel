@@ -48,7 +48,10 @@
       &.swiper-slide-active {
         width: 184rem !important;
         height: 264rem !important;
-        transition: width 0.8s, height 0.8s, opacity 0.8s !important;
+        transition:
+          width 0.8s,
+          height 0.8s,
+          opacity 0.8s !important;
       }
       opacity: 0;
       &.swiper-slide-active {
@@ -145,6 +148,21 @@
     @include small-tablet {
       margin-right: 0;
       gap: 12rem;
+    }
+  }
+
+  // .brand-hero-det__details-wrapp
+
+  &__details-wrapp {
+    gap: 48rem;
+  }
+
+  // .brand-hero-det__details-text
+
+  &__details-text {
+    margin-top: 104rem;
+    @include small-tablet {
+      display: none;
     }
   }
 

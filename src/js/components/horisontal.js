@@ -3,65 +3,146 @@ import Swiper from 'swiper/bundle';
 import { rem } from '../utils/constants';
 import { lenis } from './smoothScroll';
 
+// function horisontal() {
+//   const section = document.querySelector('.horisontal');
+//   if (!section) return;
+
+//   const isMobile = window.innerWidth < 768;
+
+//   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+//   gsap.ticker.lagSmoothing(1000, 16);
+
+//   const rows = section.querySelectorAll('.horisontal__row');
+//   const links = section.querySelectorAll('.horisontal__nav-link');
+//   const navSwiperEl = section.querySelector('.horisontal__nav-swiper');
+//   let navSwiper;
+
+//   rows.forEach((row, num) => {
+//     row.id = `row${num}`;
+
+//     const innerSectionCount = row.querySelectorAll('.horisontal__screen').length;
+//     const innerWrapp = row.querySelector('.horisontal__screen-wrapp');
+
+//     const calculatedHeight = isMobile ? `${innerSectionCount * 300}vw` : `${innerSectionCount * 150}vw`;
+
+//     // innerWrapp.style.width = `${innerSectionCount * 100}vw`;
+//     row.style.height = calculatedHeight;
+
+//     let animTimeline = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: row,
+//         start: 'top 10px',
+//         end: 'bottom bottom',
+//         scrub: true,
+//         onEnter: () => {
+//           setActiveLink(num);
+//         },
+//         onEnterBack: () => {
+//           setActiveLink(num);
+//         }
+//       }
+//     });
+
+//     animTimeline
+//       .to(
+//         innerWrapp,
+//         {
+//           xPercent: `-${100 - 100 / innerSectionCount}`,
+//           duration: 0.8
+//         },
+//         '<'
+//       )
+//       .to(innerWrapp, {
+//         opacity: num === rows.length - 1 ? 1 : 0,
+//         duration: 0.2
+//       });
+//   });
+
+//   links.forEach((link, i) => {
+//     link.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       lenis.scrollTo(`#row${i}`, {
+//         offset: 0,
+//         immediate: true
+//       });
+//     });
+//   });
+
+//   navSwiper = new Swiper(navSwiperEl, {
+//     slidesPerView: 'auto',
+//     spaceBetween: rem(0.8),
+//     breakpoints: {
+//       768: {
+//         spaceBetween: rem(3.2)
+//       }
+//     }
+//   });
+
+//   function setActiveLink(num) {
+//     links.forEach((innerLink) => innerLink.classList.remove('isActive'));
+//     links[num].classList.add('isActive');
+//     if (navSwiper) navSwiper.slideTo(num);
+//   }
+// }
+
 function horisontal() {
   const section = document.querySelector('.horisontal');
   if (!section) return;
 
-  const isMobile = window.innerWidth < 768;
-
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-  gsap.ticker.lagSmoothing(1000, 16);
 
-  const rows = section.querySelectorAll('.horisontal__row');
+  const isMobile = window.innerWidth < 768;
+  const calculatedHeight = isMobile ? `1600px` : `2000px`;
+
+
+  const cards = section.querySelectorAll('.horisontal__card');
+  const brandCards = Array.from(cards).filter((card) => card.querySelector('.horisontal__screen--1'));
+
   const links = section.querySelectorAll('.horisontal__nav-link');
   const navSwiperEl = section.querySelector('.horisontal__nav-swiper');
   let navSwiper;
 
-  rows.forEach((row, num) => {
-    row.id = `row${num}`;
+  cards.forEach((card, num) => {
+    card.style.height = calculatedHeight;
 
-    const innerSectionCount = row.querySelectorAll('.horisontal__screen').length;
-    const innerWrapp = row.querySelector('.horisontal__screen-wrapp');
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: '50% 80%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+      .to(card, {
+        opacity: num === cards.length - 1 ? 1 : 0,
+        duration: 0.8
+      });
 
-    const calculatedHeight = isMobile ? `${innerSectionCount * 300}vw` : `${innerSectionCount * 150}vw`;
+    if (card.querySelector('.horisontal__screen--1')) {
+      const brandIndex = brandCards.indexOf(card);
 
-    // innerWrapp.style.width = `${innerSectionCount * 100}vw`;
-    row.style.height = calculatedHeight;
+      card.id = `card${brandIndex}`;
 
-    let animTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: row,
-        start: 'top 10px',
+      ScrollTrigger.create({
+        trigger: card,
+        start: 'top 80%',
         end: 'bottom bottom',
         scrub: true,
-        onEnter: () => {
-          setActiveLink(num);
-        },
-        onEnterBack: () => {
-          setActiveLink(num);
+        onEnter: () => setActiveLink(brandIndex),
+        onLeaveBack: () => {
+          if (brandIndex > 0) {
+            setActiveLink(brandIndex - 1);
+          }
         }
-      }
-    });
-
-    animTimeline
-      .to(
-        innerWrapp,
-        {
-          xPercent: `-${100 - 100 / innerSectionCount}`,
-          duration: 0.8
-        },
-        '<'
-      )
-      .to(innerWrapp, {
-        opacity: num === rows.length - 1 ? 1 : 0,
-        duration: 0.2
       });
+    }
   });
 
   links.forEach((link, i) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      lenis.scrollTo(`#row${i}`, {
+      lenis.scrollTo(`#card${i}`, {
         offset: 0,
         immediate: true
       });
@@ -194,4 +275,3 @@ function horisontal() {
 // }
 
 export default horisontal;
-
