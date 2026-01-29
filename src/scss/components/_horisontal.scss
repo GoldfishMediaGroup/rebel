@@ -696,7 +696,7 @@
   &__card {
     position: relative;
     max-height: none !important;
-background: $primary-bg;
+    background: $primary-bg;
     display: flex;
     &:not(:last-of-type) {
       margin-bottom: (-100vh);
@@ -717,7 +717,7 @@ background: $primary-bg;
     max-width: 1920rem;
     // width: 100vw;
     overflow: hidden;
-  
+
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
