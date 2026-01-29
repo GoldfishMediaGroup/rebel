@@ -1,4 +1,6 @@
 .horisontal {
+  height: 100vh;
+  overflow: hidden;
   // .horisontal__inner
 
   &__inner {
@@ -61,8 +63,6 @@
   }
 
   &__screen {
-
-
     &--1 {
       & .horisontal__img {
         position: absolute;
@@ -416,11 +416,4 @@
   }
 }
 
-// .horisontal__screen
-.horisontal__screen {
-  pointer-events: none;
-}
-.horisontal__screen a,
-.horisontal__screen button {
-  pointer-events: auto;
-}
+
