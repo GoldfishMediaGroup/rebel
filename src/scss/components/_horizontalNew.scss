@@ -2,8 +2,8 @@
   // .horisontal__inner
 
   &__inner {
-height: 100vh; 
-  overflow: hidden;
+    height: 100vh;
+    overflow: hidden;
   }
 
   // .horisontal__nav
@@ -53,16 +53,15 @@ height: 100vh;
     width: 100vw;
     height: 100vh;
     position: relative;
-    contain: paint;
+  }
+
+  &__swiper {
+    width: 100vw !important;
+    height: 100vh !important;
   }
 
   &__screen {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    visibility: hidden;
 
-    inset: 0;
 
     &--1 {
       & .horisontal__img {
