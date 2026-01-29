@@ -60,6 +60,7 @@
     height: 100vh;
     position: absolute;
     background: $primary-bg;
+    will-change: transform;
     inset: 0;
     &--1 {
       & .horisontal__img {
