@@ -34,7 +34,8 @@ function horisontalNew() {
       end: `+=${cards.length * 200}%`,
       pin: true,
       scrub: 1.5,
-      invalidateOnRefresh: true
+      invalidateOnRefresh: true,
+      anticipatePin: 1
     }
   });
 
