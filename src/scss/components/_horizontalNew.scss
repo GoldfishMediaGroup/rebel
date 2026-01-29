@@ -2,6 +2,8 @@
   // .horisontal__inner
 
   &__inner {
+height: 100vh; 
+  overflow: hidden;
   }
 
   // .horisontal__nav
@@ -51,17 +53,17 @@
     width: 100vw;
     height: 100vh;
     position: relative;
+    contain: paint;
   }
-
-  // .horisontal__screen
 
   &__screen {
     width: 100vw;
     height: 100vh;
     position: absolute;
+    visibility: hidden;
 
-    will-change: transform;
     inset: 0;
+
     &--1 {
       & .horisontal__img {
         position: absolute;
@@ -413,4 +415,13 @@
 
   &__img-img {
   }
+}
+
+// .horisontal__screen
+.horisontal__screen {
+  pointer-events: none;
+}
+.horisontal__screen a,
+.horisontal__screen button {
+  pointer-events: auto;
 }

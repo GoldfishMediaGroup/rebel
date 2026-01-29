@@ -10,16 +10,16 @@ function horisontalNew() {
   const cards = gsap.utils.toArray('.horisontal__screen');
 
   gsap.set(cards, {
-    // Проверяем каждую карточку индивидуально
+    force3D: true,
+
     x: (i, target) => {
-      if (i === 0) return 0; // Первую не трогаем
-      // Если класса нет — двигаем вправо на ширину окна, если есть — оставляем 0
+      if (i === 0) return 0;
+
       return !target.classList.contains('horisontal__screen--1') ? window.innerWidth + 100 : i * -3;
     },
 
     y: (i, target) => {
-      if (i === 0) return 0; // Первую не трогаем
-      // Если класс есть — двигаем вниз, если нет — оставляем 0
+      if (i === 0) return 0;
       return target.classList.contains('horisontal__screen--1') ? window.innerHeight + 100 : 0;
     },
 
@@ -33,8 +33,9 @@ function horisontalNew() {
       start: 'top top',
       end: `+=${cards.length * 200}%`,
       pin: true,
-      scrub: 2,
-      invalidateOnRefresh: true
+      scrub: 1.5,
+      invalidateOnRefresh: true,
+      anticipatePin: 1
     }
   });
 
@@ -43,19 +44,28 @@ function horisontalNew() {
       y: 0,
       x: 0,
       duration: 1,
-      ease: 'power2.out'
+      ease: 'power1.inOut',
+      onStart: () => {
+        card.style.willChange = 'transform, opacity';
+      },
+      // ВЫКЛЮЧАЕМ, когда анимация закончилась, чтобы освободить память GPU
+      onComplete: () => {
+        card.style.willChange = 'auto';
+      }
     });
     if (cards[i - 1]) {
+      const isVertical = card.classList.contains('horisontal__screen--1');
       tl.to(
         cards[i - 1],
         {
-          opacity: cards[i].classList.contains('horisontal__screen--1') ? 0 : 1,
-          x: cards[i].classList.contains('horisontal__screen--1') ?  0  : '-100%',
-
+          opacity: isVertical ? 0 : 1,
+          x: isVertical ? 0 : '-100%',
+          force3D: true, // Критично для плавности уходящей карты
+          force3D: true,
           duration: 0.8,
           ease: 'power1.out'
         },
-        '-=1',
+        '-=0.8', // Синхронизируем чуть точнее
         ''
       );
     }

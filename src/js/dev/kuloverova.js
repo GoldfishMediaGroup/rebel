@@ -47,10 +47,11 @@ if (history.scrollRestoration) {
 }
 window.scrollTo(0, 0);
 
-gsap.registerPlugin(ScrollTrigger);
 smoothScroll();
 
 document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.ticker.fps(60);
   popup();
   form();
   scroll();
