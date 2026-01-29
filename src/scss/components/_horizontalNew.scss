@@ -1,10 +1,15 @@
 .horisontal {
   height: 100vh;
-  overflow: hidden;
+  position: relative;
+  overflow: visible;
+
   // .horisontal__inner
 
   &__inner {
     height: 100vh;
+
+    position: sticky;
+    top: 0;
     overflow: hidden;
   }
 
@@ -415,5 +420,3 @@
   &__img-img {
   }
 }
-
-
