@@ -45,15 +45,20 @@ function horisontalNew() {
       duration: 1,
       ease: 'power2.out'
     });
+    if (cards[i - 1]) {
+      tl.to(
+        cards[i - 1],
+        {
+          opacity: cards[i].classList.contains('horisontal__screen--1') ? 0 : 1,
+          x: cards[i].classList.contains('horisontal__screen--1') ?  0  : '-100%',
 
-    tl.to(
-      card,
-      {
-        duration: 0.8,
-        ease: 'power1.out'
-      },
-      ''
-    );
+          duration: 0.8,
+          ease: 'power1.out'
+        },
+        '-=1',
+        ''
+      );
+    }
   });
 }
 
