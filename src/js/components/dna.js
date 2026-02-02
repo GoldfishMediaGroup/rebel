@@ -18,7 +18,8 @@ function dna() {
     breakpoints: {
       769: {
         slidesPerView: 'auto',
-        allowTouchMove: false
+        allowTouchMove: false,
+        loop: false
       }
     }
   });
