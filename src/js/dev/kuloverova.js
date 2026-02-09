@@ -1,13 +1,3 @@
-import smoothScroll from '../components/smoothScroll';
-// smoothScroll();
-
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
-import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, ScrollToPlugin } from 'gsap/all';
-window.$ = window.jQuery = require('jquery');
-
-import { rem } from '../utils/constants';
-
 import popup from '../utils/popup';
 import form from '../utils/form';
 import scroll from '../utils/scroll';
@@ -19,7 +9,6 @@ import headerScroll from '../components/headerScroll';
 import hero from '../components/hero';
 import values from '../components/values';
 import cooperations from '../components/cooperations';
-// import horisontal from '../components/horisontal';
 import horisontalNew2 from '../components/horisontalNew2';
 import dna from '../components/dna';
 import vacancies from '../components/vacancies';
@@ -39,19 +28,9 @@ import brandsGallery from '../components/brands-gallery';
 import brandHeroDet from '../components/brandHeroDet';
 import newsDetHero from '../components/newsDetHero';
 
-import { castomScroll } from '../utils/constants';
-
-import '../libs/dynamic_adapt';
-
 export const modules = {};
-gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (history.scrollRestoration) {
-    history.scrollRestoration = 'manual';
-  }
-  window.scrollTo(0, 0);
-  document.body.style.opacity = 1;
   popup();
   form();
   scroll();
@@ -63,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
   hero();
   values();
   cooperations();
-  // horisontal();
   horisontalNew2();
   dna();
   vacancies();
@@ -75,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
   managementAnim();
   edge();
   showMoreMob('.edge__info-text', 920, '435rem', '.edge__show-more');
-  // castomScroll('.edge__info-text');
   condsHero();
   conds();
   newsHero();
@@ -84,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   brandHeroDet();
   newsDetHero();
 });
-window.addEventListener('load', () => {
-  ScrollTrigger.refresh();
-});
+
+
+
+import '../libs/dynamic_adapt';
