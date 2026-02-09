@@ -67,6 +67,7 @@ function horisontalNew2() {
     scrub: 1,
     pin: true,
     invalidateOnRefresh: true,
+    anticipatePin: true,
     onUpdate: (self) => {
       const currentTime = self.progress * masterTl.duration();
       
