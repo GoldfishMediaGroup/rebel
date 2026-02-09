@@ -18,7 +18,7 @@ import hero from '../components/hero';
 import values from '../components/values';
 import cooperations from '../components/cooperations';
 // import horisontal from '../components/horisontal';
-import horisontalNew from '../components/horisontalNew';
+import horisontalNew2 from '../components/horisontalNew2';
 import dna from '../components/dna';
 import vacancies from '../components/vacancies';
 import news from '../components/news';
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   values();
   cooperations();
   // horisontal();
-  horisontalNew();
+  horisontalNew2();
   dna();
   vacancies();
   news();
