@@ -423,7 +423,7 @@
 
 //   // .horisontal__img-img
 
-//   &__img-img {
+//   &__img-img {backdrop-filter
 //   }
 // }
 
@@ -482,8 +482,7 @@
   }
 
   &__nav-swiper {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+
     background: $background;
     margin: 0 !important;
     width: fit-content !important;
@@ -535,8 +534,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 12rem;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+
     background: $background;
     top: 0;
     right: 90rem;
