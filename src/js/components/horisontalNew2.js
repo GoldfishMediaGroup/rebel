@@ -64,7 +64,7 @@ function horisontalNew2() {
     start: 'top top',
     end: () => `+=${masterTl.duration() * window.innerHeight}`,
     animation: masterTl,
-    scrub: 1,
+    scrub: 0.3,
     pin: true,
     invalidateOnRefresh: true,
     anticipatePin: true,
