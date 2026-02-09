@@ -1,7 +1,8 @@
 .horisontal {
   position: relative;
   width: 100%;
-  background: $primary-bg;
+  height: 100vh;
+
 }
 
 .horisontal__container {
@@ -19,6 +20,7 @@
   width: 100%;
   height: 100vh;
   will-change: transform;
+     background: $primary-bg;
   // Важно: фон должен быть непрозрачным
 
   // Раскладываем слои
@@ -40,7 +42,7 @@
 .horisontal__nav {
   position: absolute;
   z-index: 10;
-  bottom: 40rem;
+  bottom: 110rem;
   left: 0;
 
   width: 1880rem;
