@@ -64,7 +64,7 @@ function horisontalNew2() {
     start: 'top top',
     end: () => `+=${masterTl.duration() * window.innerHeight}`,
     animation: masterTl,
-    scrub: 0.3,
+    scrub: true,
     pin: true,
     invalidateOnRefresh: true,
     anticipatePin: true,
@@ -101,7 +101,7 @@ function horisontalNew2() {
       e.preventDefault();
       const scrollPos = mainST.labelToScroll(`brand-${i}`);
       
-      gsap.to(window, { duration: 0.8, scrollTo: scrollPos, ease: "power2.inOut" });
+      gsap.to(window, { duration: 0, scrollTo: scrollPos, ease: "power2.inOut" });
     });
   });
 }

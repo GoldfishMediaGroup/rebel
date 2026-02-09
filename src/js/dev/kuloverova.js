@@ -1,3 +1,6 @@
+import smoothScroll from '../components/smoothScroll';
+// smoothScroll();
+
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, ScrollToPlugin } from 'gsap/all';
@@ -10,7 +13,6 @@ import form from '../utils/form';
 import scroll from '../utils/scroll';
 import fancybox from '../utils/fancybox';
 
-import smoothScroll from '../components/smoothScroll';
 import headerBurger from '../components/headerBurger';
 import footerCookieDisclamer from '../components/footerCookieDisclamer';
 import headerScroll from '../components/headerScroll';
@@ -42,16 +44,14 @@ import { castomScroll } from '../utils/constants';
 import '../libs/dynamic_adapt';
 
 export const modules = {};
-if (history.scrollRestoration) {
-  history.scrollRestoration = 'manual';
-}
-window.scrollTo(0, 0);
-
 gsap.registerPlugin(ScrollTrigger);
-smoothScroll();
-
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+  document.body.style.opacity = 1;
   popup();
   form();
   scroll();
