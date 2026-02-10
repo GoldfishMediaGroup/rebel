@@ -38,10 +38,10 @@ $tertiary-text: rgba(255, 255, 255, 0.5);
 
 body {
   color: $text-primary;
-  background: $primary-bg url('./assets/images/bg.svg') no-repeat top/cover;
+  background: $primary-bg;
   font-family: 'Geologica';
   @include small-tablet {
-    background: $primary-bg url('./assets/images/bgMob.svg') no-repeat top/cover;
+    // background: $primary-bg url('./assets/images/bgMob.svg') no-repeat top/cover;
   }
   .lock & {
     overflow: hidden;
