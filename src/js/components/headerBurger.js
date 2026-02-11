@@ -3,8 +3,8 @@ window.$ = window.jQuery = require('jquery');
 
 function headerBurger() {
   const section = document.querySelector('header');
-  if (!section) return;
 
+  
   const burger = document.querySelector('.header__burger');
   if (!burger) return;
   const body = document.body;

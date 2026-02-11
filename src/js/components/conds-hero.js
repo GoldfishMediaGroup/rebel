@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle';
 
 function condsHero() {
   const swiperEl = document.querySelector('.conds-hero__vac-swiper');
-  if (!swiperEl) return;
+
   const section = document.querySelector('.conds-hero');
 
   const swiper = new Swiper(swiperEl, {

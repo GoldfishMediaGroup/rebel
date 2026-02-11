@@ -4,7 +4,6 @@ function advantages() {
   const section = document.querySelector('.advantages');
   const swiperEl = document.querySelector('.advantages__swiper');
 
-  if (!section) return;
 
   let swiper;
   let isMobile = window.innerWidth < 769; // текущий флаг

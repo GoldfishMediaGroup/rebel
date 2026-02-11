@@ -4,7 +4,7 @@ function news() {
   const section = document.querySelector('.news');
   const swiperEl = document.querySelector('.news__swiper');
 
-  if (!swiperEl) return;
+
 
   let swiper;
   let isMobile = window.innerWidth < 769; // текущий флаг

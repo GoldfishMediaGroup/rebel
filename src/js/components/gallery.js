@@ -4,7 +4,6 @@ import { rem } from '../utils/constants';
 function gallery() {
   const section = document.querySelector('.gallery');
 
-  if (!section) return;
 
   const swiper = new Swiper('.gallery__swiper', {
     slidesPerView: 1,

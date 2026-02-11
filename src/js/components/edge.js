@@ -4,8 +4,9 @@ import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, ScrollToPlugin } from
 function edge() {
   const section = document.querySelector('.edge');
 
-  if (!section) return;
+
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  
   const infoBlocks = section.querySelectorAll('.edge__info-block');
   infoBlocks[0].classList.add('isActive');
   document.querySelector('.edge__tab-slide').classList.add('isActive');

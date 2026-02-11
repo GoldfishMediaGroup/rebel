@@ -2,7 +2,8 @@ function showMoreMob(selector, count, heightStr, selectorBtn) {
   const elems = document.querySelectorAll(selector);
 
   elems.forEach((elem, i) => {
-    if (!elem) return;
+
+    
     let text = elem.innerHTML;
     const btn = document.querySelectorAll(selectorBtn)[i]
 

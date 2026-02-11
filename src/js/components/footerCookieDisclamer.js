@@ -3,7 +3,6 @@ function footerCookieDisclamer() {
   const cookieBtn = document.querySelector('.cookie__btn');
 
 
-  if (!cookie) return;
 
   cookieBtn.addEventListener('click', () => {
     cookie.classList.remove('cookie--show');

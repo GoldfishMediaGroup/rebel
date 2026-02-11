@@ -4,7 +4,7 @@ import { rem } from '../utils/constants';
 function brandsGallery () {
   const section = document.querySelector('.brands-gallery');
 
-  if (!section) return;
+
 
   const swiper = new Swiper('.brands-gallery__swiper', {
     slidesPerView: 1,

@@ -296,7 +296,7 @@
   </div>
 </div>
 
-<div id="popup__horisontal1" aria-hidden="true" class="popup popup--horisontal" data-lenis-prevent="true">
+<div id="popup__horizontal1" aria-hidden="true" class="popup popup--horizontal" data-lenis-prevent="true">
   <div class="popup__wrapper">
     <div class="popup__content">
       <div class="popup__body flex dc cv">
@@ -323,7 +323,7 @@
   </div>
 </div>
 
-<div id="popup__horisontal2" aria-hidden="true" class="popup popup--horisontal" data-lenis-prevent="true">
+<div id="popup__horizontal2" aria-hidden="true" class="popup popup--horizontal" data-lenis-prevent="true">
   <div class="popup__wrapper">
     <div class="popup__content">
       <div class="popup__body flex dc cv">
@@ -775,9 +775,9 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const mapEl = document.querySelector('.contacts__map');
-    if (!mapEl) return;
-    initMap(mapEl);
+      const mapEl = document.querySelector('.contacts__map');
+      if (!mapEl) return;
+      initMap(mapEl);
   });
 
   async function initMap(mapEl) {
@@ -903,96 +903,6 @@
       });
   }
 </script>
-
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mapEl = document.querySelector('.contacts__map');
-    if (!mapEl) return;
-    initMap(mapEl);
-  });
-
-  async function initMap(mapEl) {
-    if (typeof ymaps3 !== 'undefined') {
-      await ymaps3.ready;
-      const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapListener } = ymaps3;
-
-      // Флаг текущего состояния
-      let isMobile = window.innerWidth < 768;
-      let resizeTimeout;
-
-      function getMapCenter() {
-        return isMobile 
-          ? [37.799740, 55.630132] // мобильный центр
-          : [37.835446, 55.797589]; // десктоп центр
-      }
-
-      // Создаем карту с начальным центром
-      let map = new YMap(
-        mapEl,
-        {
-          location: {
-            center: getMapCenter(),
-            zoom: 10
-          }
-        },
-        [
-          new YMapDefaultSchemeLayer({
-            customization: {
-              style: [
-                // ваш стиль...
-              ]
-            }
-          }),
-          new YMapDefaultFeaturesLayer({})
-        ]
-      );
-
-      const markerElement = document.createElement('img');
-      markerElement.className = 'contacts__placemark';
-      markerElement.src = './assets/images/placemark.svg';
-      map.addChild(new YMapMarker({ coordinates: [37.675226, 55.776011] }, markerElement));
-
-      // Обработчик ресайза с логикой переключения состояний
-      function handleResize() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          const nowIsMobile = window.innerWidth < 768;
-          
-          // Если состояние изменилось (был мобильный ↔ стал десктоп или наоборот)
-          if (isMobile !== nowIsMobile) {
-            console.log(`Переключение: ${isMobile ? 'мобильный → десктоп' : 'десктоп → мобильный'}`);
-            
-            // Обновляем флаг
-            isMobile = nowIsMobile;
-            
-            // Перестраиваем карту с новым центром
-            const newCenter = getMapCenter();
-            map.setLocation({
-              ...map.getLocation(),
-              center: newCenter
-            });
-            
-            console.log('Центр карты обновлен:', newCenter);
-          }
-        }, 150); // Небольшая задержка для стабилизации ресайза
-      }
-
-      // Вешаем обработчик ресайза
-      window.addEventListener('resize', handleResize);
-
-      // для вывода координат в консоль
-      const updateHandler = ({ location }) => {
-        console.log('Центр:', location.center, 'Зум:', location.zoom);
-      };
-      
-      const mapListener = new YMapListener({
-        layer: 'any',
-        onUpdate: updateHandler
-      });
-      map.addChild(mapListener);
-    }
-  }
-</script> -->
 
     </div>
   </body>

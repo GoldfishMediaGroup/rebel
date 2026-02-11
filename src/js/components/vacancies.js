@@ -4,7 +4,7 @@ function vacancies() {
   const section = document.querySelector('.vacancies');
   const swiperEl = document.querySelector('.vacancies__swiper');
 
-  if (!swiperEl) return;
+
   
   let swiper;
   let isMobile = window.innerWidth < 769; // текущий флаг

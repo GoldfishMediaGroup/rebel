@@ -4,7 +4,6 @@ import { rem } from '../utils/constants';
 function newsDetHero() {
   const section = document.querySelector('.news-det-hero');
 
-  if (!section) return;
 
   const swiper = new Swiper('.news-det-hero__swiper', {
     slidesPerView: 1,

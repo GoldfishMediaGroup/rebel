@@ -3,7 +3,7 @@ import Swiper from 'swiper/bundle';
 function dna() {
   const section = document.querySelector('.dna');
 
-  if (!section) return;
+  
 
   const swiper = new Swiper('.dna__swiper', {
     speed: 800,
