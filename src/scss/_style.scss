@@ -1,4 +1,4 @@
-@import 'swiper/css/bundle';
+
 @import './mixins';
 @import './flexs';
 
@@ -13,28 +13,28 @@ $text-primary: #fff;
 $text-secondary: #919b9e;
 $tertiary-text: rgba(255, 255, 255, 0.5);
 
-// @include desk-only {
-//   html.lenis,
-//   html.lenis body {
-//     height: auto;
-//   }
+@media (min-width: 768px) {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
 
-//   .lenis.lenis-smooth {
-//     scroll-behavior: auto !important;
-//   }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
 
-//   .lenis.lenis-smooth [data-lenis-prevent] {
-//     overscroll-behavior: contain;
-//   }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
 
-//   .lenis.lenis-stopped {
-//     // overflow: hidden;
-//   }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
 
-//   .lenis.lenis-smooth iframe {
-//     pointer-events: none;
-//   }
-// }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
 
 body {
   color: $text-primary;

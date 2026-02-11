@@ -3,7 +3,7 @@ import Swiper from 'swiper/bundle';
 function values() {
   const section = document.querySelector('.values');
 
-  if (!section) return;
+
 
   const swiper = new Swiper('.values__swiper', {
     slidesPerView: 1,    speed: 800,

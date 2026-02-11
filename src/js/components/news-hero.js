@@ -4,7 +4,7 @@ import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, ScrollToPlugin } from
 function newsHero() {
   const section = document.querySelector('.news-hero');
 
-  if (!section) return;
+ 
 
   const bgSwiper = new Swiper('.news-hero__bg-swiper', {
     speed: 800,

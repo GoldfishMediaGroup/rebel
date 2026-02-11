@@ -3,7 +3,7 @@ import Swiper from 'swiper/bundle';
 function cooperations() {
   const section = document.querySelector('.cooperations');
 
-  if (!section) return;
+
 
   const swiper = new Swiper('.cooperations__swiper', {
     slidesPerView: 1,

@@ -6,7 +6,7 @@ import { rem } from '../utils/constants';
 function managementAnim() {
   const section = document.querySelector('.management-anim');
 
-  if (!section) return;
+
 
   const swiperBg = new Swiper('.management-anim__bg-swiper', {
     speed: 1000,

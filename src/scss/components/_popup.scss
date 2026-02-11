@@ -137,7 +137,7 @@ body::before {
       }
     }
   }
-  &--horisontal {
+  &--horizontal {
     & .popup__body {
       @include small-tablet {
         border: 2rem solid $text-primary;

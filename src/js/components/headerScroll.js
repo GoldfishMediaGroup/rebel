@@ -1,8 +1,6 @@
 function headerScroll() {
   const nav = document.querySelector('header');
 
-  if (!nav) return;
-  
   const navOffsetTop = nav.offsetTop;
 
   function handleScroll() {

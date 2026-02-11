@@ -4,7 +4,7 @@ import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, ScrollToPlugin } from
 
 function valuesAnim() {
   const section = document.querySelector('.values-anim');
-  if (!section) return;
+
   const swiperEls = section.querySelectorAll('.values-anim__swiper');
   const imgSwiper = section.querySelector('.values-anim__img-swiper');
 

@@ -3,7 +3,7 @@ import Swiper from 'swiper/bundle';
 function hero() {
   const section = document.querySelector('.hero');
 
-  if (!section) return;
+
 
   const bgSwiper = new Swiper('.hero__bg-swiper', {
     speed: 800,

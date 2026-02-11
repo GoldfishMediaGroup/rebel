@@ -3,7 +3,7 @@ import { rem } from '../utils/constants';
 
 function conds() {
   const section = document.querySelector('.conds');
-  if (!section) return;
+
 
   const swiper = new Swiper('.conds__swiper', {
     slidesPerView: 2,
