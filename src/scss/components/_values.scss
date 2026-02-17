@@ -80,46 +80,37 @@
     gap: 142rem;
   }
 
-  /* .values-anim__swiper-box */
+  /* .values-anim__list-box */
 
-  &__swiper-box {
+  &__list-box {
     display: flex;
     align-items: center;
     gap: 20rem;
     position: relative;
     z-index: 2;
-  }
-
-  /* .values-anim__swiper */
-
-  &__swiper {
     width: 100%;
 
-    background: $primary-bg;
-    position: relative;
-    &:after {
-      position: absolute;
-      inset: 0rem;
-      pointer-events: none;
-      content: '';
-      border: 2rem solid $text-primary;
-      z-index: 5;
-    }
-    & .value-el {
-      border-top: unset;
-      border-bottom: unset;
-    }
+  }
+  &__list {
+    width: 100%;
+  }
+  /* .values-anim__list-wrapper */
+
+  &__list-wrapper {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20rem;
+
   }
 
-  /* .values-anim__swiper-wrapper */
+  /* .values-anim__item */
 
-  &__swiper-wrapper {
-  }
-
-  /* .values-anim__slide */
-
-  &__slide {
+  &__item {
     background: $primary-bg;
+    width: 397rem;
+    flex-shrink: 0;
   }
 
   /* .values-anim__pagin */

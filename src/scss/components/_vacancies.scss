@@ -17,6 +17,9 @@
   /* .vacancies__swiper-box */
 
   &__swiper-box {
+        display: flex;
+    flex-direction: column;
+    gap: 40rem;
     @include small-tablet {
       gap: 20rem;
     }

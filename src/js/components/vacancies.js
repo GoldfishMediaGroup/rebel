@@ -4,8 +4,6 @@ function vacancies() {
   const section = document.querySelector('.vacancies');
   const swiperEl = document.querySelector('.vacancies__swiper');
 
-
-  
   let swiper;
   let isMobile = window.innerWidth < 769; // текущий флаг
 
@@ -25,8 +23,30 @@ function vacancies() {
       speed: 800,
       grabCursor: true,
       grid: currentMobile ? { rows: 2 } : {},
+      loop: true,
       pagination: {
-        el: section.querySelector('.swiper-pagination')
+        el: section.querySelector('.vacancies__fraction')
+      },
+      navigation: {
+        prevEl: section.querySelector('.swiper-button-prev'),
+        nextEl: section.querySelector('.swiper-button-next')
+      },
+      breakpoints: {
+        769: {
+          pagination: {
+            el: section.querySelector('.vacancies__fraction'),
+            type: 'custom',
+            renderCustom: function (swiper, current, total) {
+              const formattedCurrent = String(current).padStart(2, '0');
+              const formattedTotal = String(total).padStart(2, '0');
+              return `
+      <span class="swiper-pagination-current">${formattedCurrent}</span>
+      / 
+      <span class="swiper-pagination-total">${formattedTotal}</span>
+    `;
+            }
+          }
+        }
       }
     });
   }

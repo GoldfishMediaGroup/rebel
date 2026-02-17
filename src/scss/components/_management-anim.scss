@@ -162,8 +162,10 @@
 
   /* .management-anim__pagination */
   &__pagination-box {
+    display: none;
         @include desk-only {
     position: absolute;
+    display: flex;
     bottom: -90rem;
     width: 694rem;
     right: 0;

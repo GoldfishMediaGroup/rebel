@@ -30,7 +30,7 @@
   /* .vacancies-hero__info */
 
   &__info {
-    gap: 165rem;
+    gap: 52rem;
     position: relative;
     @include small-tablet {
       gap: 12rem;
@@ -42,20 +42,8 @@
   &__desc {
     width: 514rem;
     position: relative;
-    &::before {
-      position: absolute;
-      content: '';
-      left: 0;
-      top: -40rem;
-      width: 1283rem;
-      border-radius: 8rem;
-      height: 2.5rem;
-      background: rgba(255, 255, 255, 0.2);
-      @include small-tablet {
-        display: none;
-        width: 100%;
-      }
-    }
+   
+  
     @include small-tablet {
       width: 100%;
     }
@@ -64,10 +52,7 @@
   /* .vacancies-hero__review-box */
 
   &__review-box {
-position: absolute;
-    top: 55%;
-    left: 293rem;
-    transform: translateY(50%);
+width: fit-content;
     padding: 20rem 40rem;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -81,6 +66,7 @@ position: absolute;
       top: auto;
       padding: 12rem 22rem;
       transform: unset;
+      order: 3;
       justify-content: space-between;
     }
   }
