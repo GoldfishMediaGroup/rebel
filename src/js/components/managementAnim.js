@@ -9,7 +9,7 @@ function managementAnim() {
 
 
   const swiperBg = new Swiper('.management-anim__bg-swiper', {
-    speed: 1000,
+    speed: 800,
     slidesPerView: 1,
     grabCursor: true,
     effect: 'creative',
@@ -40,7 +40,7 @@ function managementAnim() {
         prev: { translate: ['-20%', 0, -50] },
         next: { translate: ['100%', 0, 0] }
       };
-      swiperConfig.speed = 1000;
+      swiperConfig.speed = 800;
       swiperConfig.pagination = {
         el: section.querySelector('.swiper-pagination'),
         type: 'progressbar'
@@ -88,10 +88,10 @@ function managementAnim() {
         trigger: section,
         start: 'top top',
         pin: true,
-        end: () => `+=${slidesCount * 250}%`,
+        end: () => `+=${slidesCount}00%`,
         scrub: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
+  
+
       }
     });
 
@@ -112,12 +112,7 @@ function managementAnim() {
             }
           }
         )
-        .to(
-          {},
-          {
-            duration: 1
-          }
-        );
+ 
     }
   });
 }

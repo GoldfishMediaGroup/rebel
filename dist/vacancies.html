@@ -379,16 +379,8 @@
             <span class="accent-color">вакансии</span>
             rebelgroup
           </p>
-
-          <div class="vacancies-hero__desc txt20 light lh140">
-            Мы ищем людей, которые не боятся идти против шаблонов и создавать новое. В Rebelgroup ценят инициативность, креатив и
-            умение работать в команде. У нас вы сможете реализовать самые смелые идеи, расти профессионально и быть частью
-            проектов, которые меняют рынок.
-          </div>
-        </div>
-      </div>
-      <div class="vacancies-hero__img-wrap">
-        <div class="vacancies-hero__review-box flex cv">
+          
+        <a href="#" class="vacancies-hero__review-box flex cv">
           <div class="vacancies-hero__review-text">
             <p class="txt24 upper">rebelgroup</p>
             <div class="vacancies-hero__review-grade flex cv">
@@ -415,7 +407,18 @@
           <div class="vacancies-hero__review-logo">
             <img src="./assets/images/hh.webp" alt="">
           </div>
+        </a>
+
+
+          <div class="vacancies-hero__desc txt20 light lh140">
+            Мы ищем людей, которые не боятся идти против шаблонов и создавать новое. В Rebelgroup ценят инициативность, креатив и
+            умение работать в команде. У нас вы сможете реализовать самые смелые идеи, расти профессионально и быть частью
+            проектов, которые меняют рынок.
+          </div>
         </div>
+      </div>
+      <div class="vacancies-hero__img-wrap">
+
         <div class="vacancies-hero__img">
           <img src="./assets/images/vacanciesHero.webp" alt="">
         </div>
@@ -884,7 +887,7 @@
 
       const markerElement = document.createElement('img');
       markerElement.className = 'contacts__placemark';
-      markerElement.src = './assets/images/placemark.svg';
+      markerElement.src = './assets/images/16.02.2026/logoMap.svg';
       map.addChild(new YMapMarker({ coordinates: [37.675226, 55.776011] }, markerElement));
 
       // вывод координат в консоль
